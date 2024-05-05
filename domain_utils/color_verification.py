@@ -1,13 +1,15 @@
 import json
-from domain import *
+from domain_utils import domain
 
 DOMAIN_NAME = "color_verification"
 EXAMPLE_DIRECTORY = f"examples/{DOMAIN_NAME}/"
 
 def file_ending():
     return ".col"
-def generate(*args):
-    return generator(generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation, EXAMPLE_DIRECTORY)(*args)
+def generate(*args, **kwargs):
+    return domain.generator(generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation, EXAMPLE_DIRECTORY)(*args, **kwargs)
+def extraction_labels():
+    return ['correct','ablated','non-optimal','random','llm']
 
 def evaluate(instance_text, response_trace, extraction_label="", backprompt_type="", cot_type=""):
     evaluation = {}
@@ -199,7 +201,9 @@ def generate_thoughts(example_instance, cot_type):
     else: raise NotImplementedError
     return cot
 
-def generate_correct_evaluation(example_instance, extraction_label):
-    valid_coloring, minimal_coloring, errors = check_coloring(extract_coloring(example_instance, extraction_label),example_instance)
-    evaluation = {"missing_vertices":errors["missing_vertices"],"wrong_edges":errors["wrong_edges"],"valid":valid_coloring,"minimal":minimal_coloring,"correct":valid_coloring and minimal_coloring}
-    return json.dumps(evaluation, indent=4)
+def generate_correct_evaluation(example_instance, extraction_label, problem_relaxation):
+    if problem_relaxation == "full":
+        valid_coloring, minimal_coloring, errors = check_coloring(extract_coloring(example_instance, extraction_label),example_instance)
+        evaluation = {"missing_vertices":errors["missing_vertices"],"wrong_edges":errors["wrong_edges"],"valid":valid_coloring,"minimal":minimal_coloring,"correct":valid_coloring and minimal_coloring}
+        return json.dumps(evaluation, indent=4)
+    else: raise NotImplementedError
