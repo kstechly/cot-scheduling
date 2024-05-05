@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cot"
+version = "0.1.0"
+description = "Pipeline for testing chain-of-thought generalization in SoTA LLMs."
+authors = ["kstechly <kayastechly@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+grinpy = "^19.7a0"
+argparse = "^1.4.0"
+tqdm = "^4.66.4"
+openai = "^1.25.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
