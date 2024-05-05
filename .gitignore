@@ -1,2 +1,6 @@
+# Python basics
 *.pyc
+
+# Poetry basics
 poetry.lock
+/dist/*
