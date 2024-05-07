@@ -2,7 +2,7 @@ import json
 from domain_utils import domain
 
 DOMAIN_NAME = "color_verification"
-EXAMPLE_DIRECTORY = f"examples/{DOMAIN_NAME}/"
+EXAMPLE_DIRECTORY = f"data/examples/{DOMAIN_NAME}/"
 
 def file_ending():
     return ".col"
