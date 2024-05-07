@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 
 ### json utils
@@ -12,7 +13,7 @@ def write_json(domain_name,text_to_write,data_type):
         json.dump(text_to_write, fp, indent = 4)
     os.replace(f'{location}.tmp', location)
 
-def read_json(domain_name, overwrite_previous, data_type):
+def read_json(domain_name, overwrite_previous, data_type, verbose=False):
     location = f"data/{data_type}/{domain_name}/prompts.json"
     if os.path.exists(location):
         with open(location, 'r') as file:
@@ -22,7 +23,9 @@ def read_json(domain_name, overwrite_previous, data_type):
             with open(f"data/{data_type}/{domain_name}/prompts-{stamp}.json","w") as file:
                 json.dump(previous, file, indent=4)
         return previous
-    else: return {}
+    else:
+        if verbose: print(f"{location} does not exist. Initializing with empty dictionary.")
+        return {}
 
 ### other utils
 
