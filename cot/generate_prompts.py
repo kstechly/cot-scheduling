@@ -48,7 +48,13 @@ if __name__=="__main__":
                 prompt_name = f'{x}'
                 prompt = domain.generate(instance, problem_relaxation=args.relaxation, cot_type=cot_type, n_examples=args.n_examples, magic=args.magic, example_prefix=args.example_prefix, extraction_label=label)
                 full_prompt_info = {"prompt": prompt, "extraction_label":label, "relaxation":args.relaxation, "cot":cot_type, "n_examples": args.n_examples, "magic": args.magic, "example_prefix": args.example_prefix}
-                if prompt_name in prompts and utils.includes_dict_w_ignore(prompts[prompt_name], full_prompt_info, ("prompt")): continue
-                if prompt_name not in prompts: prompts[prompt_name] = []
+                if prompt_name in prompts:
+                    old_prompt_num = utils.includes_dict_w_ignore(prompts[prompt_name], full_prompt_info, set(["prompt"]))
+                else: 
+                    old_prompt_num = -1
+                    prompts[prompt_name] = []
+                if old_prompt_num>-1: 
+                    if args.overwrite_previous: prompts[prompt_name][old_prompt_num] = full_prompt_info
+                    continue
                 prompts[prompt_name].append(full_prompt_info)
     utils.write_json(domain_name, prompts, "prompts")

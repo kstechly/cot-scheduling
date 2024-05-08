@@ -127,7 +127,7 @@ def generate_query(instance_text, extraction_label):
     #   [Graph]
     #   [Coloring]
     #  Output/Examples
-    #   [Reasoning]
+    #   [Thoughts]
     #   [Evaluation]
     query = f"[Graph]\n"
     query+= f"The following graph, described as a list of edges, has an optimal coloring number of {optimal_coloring_number(instance_text)}:\n"
@@ -154,8 +154,8 @@ def generate_thoughts(example_instance, cot_type):
     valid_coloring, minimal_coloring, errors = check_coloring(coloring_text, example_instance)
     coloring = parse_coloring(coloring_text)
 
-    if cot_type:
-        cot +="\n[Reasoning]\n"
+    # if cot_type:
+    #     cot +="\n[Reasoning]\n"
     if not cot_type: pass
     elif cot_type == "global":
         cot += explanation

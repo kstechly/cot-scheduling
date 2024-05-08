@@ -54,7 +54,7 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
                     print(f"==Instance: {instance}, Tokens: {token_length}==")
                     info_dict = {x: trial_specification[x] for x in trial_specification.keys() if x != "prompt"}
                     print(f'=={info_dict}==')
-                    # print(prompt_text)
+                    print(prompt_text)
                 trial_output = trial_specification
                 trial_output.update(prompt)
 

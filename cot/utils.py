@@ -30,11 +30,12 @@ def read_json(domain_name, overwrite_previous, data_type, verbose=False):
 ### other utils
 
 def includes_dict_w_ignore(l, b, ignore_keys):
-    for a in l:
+    for n in range(0,len(l)):
+        a = l[n]
         ka = set(a).difference(ignore_keys)
         kb = set(b).difference(ignore_keys)
-        if ka == kb and all(a[k] == b[k] for k in ka): return True
-    return False
+        if ka == kb and all(a[k] == b[k] for k in ka): return n
+    return -1
 
 def includes_dict(l, b):
     for a in l:
