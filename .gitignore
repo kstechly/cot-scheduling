@@ -1,5 +1,6 @@
 # Python basics
 *.pyc
+.env
 
 # Poetry basics
 poetry.lock

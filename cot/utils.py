@@ -29,7 +29,7 @@ def read_json(domain_name, overwrite_previous, data_type, verbose=False):
 
 ### other utils
 
-def includes_dict(l, b, ignore_keys):
+def includes_dict_w_ignore(l, b, ignore_keys):
     for a in l:
         ka = set(a).difference(ignore_keys)
         kb = set(b).difference(ignore_keys)
@@ -40,6 +40,3 @@ def includes_dict(l, b):
     for a in l:
         if all(a[k] == b[k] for k in b.keys()): return True
     return False
-
-def matches(dict_to_check, subdict):
-    raise NotImplementedError
