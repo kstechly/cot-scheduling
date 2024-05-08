@@ -8,19 +8,19 @@ import time
 def write_json(domain_name,text_to_write,data_type):
     directory = f"data/{data_type}/{domain_name}"
     os.makedirs(directory, exist_ok=True)
-    location = f"{directory}/prompts.json"
+    location = f"{directory}/{data_type}.json"
     with open(f'{location}.tmp',"w") as fp:
         json.dump(text_to_write, fp, indent = 4)
     os.replace(f'{location}.tmp', location)
 
 def read_json(domain_name, overwrite_previous, data_type, verbose=False):
-    location = f"data/{data_type}/{domain_name}/prompts.json"
+    location = f"data/{data_type}/{domain_name}/{data_type}.json"
     if os.path.exists(location):
         with open(location, 'r') as file:
             previous = json.load(file)
         if overwrite_previous:
             stamp = str(time.time())
-            with open(f"data/{data_type}/{domain_name}/prompts-{stamp}.json","w") as file:
+            with open(f"data/{data_type}/{domain_name}/{data_type}-{stamp}.json","w") as file:
                 json.dump(previous, file, indent=4)
         return previous
     else:
