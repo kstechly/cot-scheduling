@@ -20,7 +20,7 @@ def read_json(domain_name, overwrite_previous, data_type, verbose=False):
             previous = json.load(file)
         if overwrite_previous:
             stamp = str(time.time())
-            with open(f"data/{data_type}/{domain_name}/{data_type}-{stamp}.json","w") as file:
+            with open(f"data/{data_type}/{domain_name}/{data_type}-{stamp}.json.old","w") as file:
                 json.dump(previous, file, indent=4)
         return previous
     else:
