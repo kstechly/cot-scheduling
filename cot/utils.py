@@ -35,3 +35,11 @@ def includes_dict(l, b, ignore_keys):
         kb = set(b).difference(ignore_keys)
         if ka == kb and all(a[k] == b[k] for k in ka): return True
     return False
+
+def includes_dict(l, b):
+    for a in l:
+        if all(a[k] == b[k] for k in b.keys()): return True
+    return False
+
+def matches(dict_to_check, subdict):
+    raise NotImplementedError
