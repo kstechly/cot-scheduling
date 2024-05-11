@@ -4,8 +4,6 @@ from fire import Fire # type: ignore
 import utils
 import domain_utils
 
-INSTANCES_LOCATION = "data/instances/"
-
 def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='', magic='', relaxation='full', overwrite_previous=False):
     if domain_name not in domain_utils.domains:
         raise ValueError(f"Domain name must be an element of {list(domain_utils.domains)}.")

@@ -10,8 +10,6 @@ def generator(generate_instructions, generate_query, generate_thoughts, generate
         instructions = generate_instructions(problem_relaxation)
 
         # TODO GET RID OF THIS NONSENSE!!!
-        # format (stored in data/color_verification) is graph instance with comments appended giving colorings of various types
-        # if extraction_label not in instance_text: print(f"There is no {extraction_label} key in {instance_text}")
         current_query = generate_query(instance_text, extraction_label)
 
         prompt = "[Instructions]\n"+instructions
