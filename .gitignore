@@ -5,3 +5,6 @@
 # Poetry basics
 poetry.lock
 /dist/*
+
+# Don't push backups
+*.old
