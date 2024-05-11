@@ -4,12 +4,31 @@ from domain_utils import domain
 DOMAIN_NAME = "color_verification"
 EXAMPLE_DIRECTORY = f"data/examples/{DOMAIN_NAME}/"
 
+
+#### TODO THIS ALL OF THIS NEEDS REFACTORING TO NEW STANDARD
+
+### REQUIRED FUNCTIONS ###
+# TODO fix this shit so that we just have stuff in a json to work from
 def file_ending():
     return ".col"
-def generate(*args, **kwargs):
-    return domain.generator(generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation, EXAMPLE_DIRECTORY)(*args, **kwargs)
 def extraction_labels():
     return ['correct','ablated','non-optimal','random','llm']
+
+def generate(*args, **kwargs):
+    return domain.generator(generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation, EXAMPLE_DIRECTORY)(*args, **kwargs)
+def generate_graph(instance_text, cot_type="", extraction_label=""):
+    # a computation graph must be a list of dictionaries (aka computation nodes), where each dict contains 
+        #"input_indices":[ordered list of indices of inputs, all smaller than index of current node],
+        #"function":"string selecting the function"
+        #"input_vals":[ordered list of input values. At first this should only be the initial inputs and Nones]
+    if not cot_type: return ""
+    elif cot_type == "global":
+        return generate_graph_global(instance_text, extraction_label)
+    else: raise NotImplementedError
+
+def compute_node(function, input_vals):
+    # TODO: implement a mapping from strings to actual function execution given a list of input values
+    raise NotImplementedError
 
 def evaluate(instance_text, response_trace, extraction_label="", backprompt_type="", cot_type=""):
     evaluation = {}
@@ -36,6 +55,8 @@ def evaluate(instance_text, response_trace, extraction_label="", backprompt_type
     
     evaluation["summary"] = summary
     return evaluation
+
+
 
 ### HELPER FUNCTIONS ###
 
@@ -146,6 +167,22 @@ def extract_graph(instance_text):
 
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
+    # if cot_type:
+    #     cot +="\n[Reasoning]\n"
+    if not cot_type: return ""
+    elif cot_type == "global": return generate_thoughts_global(example_instance)
+    else: raise NotImplementedError
+
+def generate_correct_evaluation(example_instance, extraction_label, problem_relaxation):
+    if problem_relaxation == "full":
+        valid_coloring, minimal_coloring, errors = check_coloring(extract_coloring(example_instance, extraction_label),example_instance)
+        evaluation = {"missing_vertices":errors["missing_vertices"],"wrong_edges":errors["wrong_edges"],"valid":valid_coloring,"minimal":minimal_coloring,"correct":valid_coloring and minimal_coloring}
+        return json.dumps(evaluation, indent=4)
+    else: raise NotImplementedError
+
+## SPECIFIC COT UTILITIES ##
+# GLOBAL COT #
+def generate_thoughts_global(example_instance):
     explanation = "To check if a coloring is valid, it suffices to iterate through every edge in the graph and check 1) if the first vertex has been colored, 2) if the second vertex has been colored, 3) if both vertices are different colors. To check if it is minimal, all we have to do is to count the number of colors and ensure that this number is less than or equal to the optimal coloring number.\n"
 
     cot = ""
@@ -154,56 +191,46 @@ def generate_thoughts(example_instance, cot_type):
     valid_coloring, minimal_coloring, errors = check_coloring(coloring_text, example_instance)
     coloring = parse_coloring(coloring_text)
 
-    # if cot_type:
-    #     cot +="\n[Reasoning]\n"
-    if not cot_type: pass
-    elif cot_type == "global":
-        cot += explanation
+    cot += explanation
 
-        # validity check
-        cot += "First, we check if the coloring is valid.\n"
-        for edge_num in range(0,len(edges)):
-            cot += f'Edge {edge_num}:\n'
-            cot += f'Edge number {edge_num} is defined in the graph description as an edge between vertex {edges[edge_num][0]} and vertex {edges[edge_num][1]}.\n'
-            cot += f'We look at the coloring to see if it mentions the first vertex and see that '
-            # TODO: maybe an even more global prompt that checks every single vertex individually manually, doing the full loop
-            if edges[edge_num][0] not in errors["missing_vertices"]:
-                cot += f'the coloring labels vertex {edges[edge_num][0]} as {coloring[edges[edge_num][0]]}.\n'
-            else:
-                cot += f'the coloring does not mention vertex {edges[edge_num][0]}. Therefore the coloring is invalid. We keep track of this for later.\nSince there is no defined color, we won\'t compare vertex colors on this edge.\n'
-            cot += f'We look at the coloring to see if it mentions the second vertex and see that '
-            if edges[edge_num][0] not in errors["missing_vertices"]:
-                cot += f'the coloring labels vertex {edges[edge_num][1]} as {coloring[edges[edge_num][1]]}.\n'
-            else:
-                cot += f'the coloring does not mention vertex {edges[edge_num][1]}. Therefore the coloring is invalid. We keep track of this for later.\nSince there is no defined color, we won\'t compare vertex colors on this edge.\n'
-            if edges[edge_num][0] not in errors["missing_vertices"] and edges[edge_num][0] not in errors["missing_vertices"]:
-                cot += f'Since both vertices are colored, we can compare them.\n'
-                if sorted([edges[edge_num][0],edges[edge_num][1]]) in errors["wrong_edges"]:
-                    assert coloring[edges[edge_num][0]] == coloring[edges[edge_num][1]]
-                    cot += f'Both vertices are colored {coloring[edges[edge_num][0]]}. Therefore the coloring is invalid. We keep track of this for later.\n'
-                else:
-                    assert coloring[edges[edge_num][0]] != coloring[edges[edge_num][1]]
-                    cot += f'Vertex {edges[edge_num][0]} is colored {coloring[edges[edge_num][0]]}, and vertex {edges[edge_num][1]} is colored {coloring[edges[edge_num][1]]}, which are different colors.\n'
-
-        # minimality check
-        cot += f'Now we check if the coloring is minimal. The colors listed are '
-        # TODO an even looser version where it iterates through literally everything.
-        colors = list(map(str,set(coloring.values())))
-        cot += f'{", ".join(colors[:-1])} and {colors[-1]}.'
-        cot += f'This is a total of {len(colors)} colors.\n'
-        if minimal_coloring:
-            assert len(colors) <= int(optimal_coloring_number(example_instance))
-            cot += f'{len(colors)} is less than or equal to the optimal coloring number {optimal_coloring_number(example_instance)}, which is minimal.\n'
+    # validity check
+    cot += "First, we check if the coloring is valid.\n"
+    for edge_num in range(0,len(edges)):
+        cot += f'Edge {edge_num}:\n'
+        cot += f'Edge number {edge_num} is defined in the graph description as an edge between vertex {edges[edge_num][0]} and vertex {edges[edge_num][1]}.\n'
+        cot += f'We look at the coloring to see if it mentions the first vertex and see that '
+        # TODO: maybe an even more global prompt that checks every single vertex individually manually, doing the full loop
+        if edges[edge_num][0] not in errors["missing_vertices"]:
+            cot += f'the coloring labels vertex {edges[edge_num][0]} as {coloring[edges[edge_num][0]]}.\n'
         else:
-            assert len(colors) > optimal_coloring_number(example_instance)
-            cot += f'{len(colors)} greater than the optimal coloring number {optimal_coloring_number(example_instance)}, which is not minimal. Therefore the coloring is not correct.\n'
-        cot += f'Using all the information we\'ve compiled, we can now write down the final answer.'
-    else: raise NotImplementedError
-    return cot
+            cot += f'the coloring does not mention vertex {edges[edge_num][0]}. Therefore the coloring is invalid. We keep track of this for later.\nSince there is no defined color, we won\'t compare vertex colors on this edge.\n'
+        cot += f'We look at the coloring to see if it mentions the second vertex and see that '
+        if edges[edge_num][0] not in errors["missing_vertices"]:
+            cot += f'the coloring labels vertex {edges[edge_num][1]} as {coloring[edges[edge_num][1]]}.\n'
+        else:
+            cot += f'the coloring does not mention vertex {edges[edge_num][1]}. Therefore the coloring is invalid. We keep track of this for later.\nSince there is no defined color, we won\'t compare vertex colors on this edge.\n'
+        if edges[edge_num][0] not in errors["missing_vertices"] and edges[edge_num][0] not in errors["missing_vertices"]:
+            cot += f'Since both vertices are colored, we can compare them.\n'
+            if sorted([edges[edge_num][0],edges[edge_num][1]]) in errors["wrong_edges"]:
+                assert coloring[edges[edge_num][0]] == coloring[edges[edge_num][1]]
+                cot += f'Both vertices are colored {coloring[edges[edge_num][0]]}. Therefore the coloring is invalid. We keep track of this for later.\n'
+            else:
+                assert coloring[edges[edge_num][0]] != coloring[edges[edge_num][1]]
+                cot += f'Vertex {edges[edge_num][0]} is colored {coloring[edges[edge_num][0]]}, and vertex {edges[edge_num][1]} is colored {coloring[edges[edge_num][1]]}, which are different colors.\n'
 
-def generate_correct_evaluation(example_instance, extraction_label, problem_relaxation):
-    if problem_relaxation == "full":
-        valid_coloring, minimal_coloring, errors = check_coloring(extract_coloring(example_instance, extraction_label),example_instance)
-        evaluation = {"missing_vertices":errors["missing_vertices"],"wrong_edges":errors["wrong_edges"],"valid":valid_coloring,"minimal":minimal_coloring,"correct":valid_coloring and minimal_coloring}
-        return json.dumps(evaluation, indent=4)
-    else: raise NotImplementedError
+    # minimality check
+    cot += f'Now we check if the coloring is minimal. The colors listed are '
+    # TODO an even looser version where it iterates through literally everything.
+    colors = list(map(str,set(coloring.values())))
+    cot += f'{", ".join(colors[:-1])} and {colors[-1]}.'
+    cot += f'This is a total of {len(colors)} colors.\n'
+    if minimal_coloring:
+        assert len(colors) <= int(optimal_coloring_number(example_instance))
+        cot += f'{len(colors)} is less than or equal to the optimal coloring number {optimal_coloring_number(example_instance)}, which is minimal.\n'
+    else:
+        assert len(colors) > optimal_coloring_number(example_instance)
+        cot += f'{len(colors)} greater than the optimal coloring number {optimal_coloring_number(example_instance)}, which is not minimal. Therefore the coloring is not correct.\n'
+    cot += f'Using all the information we\'ve compiled, we can now write down the final answer.'
+def generate_graph_global(instance_text, extraction_label):
+
+    raise NotImplementedError

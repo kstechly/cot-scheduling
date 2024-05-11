@@ -1,60 +1,45 @@
 import argparse
+from fire import Fire # type: ignore
 
 import utils
 import domain_utils
-from domain_utils import *
-
-START = 1
-END = 100
 
 INSTANCES_LOCATION = "data/instances/"
 
-def read_instance(domain_name,number_of_instance,file_ending):
-    try:
-        with open(f"{INSTANCES_LOCATION}{domain_name}/instance-{number_of_instance}{file_ending}") as fp:
-            return fp.read()
-    except FileNotFoundError:
-        print(f"{INSTANCES_LOCATION}{domain_name}/instance-{number_of_instance} not found.")
-
-if __name__=="__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-d','--domain', type=str, required="True", help='Problem domain to generate for')
-    # TODO make this just auto-process everything
-    parser.add_argument('-s','--start', type=int, default=START, help='Start number of instances to process')
-    parser.add_argument('-e','--end', type=int, default=END, help='End number of instances to process')
-    parser.add_argument('-c','--cot', type=str, default='', help='Chain of Thought type. Leave empty for no CoT. Only works if non-zero number of examples.')
-    parser.add_argument('-r','--relaxation', type=str, default='full', help='Relaxation of the problem. Changes initial instructions, example answers, and final evaluation, but not thoughts.')
-    parser.add_argument('-m','--magic', type=str, default='', help='Magic phrase to use. Leave empty for none.')
-    parser.add_argument('-n','--n_examples', type=int, default=0, help='Number of examples to provide.')
-    parser.add_argument('-p','--example_prefix', type=str, default='example_basic', help='The prefix at which to look for examples in the example folder.')
-    parser.add_argument('-o','--overwrite_previous', type=bool, default=False, help='Overwrite previously generated prompts. Automatically creates a backup.')
-    args = parser.parse_args()
-    domain_name = args.domain
+def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='', magic='', relaxation='full', overwrite_previous=False):
     if domain_name not in domain_utils.domains:
         raise ValueError(f"Domain name must be an element of {list(domain_utils.domains)}.")
     domain = domain_utils.domains[domain_name]
 
-    labels = domain.extraction_labels()
-    prompts = utils.read_json(domain_name, args.overwrite_previous, "prompts")
+    prompts = utils.read_json(domain_name, overwrite_previous, "prompts")
+    instances = utils.read_json(domain_name, False, "instances")
 
     # Just so that we don't double store 0-example CoT prompts on accident:
-    if args.n_examples == 0: cot_type = ""
-    else: cot_type = args.cot
+    if n_examples == 0: cot = ""
+    else: cot = cot
+    
+    # TODO implement subprompt generation. Want to check exactly the distribution that the models get.
+    #      Both the expected, correct one, and the actual ones they end up seeing...
+    #       (Relevant for Paradox of Learning reasons)
 
-    for x in range(args.start,args.end+1):
-        instance = read_instance(domain_name,x,domain.file_ending())
-        if instance:
-            for label in labels:
-                prompt_name = f'{x}'
-                prompt = domain.generate(instance, problem_relaxation=args.relaxation, cot_type=cot_type, n_examples=args.n_examples, magic=args.magic, example_prefix=args.example_prefix, extraction_label=label)
-                full_prompt_info = {"prompt": prompt, "extraction_label":label, "relaxation":args.relaxation, "cot":cot_type, "n_examples": args.n_examples, "magic": args.magic, "example_prefix": args.example_prefix}
-                if prompt_name in prompts:
-                    old_prompt_num = utils.includes_dict_w_ignore(prompts[prompt_name], full_prompt_info, set(["prompt"]))
-                else: 
-                    old_prompt_num = -1
-                    prompts[prompt_name] = []
-                if old_prompt_num>-1: 
-                    if args.overwrite_previous: prompts[prompt_name][old_prompt_num] = full_prompt_info
-                    continue
-                prompts[prompt_name].append(full_prompt_info)
+    for instance in instances:
+        prompt = domain.generate(instances[instance]["raw_instance"], problem_relaxation=relaxation, cot_type=cot, n_examples=n_examples, magic=magic, example_prefix=example_type)
+        # computation_graph = domain.generate_graph(instance, cot_type=cot_type, extraction_label=label)
+        full_prompt_info = {"relaxation":relaxation, "cot":cot, "n_examples": n_examples, "magic": magic, "example_type": example_type} #, "computation_graph": computation_graph}
+        # TODO this could be done better
+        if instance in prompts:
+            old_prompt_num = utils.dict_index(prompts[instance], full_prompt_info)
+        else: 
+            old_prompt_num = -1
+            prompts[instance] = []
+        full_prompt_info.update({"prompt": prompt})
+        if old_prompt_num>-1: 
+            if overwrite_previous: prompts[instance][old_prompt_num] = full_prompt_info
+            continue
+        full_prompt_info.update(instances[instance])
+        prompts[instance].append(full_prompt_info)
+    
     utils.write_json(domain_name, prompts, "prompts")
+
+if __name__=="__main__":
+    Fire(generate_prompts)

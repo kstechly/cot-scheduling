@@ -4,33 +4,29 @@ import tiktoken # type: ignore
 from fire import Fire # type: ignore
 
 import utils
-import domain_utils
-from domain_utils import *
 
 STOP_STATEMENT = "[ANSWER END]" # what we look for to end LLM response generation
 
-SYSTEM_PROMPT = "You are a system that solves reasoning problems presented in text form."
+SYSTEM_PROMPT  = "You are a system that solves reasoning problems presented in text form."
 
-input_costs_per_million = {"gpt-4": 30, "gpt-4-turbo-2024-04-09": 10, "gpt-3.5-turbo-0125": 0.5}
-output_costs_per_million = {"gpt-4": 60, "gpt-4-turbo-2024-04-09": 30, "gpt-3.5-turbo-0125": 1.5}
+input_costs_per_million  = {"gpt-4": 30, "gpt-4-turbo":10, "gpt-4-turbo-2024-04-09": 10, "gpt-3.5-turbo-0125": 0.5}
+output_costs_per_million = {"gpt-4": 60, "gpt-4-turbo":30, "gpt-4-turbo-2024-04-09": 30, "gpt-3.5-turbo-0125": 1.5}
 
 def get_responses(llm, domain_name, specified_instances = [], overwrite_previous=False, verbose=False, temp=0, num_trials=1, **prompt_specification):
-    if domain_name not in domain_utils.domains:
-         raise ValueError(f"Domain name must be an element of {list(domain_utils.domains)}.")
-    domain = domain_utils.domains[domain_name]
+
 
     # Cost calculation setup
-    input_cost = 0.0
+    input_cost  = 0.0
     output_cost = 0.0
     million = 1000000
     if llm in input_costs_per_million.keys():
-        input_cost = input_costs_per_million[llm]/million
-        output_cost = input_costs_per_million[llm]/million
+        input_cost  = input_costs_per_million[llm]/million
+        output_cost = output_costs_per_million[llm]/million
     cost = 0.0
-    enc = tiktoken.get_encoding("cl100k_base")
+    enc  = tiktoken.get_encoding("cl100k_base")
 
     # Load prompts and possibly filter for specified_instances
-    instances = utils.read_json(domain_name, overwrite_previous, "prompts", verbose)
+    instances = utils.read_json(domain_name, False, "prompts", verbose)
     if specified_instances: working_instances = {num: instances[num] for num in instances.key() if num in specified_instances}
     else: working_instances = instances
 
@@ -46,7 +42,10 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
             for trial_id in range(0, num_trials):
                 trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
                 trial_specification.update(prompt)
-                if utils.includes_dict(previous_instance_output, trial_specification): continue
+
+                if utils.includes_dict(previous_instance_output, trial_specification) and not overwrite_previous: continue
+                ind = utils.dict_index(previous_instance_output, trial_specification)
+
                 prompt_text = prompt["prompt"]
                 token_length = len(enc.encode(prompt_text))
                 cost += token_length*input_cost
@@ -70,7 +69,8 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
                     print(f"***Current cost: {cost:.4f}***")
 
                 trial_output.update({"response": llm_response})
-                previous[instance].append(trial_output)
+                if ind == -1: previous[instance].append(trial_output)
+                else: previous[instance][ind] = trial_output
                 utils.write_json(domain_name, previous, "responses")
                 
     # Print any failed instances

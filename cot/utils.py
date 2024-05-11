@@ -1,7 +1,7 @@
 import json
 import os
 import time
-
+import pickle
 
 ### json utils
 
@@ -27,6 +27,15 @@ def read_json(domain_name, overwrite_previous, data_type, verbose=False):
         if verbose: print(f"{location} does not exist. Initializing with empty dictionary.")
         return {}
 
+### pickle utils
+def load_pickle(file_loc):
+    with open(file_loc, "rb") as fp:
+        return pickle.load(fp)
+def save_pickle(obj,file_loc):
+    with open(file_loc, "wb") as fp:
+        pickle.dump(obj, fp)
+
+
 ### other utils
 
 def includes_dict_w_ignore(l, b, ignore_keys):
@@ -41,3 +50,9 @@ def includes_dict(l, b):
     for a in l:
         if all(a[k] == b[k] for k in b.keys()): return True
     return False
+
+def dict_index(l, b):
+    for n in range(0, len(l)):
+        a = l[n]
+        if all(a[k] == b[k] for k in b.keys()): return n
+    return -1
