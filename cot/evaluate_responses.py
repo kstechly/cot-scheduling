@@ -38,8 +38,6 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     df = pd.DataFrame(flat_results)
     print(df.describe())
 
-
-
 def flatten(dict):
     return list(chain(*dict.values()))
 
