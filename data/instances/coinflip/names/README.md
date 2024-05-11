@@ -1,1 +1,1 @@
-Original files are taken from [this](https://www.ssa.gov/oact/babynames/limits.html) Social Security Administration site. Names have been postprocessed to remove additional information (gender, frequency), and only names with over 6000 occurrences have been kept.
+Original files are taken from [this](https://www.ssa.gov/oact/babynames/limits.html) Social Security Administration site. Names have been postprocessed to remove additional information (gender, frequency), and only names with over 50 occurrences have been kept.

@@ -13,9 +13,10 @@ names = []
 for file_name in file_names:
     file_data = read(file_name)
     file_data = file_data.split("\n")
-    file_data = [x.split(",")[0] for x in file_data if x and int(x.split(",")[2])>6000]
+    file_data = [x.split(",")[0] for x in file_data if x and int(x.split(",")[2])>50]
     names = names + file_data
 
+names = list(set(names))
 
 print(len(names))
 with open('ssa_names_data.json',"w") as fp:
