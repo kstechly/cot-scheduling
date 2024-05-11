@@ -22,6 +22,7 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
     #      Specifically, maybe let the domain decide how many prompts to output? **kwargs
 
     for instance in instances:
+        # TODO refactor this so that it just dumps the generation to the dict, merging with instance data
         prompt = domain.generate(instances[instance]["raw_instance"], problem_relaxation=relaxation, cot_type=cot, n_examples=n_examples, magic=magic, example_prefix=example_type)
         # computation_graph = domain.generate_graph(instance, cot_type=cot_type, extraction_label=label)
         full_prompt_info = {"relaxation":relaxation, "cot":cot, "n_examples": n_examples, "magic": magic, "example_type": example_type} #, "computation_graph": computation_graph}
