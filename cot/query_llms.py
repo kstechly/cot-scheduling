@@ -3,6 +3,7 @@ import openai # type: ignore
 import tiktoken # type: ignore
 from fire import Fire # type: ignore
 from functools import cache
+import time
 
 import utils
 
@@ -23,7 +24,8 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
     if llm in input_costs_per_million.keys():
         input_cost  = input_costs_per_million[llm]/million
         output_cost = output_costs_per_million[llm]/million
-    cost = 0.0
+    else: raise ValueError(f"Can't calculate cost for llm {llm}. Change query_llms to fix this.")
+    total_cost = 0.0
     enc  = tiktoken.get_encoding("cl100k_base")
 
     # Load prompts and possibly filter for specified_instances
@@ -39,7 +41,7 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
         if instance not in previous.keys(): previous[instance] = []
         previous_instance_output = previous[instance]         
         for prompt in working_instances[instance]:
-            if not utils.includes_dict(prompt, prompt_specification): continue
+            if not utils.includes_dict([prompt], prompt_specification): continue
             for trial_id in range(0, num_trials):
                 trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
                 trial_specification.update(prompt)
@@ -49,7 +51,7 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
 
                 prompt_text = prompt["prompt"]
                 token_length = len(enc.encode(prompt_text))
-                cost += token_length*input_cost
+                trial_cost = token_length*input_cost
                 if verbose:
                     print(f"==Instance: {instance}, Tokens: {token_length}==")
                     info_dict = {x: trial_specification[x] for x in trial_specification.keys() if x != "prompt"}
@@ -63,27 +65,28 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
                     failed_instances.append(instance)
                     print(f"==Failed instance: {instance}==")
                     continue
-                cost += len(enc.encode(llm_response))*output_cost
+                trial_cost += len(enc.encode(llm_response))*output_cost
+                total_cost += trial_cost
                 if verbose:     
                     print(f'==LLM Response==')
                     print(llm_response)
-                    print(f"***Current cost: {cost:.4f}***")
+                    print(f"***Current cost: {total_cost:.4f}***")
 
-                trial_output.update({"response": llm_response})
+                trial_output.update({"response": llm_response, "timestamp": time.time(), "estimated_cost": trial_cost})
+                print(f'Trial output: {trial_output}')
                 if ind == -1: previous[instance].append(trial_output)
                 else: previous[instance][ind] = trial_output
                 utils.write_json(domain_name, previous, "responses")
                 
     # Print any failed instances
     print(f"Failed instances: {failed_instances}")
-    print(f"Total Cost: {cost:.2f}")
+    print(f"Total Cost: {total_cost:.2f}")
 
 @cache
 def is_openai_model(llm):
     client = openai.OpenAI()
     openai_models = client.models.list().data
-    model_names = [x.id for x in openai_models]
-    return llm in model_names
+    return llm in [x.id for x in openai_models]
 
 def send_query(query_text, llm, temp=0, stop_statement=STOP_STATEMENT):
     if is_openai_model(llm):

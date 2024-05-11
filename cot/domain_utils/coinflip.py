@@ -85,7 +85,7 @@ def generate_instructions(problem_relaxation):
         return "Respond only with 'yes' or 'no'. Do not include anything else in your response."
     else: raise NotImplementedError
 
-def generate_query(instance_data, extraction_label):
+def generate_query(instance_data):
     query  = f'[QUESTION]\n'
     query += f"A coin is heads up. "
     for name in instance_data:
