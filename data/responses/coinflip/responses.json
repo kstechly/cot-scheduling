@@ -223,5 +223,33 @@
             "example_prefix": "example_basic",
             "response": "no"
         }
+    ],
+    "0": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Josh flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Josh",
+                    true
+                ],
+                [
+                    "Josh",
+                    true
+                ],
+                [
+                    "Josh",
+                    true
+                ]
+            ],
+            "response": "no"
+        }
     ]
 }

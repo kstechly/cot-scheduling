@@ -2,6 +2,7 @@ from tqdm import tqdm # type: ignore
 import openai # type: ignore
 import tiktoken # type: ignore
 from fire import Fire # type: ignore
+from functools import cache
 
 import utils
 
@@ -77,8 +78,15 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
     print(f"Failed instances: {failed_instances}")
     print(f"Total Cost: {cost:.2f}")
 
+@cache
+def is_openai_model(llm):
+    client = openai.OpenAI()
+    openai_models = client.models.list().data
+    model_names = [x.id for x in openai_models]
+    return llm in model_names
+
 def send_query(query_text, llm, temp=0, stop_statement=STOP_STATEMENT):
-    if 'gpt' in llm:
+    if is_openai_model(llm):
         # TODO do this in a principled way (grab from openai api and check etc)
         messages=[
         {"role": "system", "content": SYSTEM_PROMPT},
