@@ -21,6 +21,7 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
     # TODO implement subprompt generation. Want to check exactly the distribution that the models get.
     #      Both the expected, correct one, and the actual ones they end up seeing...
     #       (Relevant for Paradox of Learning reasons)
+    #      Specifically, maybe let the domain decide how many prompts to output? **kwargs
 
     for instance in instances:
         prompt = domain.generate(instances[instance]["raw_instance"], problem_relaxation=relaxation, cot_type=cot, n_examples=n_examples, magic=magic, example_prefix=example_type)
@@ -33,10 +34,10 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
             old_prompt_num = -1
             prompts[instance] = []
         full_prompt_info.update({"prompt": prompt})
+        full_prompt_info.update(instances[instance])
         if old_prompt_num>-1: 
             if overwrite_previous: prompts[instance][old_prompt_num] = full_prompt_info
             continue
-        full_prompt_info.update(instances[instance])
         prompts[instance].append(full_prompt_info)
     
     utils.write_json(domain_name, prompts, "prompts")

@@ -6,7 +6,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Josh flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Josh flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Josh",
+                    true
+                ],
+                [
+                    "Josh",
+                    true
+                ],
+                [
+                    "Josh",
+                    true
+                ]
+            ]
         }
     ],
     "1": [
@@ -16,7 +30,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. Alice does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. Alice does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Alice",
+                    true
+                ],
+                [
+                    "Alice",
+                    false
+                ],
+                [
+                    "Alice",
+                    true
+                ]
+            ]
         }
     ],
     "2": [
@@ -26,7 +54,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice does not flip the coin. Josh does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice does not flip the coin. Josh does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Alice",
+                    false
+                ],
+                [
+                    "Josh",
+                    false
+                ],
+                [
+                    "Alice",
+                    true
+                ]
+            ]
         }
     ],
     "3": [
@@ -36,7 +78,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John flips the coin. Adam flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John flips the coin. Adam flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "John",
+                    true
+                ],
+                [
+                    "Adam",
+                    true
+                ],
+                [
+                    "Adam",
+                    true
+                ]
+            ]
         }
     ],
     "4": [
@@ -46,7 +102,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. John does not flip the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. John does not flip the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Adam",
+                    false
+                ],
+                [
+                    "John",
+                    false
+                ],
+                [
+                    "Adam",
+                    false
+                ]
+            ]
         }
     ],
     "5": [
@@ -56,7 +126,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. John flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. John flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Adam",
+                    false
+                ],
+                [
+                    "John",
+                    true
+                ],
+                [
+                    "Adam",
+                    true
+                ]
+            ]
         }
     ],
     "6": [
@@ -66,7 +150,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne does not flip the coin. Anne flips the coin. John does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne does not flip the coin. Anne flips the coin. John does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Anne",
+                    false
+                ],
+                [
+                    "Anne",
+                    true
+                ],
+                [
+                    "John",
+                    false
+                ]
+            ]
         }
     ],
     "7": [
@@ -76,7 +174,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. John flips the coin. John flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. John flips the coin. John flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Alice",
+                    true
+                ],
+                [
+                    "John",
+                    true
+                ],
+                [
+                    "John",
+                    true
+                ]
+            ]
         }
     ],
     "8": [
@@ -86,7 +198,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. John does not flip the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. John does not flip the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Alice",
+                    true
+                ],
+                [
+                    "John",
+                    false
+                ],
+                [
+                    "Adam",
+                    false
+                ]
+            ]
         }
     ],
     "9": [
@@ -96,7 +222,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne does not flip the coin. Alice flips the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne does not flip the coin. Alice flips the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Anne",
+                    false
+                ],
+                [
+                    "Alice",
+                    true
+                ],
+                [
+                    "Adam",
+                    false
+                ]
+            ]
         }
     ],
     "10": [
@@ -106,7 +246,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. Adam does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. Adam does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Adam",
+                    false
+                ],
+                [
+                    "Adam",
+                    false
+                ],
+                [
+                    "Alice",
+                    true
+                ]
+            ]
         }
     ],
     "11": [
@@ -116,7 +270,21 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John flips the coin. Anne flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John flips the coin. Anne flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "John",
+                    true
+                ],
+                [
+                    "Anne",
+                    true
+                ],
+                [
+                    "Josh",
+                    true
+                ]
+            ]
         }
     ],
     "12": [
@@ -126,7 +294,29 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Fong does not flip the coin. Godel does not flip the coin. Bach flips the coin. Fong does not flip the coin. Neumann flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Fong does not flip the coin. Godel does not flip the coin. Bach flips the coin. Fong does not flip the coin. Neumann flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Fong",
+                    false
+                ],
+                [
+                    "Godel",
+                    false
+                ],
+                [
+                    "Bach",
+                    true
+                ],
+                [
+                    "Fong",
+                    false
+                ],
+                [
+                    "Neumann",
+                    true
+                ]
+            ]
         }
     ],
     "13": [
@@ -136,7 +326,29 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel does not flip the coin. Fong flips the coin. Godel flips the coin. Neumann flips the coin. Bach does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel does not flip the coin. Fong flips the coin. Godel flips the coin. Neumann flips the coin. Bach does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Godel",
+                    false
+                ],
+                [
+                    "Fong",
+                    true
+                ],
+                [
+                    "Godel",
+                    true
+                ],
+                [
+                    "Neumann",
+                    true
+                ],
+                [
+                    "Bach",
+                    false
+                ]
+            ]
         }
     ],
     "14": [
@@ -146,7 +358,29 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Polya flips the coin. Polya flips the coin. Polya flips the coin. Bach does not flip the coin. Polya flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Polya flips the coin. Polya flips the coin. Polya flips the coin. Bach does not flip the coin. Polya flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Polya",
+                    true
+                ],
+                [
+                    "Polya",
+                    true
+                ],
+                [
+                    "Polya",
+                    true
+                ],
+                [
+                    "Bach",
+                    false
+                ],
+                [
+                    "Polya",
+                    true
+                ]
+            ]
         }
     ],
     "15": [
@@ -156,7 +390,29 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach does not flip the coin. Margaret does not flip the coin. Fong does not flip the coin. Margaret flips the coin. Margaret flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach does not flip the coin. Margaret does not flip the coin. Fong does not flip the coin. Margaret flips the coin. Margaret flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Bach",
+                    false
+                ],
+                [
+                    "Margaret",
+                    false
+                ],
+                [
+                    "Fong",
+                    false
+                ],
+                [
+                    "Margaret",
+                    true
+                ],
+                [
+                    "Margaret",
+                    true
+                ]
+            ]
         }
     ],
     "16": [
@@ -166,7 +422,29 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach flips the coin. Godel does not flip the coin. Godel flips the coin. Fong flips the coin. Neumann does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach flips the coin. Godel does not flip the coin. Godel flips the coin. Fong flips the coin. Neumann does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Bach",
+                    true
+                ],
+                [
+                    "Godel",
+                    false
+                ],
+                [
+                    "Godel",
+                    true
+                ],
+                [
+                    "Fong",
+                    true
+                ],
+                [
+                    "Neumann",
+                    false
+                ]
+            ]
         }
     ],
     "17": [
@@ -176,7 +454,29 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret flips the coin. Godel does not flip the coin. Fong does not flip the coin. Godel flips the coin. Polya does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret flips the coin. Godel does not flip the coin. Fong does not flip the coin. Godel flips the coin. Polya does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Margaret",
+                    true
+                ],
+                [
+                    "Godel",
+                    false
+                ],
+                [
+                    "Fong",
+                    false
+                ],
+                [
+                    "Godel",
+                    true
+                ],
+                [
+                    "Polya",
+                    false
+                ]
+            ]
         }
     ],
     "18": [
@@ -186,7 +486,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Neumann does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Neumann does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Neumann",
+                    false
+                ]
+            ]
         }
     ],
     "19": [
@@ -196,7 +502,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Margaret",
+                    false
+                ]
+            ]
         }
     ],
     "20": [
@@ -206,7 +518,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Godel",
+                    true
+                ]
+            ]
         }
     ],
     "21": [
@@ -216,7 +534,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Fong flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Fong flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Fong",
+                    true
+                ]
+            ]
         }
     ],
     "22": [
@@ -226,7 +550,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Bach",
+                    false
+                ]
+            ]
         }
     ],
     "23": [
@@ -236,7 +566,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Godel",
+                    false
+                ]
+            ]
         }
     ],
     "24": [
@@ -246,7 +582,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Zagathar",
+                    false
+                ]
+            ]
         }
     ],
     "25": [
@@ -256,7 +598,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Grzegorz",
+                    true
+                ]
+            ]
         }
     ],
     "26": [
@@ -266,7 +614,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Zagathar",
+                    true
+                ]
+            ]
         }
     ],
     "27": [
@@ -276,7 +630,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Grzegorz",
+                    true
+                ]
+            ]
         }
     ],
     "28": [
@@ -286,7 +646,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Zagathar",
+                    false
+                ]
+            ]
         }
     ],
     "29": [
@@ -296,7 +662,13 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Grzegorz",
+                    false
+                ]
+            ]
         }
     ],
     "30": [
@@ -306,7 +678,17 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Grzegorz",
+                    false
+                ],
+                [
+                    "Zagathar",
+                    true
+                ]
+            ]
         }
     ],
     "31": [
@@ -316,7 +698,17 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Zagathar",
+                    true
+                ],
+                [
+                    "Grzegorz",
+                    true
+                ]
+            ]
         }
     ],
     "32": [
@@ -326,7 +718,17 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Grzegorz",
+                    false
+                ],
+                [
+                    "Zagathar",
+                    true
+                ]
+            ]
         }
     ],
     "33": [
@@ -336,7 +738,17 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Zagathar",
+                    false
+                ],
+                [
+                    "Zagathar",
+                    false
+                ]
+            ]
         }
     ],
     "34": [
@@ -346,7 +758,17 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Zagathar",
+                    true
+                ],
+                [
+                    "Grzegorz",
+                    true
+                ]
+            ]
         }
     ],
     "35": [
@@ -356,7 +778,17 @@
             "n_examples": 0,
             "magic": "",
             "example_type": "basic",
-            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    "Grzegorz",
+                    false
+                ],
+                [
+                    "Grzegorz",
+                    true
+                ]
+            ]
         }
     ]
 }
