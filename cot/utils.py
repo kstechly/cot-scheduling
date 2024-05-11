@@ -13,8 +13,10 @@ def write_json(domain_name,text_to_write,data_type):
         json.dump(text_to_write, fp, indent = 4)
     os.replace(f'{location}.tmp', location)
 
-def read_json(domain_name, overwrite_previous, data_type, verbose=False):
+def read_json(domain_name, overwrite_previous, data_type, verbose=False, strange_subloc=""):
     location = f"data/{data_type}/{domain_name}/{data_type}.json"
+    if strange_subloc:
+        location = f"data/{data_type}/{domain_name}/{strange_subloc}"
     if os.path.exists(location):
         with open(location, 'r') as file:
             previous = json.load(file)

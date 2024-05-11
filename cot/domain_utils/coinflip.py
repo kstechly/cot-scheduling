@@ -2,6 +2,7 @@ import json
 from fire import Fire #type: ignore
 import tiktoken # type: ignore
 import random
+from functools import cache
 
 from domain_utils import domain
 import utils
@@ -24,45 +25,47 @@ def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_len
     
     instances = utils.read_json(DOMAIN_NAME, overwrite_previous, "instances", verbose=True)
     if overwrite_previous: instances = {}
-    print(instances)
     prev_num = len(instances.keys())
     for instance_num in range(prev_num,prev_num+num):
         inst_names = []
         for _ in range(0, num_steps):
             flip = random.choice([True, False])
-            inst_names.append((generate_names(overwrite_previous, token_length),flip))
-        print(f'{instance_num}: {inst_names}')
-        instances[instance_num] = {"raw_instance": inst_names}
+            inst_names.append((generate_names(token_length),flip))
+        # print(f'{instance_num}: {inst_names}')
+        instances[instance_num] = {"raw_instance": inst_names, "uniform_token_length": token_length, "steps_to_solve":num_steps}
     
-    print(f'Writing to json.')
+    print(f'Writing {num} instances to json. (num steps: {num_steps}, token_length: {token_length})')
+    # TODO This could be faster if it were only done every so often
     utils.write_json(DOMAIN_NAME, instances, "instances")
 
-def generate_names(overwrite_previous, token_length):
-    names = load_all_names()
-
-    enc = tiktoken.get_encoding("cl100k_base")
-    nl  = lambda x: len(enc.encode(x))
-    allowed_names = [n for n in names if nl(n)==token_length]
+def generate_names(token_length):
+    allowed_names = get_allowed_names(token_length)
     if not len(allowed_names): raise ValueError(f"There are no names of token length {token_length} in the list.")
 
     name = random.choice(allowed_names)
     utils.save_pickle(random.getstate(), RANDOM_FILE_LOC)
-    print(name)
     return name
 
+@cache
+def get_allowed_names(token_length):
+    names = load_all_names()
+    return [n for n in names if token_l(n)==token_length]
+@cache
+def token_l(x):
+    enc = get_encoding()
+    return len(enc.encode(x))
+@cache
+def get_encoding():
+    return tiktoken.get_encoding("cl100k_base")
+
 def load_all_names():
-    #TODO get a list of names
-    return ["John", "Josh", "Alice", "Anne", "Margaret", "Zagathar", "Grzegorz", "Kolmogorov", "Neumann", "Fong", "Sipser", "Polya", "Nagel", "Godel", "Bach", "Yogi", "Adam", "Lars"]
+    return utils.read_json(DOMAIN_NAME, False, "instances", strange_subloc="names/ssa_names_data.json")
+    # return ["John", "Josh", "Alice", "Anne", "Margaret", "Zagathar", "Grzegorz", "Kolmogorov", "Neumann", "Fong", "Sipser", "Polya", "Nagel", "Godel", "Bach", "Yogi", "Adam", "Lars"]
 
 ### REQUIRED FUNCTIONS ###
 
-def file_ending():
-    return ".json"
-def extraction_labels():
-    return ['']
-
 def generate(*args, **kwargs):
-    return domain.generator(generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation, EXAMPLE_DIRECTORY)(*args, **kwargs)
+    return domain.generator(DOMAIN_NAME, generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation)(*args, **kwargs)
 
 def evaluate(instance_text, response_trace, extraction_label="", backprompt_type="", cot_type=""):
     #TODO
