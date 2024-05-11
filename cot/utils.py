@@ -26,7 +26,7 @@ def read_json(domain_name, overwrite_previous, data_type, verbose=False, strange
                 json.dump(previous, file, indent=4)
         return previous
     else:
-        if verbose: print(f"{location} does not exist. Initializing with empty dictionary.")
+        if verbose: print(f"{location} does not exist. Returning empty dictionary.")
         return {}
 
 ### pickle utils
