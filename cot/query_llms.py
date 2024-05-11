@@ -15,8 +15,6 @@ input_costs_per_million  = {"gpt-4": 30, "gpt-4-turbo":10, "gpt-4-turbo-2024-04-
 output_costs_per_million = {"gpt-4": 60, "gpt-4-turbo":30, "gpt-4-turbo-2024-04-09": 30, "gpt-3.5-turbo-0125": 1.5}
 
 def get_responses(llm, domain_name, specified_instances = [], overwrite_previous=False, verbose=False, temp=0, num_trials=1, **prompt_specification):
-
-
     # Cost calculation setup
     input_cost  = 0.0
     output_cost = 0.0
