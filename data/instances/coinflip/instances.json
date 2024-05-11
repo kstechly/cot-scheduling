@@ -1,0 +1,506 @@
+{
+    "0": {
+        "raw_instance": [
+            [
+                "Josh",
+                true
+            ],
+            [
+                "Josh",
+                true
+            ],
+            [
+                "Josh",
+                true
+            ]
+        ]
+    },
+    "1": {
+        "raw_instance": [
+            [
+                "Alice",
+                true
+            ],
+            [
+                "Alice",
+                false
+            ],
+            [
+                "Alice",
+                true
+            ]
+        ]
+    },
+    "2": {
+        "raw_instance": [
+            [
+                "Alice",
+                false
+            ],
+            [
+                "Josh",
+                false
+            ],
+            [
+                "Alice",
+                true
+            ]
+        ]
+    },
+    "3": {
+        "raw_instance": [
+            [
+                "John",
+                true
+            ],
+            [
+                "Adam",
+                true
+            ],
+            [
+                "Adam",
+                true
+            ]
+        ]
+    },
+    "4": {
+        "raw_instance": [
+            [
+                "Adam",
+                false
+            ],
+            [
+                "John",
+                false
+            ],
+            [
+                "Adam",
+                false
+            ]
+        ]
+    },
+    "5": {
+        "raw_instance": [
+            [
+                "Adam",
+                false
+            ],
+            [
+                "John",
+                true
+            ],
+            [
+                "Adam",
+                true
+            ]
+        ]
+    },
+    "6": {
+        "raw_instance": [
+            [
+                "Anne",
+                false
+            ],
+            [
+                "Anne",
+                true
+            ],
+            [
+                "John",
+                false
+            ]
+        ]
+    },
+    "7": {
+        "raw_instance": [
+            [
+                "Alice",
+                true
+            ],
+            [
+                "John",
+                true
+            ],
+            [
+                "John",
+                true
+            ]
+        ]
+    },
+    "8": {
+        "raw_instance": [
+            [
+                "Alice",
+                true
+            ],
+            [
+                "John",
+                false
+            ],
+            [
+                "Adam",
+                false
+            ]
+        ]
+    },
+    "9": {
+        "raw_instance": [
+            [
+                "Anne",
+                false
+            ],
+            [
+                "Alice",
+                true
+            ],
+            [
+                "Adam",
+                false
+            ]
+        ]
+    },
+    "10": {
+        "raw_instance": [
+            [
+                "Adam",
+                false
+            ],
+            [
+                "Adam",
+                false
+            ],
+            [
+                "Alice",
+                true
+            ]
+        ]
+    },
+    "11": {
+        "raw_instance": [
+            [
+                "John",
+                true
+            ],
+            [
+                "Anne",
+                true
+            ],
+            [
+                "Josh",
+                true
+            ]
+        ]
+    },
+    "12": {
+        "raw_instance": [
+            [
+                "Fong",
+                false
+            ],
+            [
+                "Godel",
+                false
+            ],
+            [
+                "Bach",
+                true
+            ],
+            [
+                "Fong",
+                false
+            ],
+            [
+                "Neumann",
+                true
+            ]
+        ]
+    },
+    "13": {
+        "raw_instance": [
+            [
+                "Godel",
+                false
+            ],
+            [
+                "Fong",
+                true
+            ],
+            [
+                "Godel",
+                true
+            ],
+            [
+                "Neumann",
+                true
+            ],
+            [
+                "Bach",
+                false
+            ]
+        ]
+    },
+    "14": {
+        "raw_instance": [
+            [
+                "Polya",
+                true
+            ],
+            [
+                "Polya",
+                true
+            ],
+            [
+                "Polya",
+                true
+            ],
+            [
+                "Bach",
+                false
+            ],
+            [
+                "Polya",
+                true
+            ]
+        ]
+    },
+    "15": {
+        "raw_instance": [
+            [
+                "Bach",
+                false
+            ],
+            [
+                "Margaret",
+                false
+            ],
+            [
+                "Fong",
+                false
+            ],
+            [
+                "Margaret",
+                true
+            ],
+            [
+                "Margaret",
+                true
+            ]
+        ]
+    },
+    "16": {
+        "raw_instance": [
+            [
+                "Bach",
+                true
+            ],
+            [
+                "Godel",
+                false
+            ],
+            [
+                "Godel",
+                true
+            ],
+            [
+                "Fong",
+                true
+            ],
+            [
+                "Neumann",
+                false
+            ]
+        ]
+    },
+    "17": {
+        "raw_instance": [
+            [
+                "Margaret",
+                true
+            ],
+            [
+                "Godel",
+                false
+            ],
+            [
+                "Fong",
+                false
+            ],
+            [
+                "Godel",
+                true
+            ],
+            [
+                "Polya",
+                false
+            ]
+        ]
+    },
+    "18": {
+        "raw_instance": [
+            [
+                "Neumann",
+                false
+            ]
+        ]
+    },
+    "19": {
+        "raw_instance": [
+            [
+                "Margaret",
+                false
+            ]
+        ]
+    },
+    "20": {
+        "raw_instance": [
+            [
+                "Godel",
+                true
+            ]
+        ]
+    },
+    "21": {
+        "raw_instance": [
+            [
+                "Fong",
+                true
+            ]
+        ]
+    },
+    "22": {
+        "raw_instance": [
+            [
+                "Bach",
+                false
+            ]
+        ]
+    },
+    "23": {
+        "raw_instance": [
+            [
+                "Godel",
+                false
+            ]
+        ]
+    },
+    "24": {
+        "raw_instance": [
+            [
+                "Zagathar",
+                false
+            ]
+        ]
+    },
+    "25": {
+        "raw_instance": [
+            [
+                "Grzegorz",
+                true
+            ]
+        ]
+    },
+    "26": {
+        "raw_instance": [
+            [
+                "Zagathar",
+                true
+            ]
+        ]
+    },
+    "27": {
+        "raw_instance": [
+            [
+                "Grzegorz",
+                true
+            ]
+        ]
+    },
+    "28": {
+        "raw_instance": [
+            [
+                "Zagathar",
+                false
+            ]
+        ]
+    },
+    "29": {
+        "raw_instance": [
+            [
+                "Grzegorz",
+                false
+            ]
+        ]
+    },
+    "30": {
+        "raw_instance": [
+            [
+                "Grzegorz",
+                false
+            ],
+            [
+                "Zagathar",
+                true
+            ]
+        ]
+    },
+    "31": {
+        "raw_instance": [
+            [
+                "Zagathar",
+                true
+            ],
+            [
+                "Grzegorz",
+                true
+            ]
+        ]
+    },
+    "32": {
+        "raw_instance": [
+            [
+                "Grzegorz",
+                false
+            ],
+            [
+                "Zagathar",
+                true
+            ]
+        ]
+    },
+    "33": {
+        "raw_instance": [
+            [
+                "Zagathar",
+                false
+            ],
+            [
+                "Zagathar",
+                false
+            ]
+        ]
+    },
+    "34": {
+        "raw_instance": [
+            [
+                "Zagathar",
+                true
+            ],
+            [
+                "Grzegorz",
+                true
+            ]
+        ]
+    },
+    "35": {
+        "raw_instance": [
+            [
+                "Grzegorz",
+                false
+            ],
+            [
+                "Grzegorz",
+                true
+            ]
+        ]
+    }
+}

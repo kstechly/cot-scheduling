@@ -1,0 +1,362 @@
+{
+    "0": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Josh flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "1": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. Alice does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "2": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice does not flip the coin. Josh does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "3": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John flips the coin. Adam flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "4": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. John does not flip the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "5": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. John flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "6": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne does not flip the coin. Anne flips the coin. John does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "7": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. John flips the coin. John flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "8": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Alice flips the coin. John does not flip the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "9": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne does not flip the coin. Alice flips the coin. Adam does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "10": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Adam does not flip the coin. Adam does not flip the coin. Alice flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "11": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John flips the coin. Anne flips the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "12": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Fong does not flip the coin. Godel does not flip the coin. Bach flips the coin. Fong does not flip the coin. Neumann flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "13": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel does not flip the coin. Fong flips the coin. Godel flips the coin. Neumann flips the coin. Bach does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "14": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Polya flips the coin. Polya flips the coin. Polya flips the coin. Bach does not flip the coin. Polya flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "15": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach does not flip the coin. Margaret does not flip the coin. Fong does not flip the coin. Margaret flips the coin. Margaret flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "16": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach flips the coin. Godel does not flip the coin. Godel flips the coin. Fong flips the coin. Neumann does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "17": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret flips the coin. Godel does not flip the coin. Fong does not flip the coin. Godel flips the coin. Polya does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "18": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Neumann does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "19": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "20": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "21": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Fong flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "22": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Bach does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "23": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Godel does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "24": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "25": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "26": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "27": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "28": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "29": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "30": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "31": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "32": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Zagathar flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "33": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar does not flip the coin. Zagathar does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "34": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Zagathar flips the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ],
+    "35": [
+        {
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Grzegorz does not flip the coin. Grzegorz flips the coin. Is the coin still heads up?\n\n\n[Answer]\n"
+        }
+    ]
+}

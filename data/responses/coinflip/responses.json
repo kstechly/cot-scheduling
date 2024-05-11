@@ -1,0 +1,227 @@
+{
+    "1": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "yes"
+        }
+    ],
+    "2": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Margaret flips the coin. Margaret flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "3": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Yogi does not flip the coin. Godel flips the coin. Bach flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "4": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Nagel does not flip the coin. Sipser does not flip the coin. Nagel does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "yes"
+        }
+    ],
+    "5": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Nagel flips the coin. Nagel does not flip the coin. Nagel flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "6": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Nagel does not flip the coin. Sipser does not flip the coin. Sipser flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "7": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Sipser flips the coin. Sipser flips the coin. Nagel flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "8": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Sipser flips the coin. Nagel does not flip the coin. Sipser does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "9": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Sipser flips the coin. Sipser does not flip the coin. Sipser flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "10": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. John does not flip the coin. Josh flips the coin. Adam flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "11": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Anne does not flip the coin. Josh does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "12": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Adam does not flip the coin. Josh flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "13": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh does not flip the coin. Adam flips the coin. John flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "14": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Josh flips the coin. Adam flips the coin. Alice does not flip the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ],
+    "15": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo",
+            "temp": 0,
+            "prompt": "[Instructions]\nRespond only with 'yes' or 'no'. Do not include anything else in your response.\nProblem to solve:\n\n[QUESTION]\nA coin is heads up. Anne flips the coin. Josh does not flip the coin. John flips the coin. Is the coin still heads up?\n\n\n[Answer]\n",
+            "extraction_label": "",
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_prefix": "example_basic",
+            "response": "no"
+        }
+    ]
+}
