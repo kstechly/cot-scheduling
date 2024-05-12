@@ -58,6 +58,10 @@ def evaluate(response,**kwargs):
         if response["cot"] == "":
             llm_claim = response["response"].strip().lower()
             return evaluate_full_raw(response, llm_claim)
+        if response["cot"] == "wei" or response["cot"] == "wei_incorrect":
+            try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
+            except: llm_claim = None
+            return evaluate_full_raw(response, llm_claim)
         else: raise NotImplementedError(f"CoT '{response['cot']}' does not have evaluation implemented!")
     else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
 

@@ -74,7 +74,7 @@ def evaluate(response,**kwargs):
         if response["cot"] == "":
             llm_claim = response["response"].strip().lower()
             return evaluate_full_raw(response, llm_claim)
-        elif response["cot"] == "wei":
+        elif response["cot"] == "wei" or response["cot"] == "wei_incorrect":
             #TODO implement computational graph evaluation
             try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
             except: 
