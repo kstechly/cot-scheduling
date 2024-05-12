@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False, values='', columns='', h='', **kwargs):
+def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False, values='', columns='', h='', gcol='', gval='', **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
@@ -44,7 +44,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # print(df.pivot_table(columns='uniform_token_length', values='correct'))
     # df['binned'] = pd.cut(df['input_length'],5)
     # print(df.pivot_table(index='steps_to_solve',columns='binned', values='correct'))
-    print(f"${df['estimated_cost'].sum():.02f} estimated total spend.")
+    print(f"\n${df['estimated_cost'].sum():.02f} estimated total spend.\n")
     df2 = df.drop(columns=['trial_id', 'temp', 'n_examples', 'output_length', 'well_formed_response', 'timestamp', 'estimated_cost'])
     print(df2.corr(numeric_only=True))
     # steps_pivot = df.pivot_table(columns='steps_to_solve', values='correct')
@@ -52,16 +52,19 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # print(steps_pivot.columns)
     # x = 'uniform_token_length'
     if graph_it:
-        sns.color_palette("colorblind")
-        sns.set_theme(style="darkgrid")
+        if gcol and gval: subdf = df[df[gcol]==gval]
+        else: subdf = df
+        # sns.color_palette("colorblind")
+        # sns.set_theme(style="darkgrid")
         x = 'steps_to_solve'
         y = 'correct'
-        if h: sns.barplot(x=x, y=y, hue=h, data=df)
-        else: sns.barplot(x=x, y=y, data=df)
+        if h: sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep")
+        else: sns.lineplot(x=x, y=y, data=subdf)
         sns.despine(offset=10, trim=True)
-        if domain_name == "coinflip": plt.plot([df.min()[x]-1, df.max()[x]-2], [0.5, 0.5])
+        if domain_name == "coinflip": plt.plot([subdf.min()[x], subdf.max()[x]], [0.5, 0.5])
         plt.show()
     if values and columns:
+        print("\n")
         print(df.pivot_table(columns=columns, values=values))
 
 

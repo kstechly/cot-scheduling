@@ -163,7 +163,6 @@ def generate_thoughts_wei(example_instance):
         # A: The coin was flipped by no one. So the coin was flipped 0 times. The coin started heads up, and it was not
         # flipped, so it is still heads up. So the answer is yes.
     raw = example_instance["raw_instance"]
-    raw = [['Abe',False]]
     flipper_list = [x[0] for x in raw if x[1]==1]
     flippers = " and ".join(flipper_list) if flipper_list else "no one"
     flip_times = len(flipper_list)
@@ -173,3 +172,7 @@ def generate_thoughts_wei(example_instance):
     answer = 'yes' if heads else 'no'
     cot = f"The coin was flipped by {flippers}. So the coin was flipped {flip_times} times. The coin started heads up, {reasoning}. So the answer is {answer}."
     return cot
+
+def generate_thoughts_wei_incorrect(example_instance):
+    # An inccorrect, less informative version of the original
+    return "The coin was flipped by no one. So the coin was flipped 0 times. The coin started heads up, and it was not flipped, so it is still heads up. So the answer is yes."
