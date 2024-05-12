@@ -13,7 +13,7 @@ def generator(domain_name, generate_instructions, generate_query, generate_thoug
         instructions = generate_instructions(problem_relaxation)
 
         # TODO GET RID OF THIS NONSENSE!!!
-        current_query = generate_query(instance_text)
+        current_query = generate_query(instance_text, problem_relaxation)
 
         prompt = "[Instructions]\n"+instructions
         if n_examples: prompt+=f"\n\nThe following {n_examples} examples are provided. Please follow the formatting used in them.\n\n"
@@ -32,7 +32,7 @@ def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, gener
     assert n_examples <= len(example_instances)
 
     example_labels = [f'Example {k}:\n\n' for k in example_instances]
-    example_queries = [generate_query(example) for example in example_instances.values()]
+    example_queries = [generate_query(example, problem_relaxation) for example in example_instances.values()]
     example_thoughts = [generate_thoughts(example, cot_type) for example in example_instances.values()]
     example_evaluations = [generate_correct_evaluation(example, problem_relaxation) for example in example_instances.values()]
 

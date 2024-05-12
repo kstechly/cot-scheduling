@@ -70,7 +70,7 @@ def generate(*args, **kwargs):
 def evaluate(response,**kwargs):
     evaluation = {}
     if not utils.includes_sub_dict(response, kwargs): return {}
-    if response["relaxation"] == "full":
+    if response["relaxation"] in ["full", "explained", "turn"]:
         if response["cot"] == "":
             llm_claim = response["response"].strip().lower()
             return evaluate_full_raw(response, llm_claim)
@@ -93,17 +93,23 @@ def evaluate(response,**kwargs):
 
 ## BASIC PROMPT UTILITIES ##
 def generate_instructions(problem_relaxation):
-    if problem_relaxation == "full":
+    if problem_relaxation in ["full", "turn"] :
         return "After the [Answer] tag, you may respond only with 'yes' or 'no'. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
+    elif problem_relaxation == "explained":
+        instructions = "The coin flipping problem is a test of ability to reason about parity. A coin begins heads up, and a sequence of (potentially repeated) people flip or do not flip it. If someone flips a coin that is heads up, they flip it to tails. In this problem, contrary to the commonsense meaning of the phrase, \"flipping\" a coin does not involve tossing it into the air and catching it, but instead means turning it over onto its other side. The puzzle is to figure out if the coin is back to heads up after some number of flips.\n"
+        instructions+= "After the [Answer] tag, you may respond only with 'yes' or 'no'. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
+        return instructions
     else: raise NotImplementedError
 
-def generate_query(instance):
+def generate_query(instance, problem_relaxation):
+    flips = "turns the coin over" if problem_relaxation == "turn" else "flips the coin"
+    flip  = "turn the coin over"  if problem_relaxation == "turn" else "flip the coin"
     instance_data = instance["raw_instance"]
     query  = f'[QUESTION]\n'
     query += f"A coin is heads up. "
     for name in instance_data:
         query += name[0]
-        query += " flips the coin. " if name[1] else " does not flip the coin. "
+        query += " {flips}. " if name[1] else " does not {flip}. "
     query += "Is the coin still heads up?"
     return query
 
@@ -138,7 +144,7 @@ def generate_thoughts(example_instance, cot_type):
     else: raise NotImplementedError
 
 def generate_correct_evaluation(example_instance, problem_relaxation):
-    if problem_relaxation == "full":
+    if problem_relaxation in ["full", "explained", "turn"]:
         flips = [x[1] for x in example_instance["raw_instance"]]
         heads = bool(sum(flips)%2)
         if heads: return "yes"
