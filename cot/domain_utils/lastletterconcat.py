@@ -66,7 +66,7 @@ def evaluate(response,**kwargs):
 ## BASIC PROMPT UTILITIES ##
 def generate_instructions(problem_relaxation):
     if problem_relaxation == "full":
-        return "After the [Answer] tag, you may respond only a lowercase string of concatenated characters. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
+        return "After the [Answer] tag, you may only respond with a lowercase string of concatenated characters. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
     else: raise NotImplementedError
 
 def generate_query(instance):

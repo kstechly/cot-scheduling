@@ -1,0 +1,36 @@
+{
+    "0": {
+        "raw_instance": [
+            "Anthony"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1
+    },
+    "1": {
+        "raw_instance": [
+            "Beautiful",
+            "Ash"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2
+    },
+    "2": {
+        "raw_instance": [
+            "Matthew",
+            "River",
+            "Craig"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3
+    },
+    "3": {
+        "raw_instance": [
+            "India",
+            "Daniel",
+            "Stephen",
+            "Cal"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 4
+    }
+}
