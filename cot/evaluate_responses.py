@@ -53,13 +53,13 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # x = 'uniform_token_length'
     if graph_it:
         sns.color_palette("colorblind")
-        sns.set_theme(style="dark")
+        sns.set_theme(style="darkgrid")
         x = 'steps_to_solve'
         y = 'correct'
         sns.barplot(x=x, y=y, hue=h,
                 data=df)
         sns.despine(offset=10, trim=True)
-        plt.plot([df.min()[x]-1, df.max()[x]-2], [0.5, 0.5])
+        if domain_name == "coinflip": plt.plot([df.min()[x]-1, df.max()[x]-2], [0.5, 0.5])
         plt.show()
     if values and columns:
         print(df.pivot_table(columns=columns, values=values))

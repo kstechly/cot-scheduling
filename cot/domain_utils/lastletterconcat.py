@@ -85,13 +85,18 @@ def evaluate_full_raw(response, llm_claim):
     evaluation["ground_truth"] = generate_correct_evaluation(response, "full")
     evaluation["input_length"] = domain.token_l(response["prompt"])
     evaluation["output_length"] = domain.token_l(response["response"])
-    evaluation["correct"] = llm_claim == evaluation["ground_truth"]
-
+    llm_claim_cleaned = llm_claim.strip()
     if re.search(r"\s", llm_claim):
-        evaluation["well_formed_response"] = False
-        print(f"Ill-formed response! Can't parse:")
-        print(response["response"])
+        try: 
+            llm_claim_cleaned = llm_claim_cleaned.split("[answer]")[1].strip()
+        except:
+            evaluation["well_formed_response"] = False
+            print(f"Ill-formed response! Can't parse:")
+            print(response["response"])
+            llm_claim_cleaned = "".join(llm_claim_cleaned.split()) #last ditch, but will still print about it
     else: evaluation["well_formed_response"] = True
+    
+    evaluation["correct"] = llm_claim_cleaned == evaluation["ground_truth"]
     return evaluation
 
 ## COT PROMPT UTILITIES ##

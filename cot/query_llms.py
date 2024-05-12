@@ -25,7 +25,9 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
     current_sesh_cost = 0.0
     enc  = tiktoken.get_encoding("cl100k_base")
 
-    total_cost = utils.get_total_cost(domain_name)
+    #TODO janky, plz fix
+    try: total_cost = utils.get_total_cost(domain_name)
+    except: total_cost = 0
 
     # Load prompts and possibly filter for specified_instances
     instances = utils.read_json(domain_name, False, "prompts", verbose)
