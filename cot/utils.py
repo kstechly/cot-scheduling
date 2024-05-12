@@ -44,14 +44,6 @@ def save_pickle(obj,file_loc):
 def flatten(dict):
     return list(chain(*dict.values()))
 
-def includes_dict_w_ignore(l, b, ignore_keys):
-    for n in range(0,len(l)):
-        a = l[n]
-        ka = set(a).difference(ignore_keys)
-        kb = set(b).difference(ignore_keys)
-        if ka == kb and all(a[k] == b[k] for k in ka): return n
-    return -1
-
 def includes_dict(l, b):
     for a in l:
         if all(a[k] == b[k] for k in b.keys()): return True
