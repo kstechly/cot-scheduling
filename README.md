@@ -1,4 +1,4 @@
-Exploring generalizable reasoning with chain-of-thought
+# Exploring generalizable reasoning with chain-of-thought
 
 
 Requires Poetry and the dotenv-plugin
