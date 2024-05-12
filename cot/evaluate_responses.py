@@ -5,7 +5,6 @@ from tqdm import tqdm #type: ignore
 import domain_utils
 from domain_utils import *
 from fire import Fire #type: ignore
-from itertools import chain
 import pandas as pd #type: ignore
 
 
@@ -34,12 +33,11 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
             else: previous[instance][ind] = response
             previous[instance].append(response)
     utils.write_json(domain_name, previous, "evaluations")
-    flat_results = flatten(previous)
+    flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
     print(df['correct'].value_counts(normalize=True).mul(100).astype(str)+"%")
-
-def flatten(dict):
-    return list(chain(*dict.values()))
+    print(df.pivot_table(columns='steps_to_solve', values='correct'))
+    print(df.pivot_table(columns='uniform_token_length', values='correct'))
 
 if __name__=="__main__":
     Fire(evaluate_responses)

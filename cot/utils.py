@@ -2,6 +2,7 @@ import json
 import os
 import time
 import pickle
+from itertools import chain
 
 ### json utils
 
@@ -39,6 +40,9 @@ def save_pickle(obj,file_loc):
 
 
 ### other utils
+
+def flatten(dict):
+    return list(chain(*dict.values()))
 
 def includes_dict_w_ignore(l, b, ignore_keys):
     for n in range(0,len(l)):
