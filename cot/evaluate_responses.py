@@ -36,7 +36,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     utils.write_json(domain_name, previous, "evaluations")
     flat_results = flatten(previous)
     df = pd.DataFrame(flat_results)
-    print(df.describe())
+    print(df['correct'].value_counts(normalize=True).mul(100).astype(str)+"%")
 
 def flatten(dict):
     return list(chain(*dict.values()))

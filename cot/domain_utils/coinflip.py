@@ -67,9 +67,26 @@ def load_all_names():
 def generate(*args, **kwargs):
     return domain.generator(DOMAIN_NAME, generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation)(*args, **kwargs)
 
-def evaluate(instance_text, response_trace, extraction_label="", backprompt_type="", cot_type=""):
-    #TODO
-    raise NotImplementedError
+def evaluate(response):
+    evaluation = {}
+    if response["relaxation"] == "full":
+        legal_answers = ["yes", "no"]
+        if response["cot"] == "":
+            raw = response["raw_instance"]
+            sum_flips = [int(x[1]) for x in raw]
+            heads_ground_truth = bool((sum(sum_flips)+1)%2)
+            evaluation["ground_truth"] = heads_ground_truth
+            
+            llm_claim = response["response"].strip().lower()
+            if llm_claim in legal_answers:
+                evaluation["well_formed_response"] = True
+                evaluation["correct"] = heads_ground_truth if llm_claim == "yes" else not heads_ground_truth
+            else: 
+                evaluation["well_formed_response"] = False
+                print(f"Ill-formed response! Can't parse {response}")
+            return evaluation
+        else: raise NotImplementedError(f"CoT {response['cot']} does not have evaluation implemented!")
+    else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
 
 ### HELPER FUNCTIONS ###
 
