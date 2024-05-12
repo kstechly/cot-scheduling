@@ -1,5 +1,7 @@
 import os
 import utils
+from functools import cache
+import tiktoken #type: ignore
 ### BASIC FUNCTIONS ###
 def generator(domain_name, generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation):
     def generate(instance_text, problem_relaxation="full", cot_type="", n_examples=0, magic=""):
@@ -36,3 +38,19 @@ def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, gener
 
     examples = list(map(lambda w,x,y,z: w+x+"\n\n"+magic+f"{chr(10)+'[Thoughts]' if cot_type else ''}\n"+y+"\n\n[Answer]\n"+z+"\n\n",example_labels, example_queries, example_thoughts, example_evaluations))
     return "".join(examples[:n_examples])
+
+### INSTANCE GENERATION UTILITIES ###
+@cache
+def get_allowed_words(domain_name, token_length, words_location):
+    names = load_all_names(domain_name, words_location)
+    return [n for n in names if token_l(n)==token_length]
+@cache
+def token_l(x):
+    enc = get_encoding()
+    return len(enc.encode(x))
+@cache
+def get_encoding():
+    return tiktoken.get_encoding("cl100k_base")
+
+def load_all_names(domain_name, words_location):
+    return utils.read_json(domain_name, False, "instances", strange_subloc=words_location)

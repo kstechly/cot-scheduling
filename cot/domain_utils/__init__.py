@@ -1,7 +1,7 @@
 # To add a new domain, create a module in this subfolder, and then add it to the following:
-from domain_utils import color_verification, coinflip
-__all__ = ["color_verification","coinflip"]
-domains = {"color_verification":color_verification, "coinflip":coinflip}
+from domain_utils import color_verification, coinflip, lastletterconcat
+__all__ = ["color_verification","coinflip","lastletterconcat"]
+domains = {"color_verification":color_verification, "coinflip":coinflip, "lastletterconcat":lastletterconcat}
 
 # TODO refactor this to autopopulate
 
