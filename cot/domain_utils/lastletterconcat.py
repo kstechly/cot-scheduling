@@ -75,7 +75,7 @@ def generate_query(instance):
     query  = f'[Question]\n'
     query += f"Take the last letters of each word in \""
     query += " ".join(instance_data)
-    query += " and concatenate them."
+    query += "\" and concatenate them."
     return query
 
 ## EVALUATION UTILITIES ##
