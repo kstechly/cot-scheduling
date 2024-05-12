@@ -29,9 +29,9 @@ def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, gener
 
     assert n_examples <= len(example_instances)
 
-    example_labels = [f'Example {k}:\n\n' for k in range(1, len(example_instances)+1)]
+    example_labels = [f'Example {k}:\n\n' for k in example_instances]
     example_queries = [generate_query(example) for example in example_instances.values()]
-    example_thoughts = [generate_thoughts(example, cot_type) for example in example_instances]
+    example_thoughts = [generate_thoughts(example, cot_type) for example in example_instances.values()]
     example_evaluations = [generate_correct_evaluation(example, problem_relaxation) for example in example_instances.values()]
 
     examples = list(map(lambda w,x,y,z: w+x+"\n\n"+magic+f"{chr(10)+'[Thoughts]' if cot_type else ''}\n"+y+"\n\n[Answer]\n"+z+"\n\n",example_labels, example_queries, example_thoughts, example_evaluations))

@@ -40,7 +40,7 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
 
     failed_instances = []
     with prog as p:
-        for instance in p.track(working_instances, description=f"{llm}"):
+        for instance in p.track(working_instances, description=f"{llm}, {domain_name}"):
             instance_task = utils.replace_task(p, instance_task, description=f'Instance {instance} (Cost so far: ${total_cost:.02f})', total=len(working_instances[instance]))
             if instance not in previous.keys(): previous[instance] = []
             previous_instance_output = previous[instance]         
@@ -74,21 +74,23 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
                     trial_cost += len(enc.encode(llm_response))*output_cost
                     current_sesh_cost += trial_cost
                     total_cost += trial_cost
-                    if verbose:     
-                        print(f'==LLM Response==')
-                        print(llm_response)
-                        print(f"***Current cost: {current_sesh_cost:.4f}***")
 
                     trial_output.update({"response": llm_response, "timestamp": time.time(), "estimated_cost": trial_cost})
                     # print(f'Trial output: {trial_output}')
                     if ind == -1: previous[instance].append(trial_output)
                     else: previous[instance][ind] = trial_output
                     utils.write_json(domain_name, previous, "responses")
+                    if verbose:     
+                        print(f'==LLM Response==')
+                        print(llm_response)
+                        # print(f"***Current cost: {current_sesh_cost:.4f}***")
                 p.update(instance_task, advance=1)
                     
     # Print any failed instances
     print(f"Failed instances: {failed_instances}")
     print(f"Total Session Cost: {current_sesh_cost:.2f}")
+    print(f"Total Cost: {total_cost:.2f}")
+    
 
 @cache
 def is_openai_model(llm):

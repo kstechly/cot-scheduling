@@ -114,7 +114,7 @@ def generate_query(instance):
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
     if not cot_type: return ""
-    elif cot_type == "global": return generate_thoughts_global(example_instance)
+    elif cot_type == "wei": return generate_thoughts_wei(example_instance)
     else: raise NotImplementedError
 
 def generate_correct_evaluation(example_instance, problem_relaxation):
@@ -128,5 +128,29 @@ def generate_correct_evaluation(example_instance, problem_relaxation):
 ## SPECIFIC COT UTILITIES ##
 #TODO 
 
-def generate_thoughts_global(example_instance):
-    raise NotImplementedError
+def generate_thoughts_wei(example_instance):
+    # Replicated from Wei, et. al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+    #
+    # Some original examples from the paper (Table 23 on Page 37):
+        # Q: Q: A coin is heads up. Ka flips the coin. Sherrie flips the coin. Is the coin still heads up?
+        # A: The coin was flipped by Ka and Sherrie. So the coin was flipped 2 times, which is an even number. The coin
+        # started heads up, so after an even number of flips, it will still be heads up. So the answer is yes.
+        #
+        # Q: A coin is heads up. Maybelle flips the coin. Shalonda does not flip the coin. Is the coin still heads up?
+        # A: The coin was flipped by Maybelle. So the coin was flipped 1 time, which is an odd number. The coin started
+        # heads up, so after an odd number of flips, it will be tails up. So the answer is no.
+        #
+        # Q: A coin is heads up. Inga does not flip the coin. Elanor does not flip the coin. Is the coin still heads up?
+        # A: The coin was flipped by no one. So the coin was flipped 0 times. The coin started heads up, and it was not
+        # flipped, so it is still heads up. So the answer is yes.
+    raw = example_instance["raw_instance"]
+    raw = [['Abe',False]]
+    flipper_list = [x[0] for x in raw if x[1]==1]
+    flippers = " and ".join(flipper_list) if flipper_list else "no one"
+    flip_times = len(flipper_list)
+    heads = not bool(flip_times%2)
+    zero_case = "and it was not flipped, so it is still heads up"
+    reasoning = f"so after an {'even' if heads else 'odd'} number of flips, it will {'still be heads up' if heads else 'be tails up'}" if flip_times else zero_case
+    answer = 'yes' if heads else 'no'
+    cot = f"The coin was flipped by {flippers}. So the coin was flipped {flip_times} times. The coin started heads up, {reasoning}. So the answer is {answer}."
+    return cot
