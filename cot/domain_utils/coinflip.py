@@ -9,7 +9,6 @@ import utils
 
 #TODO stop telling the name in a billion places... And all this nonsense with __init__ hardwiring needs to go
 DOMAIN_NAME = "coinflip"
-EXAMPLE_DIRECTORY = f"data/examples/{DOMAIN_NAME}/"
 
 SEED = "13"
 RANDOM_FILE_LOC = f"random"
@@ -86,8 +85,6 @@ def evaluate(response,**kwargs):
                 evaluation["llm_claim"] = llm_claim_bool
                 evaluation["well_formed_response"] = True
                 evaluation["correct"] = heads_ground_truth if llm_claim_bool else not heads_ground_truth
-                evaluation["true_positive"] = llm_claim_bool and heads_ground_truth
-                evaluation["true_negative"] = not llm_claim_bool and not heads_ground_truth
             else: 
                 evaluation["well_formed_response"] = False
                 print(f"Ill-formed response! Can't parse {response}")
@@ -96,12 +93,6 @@ def evaluate(response,**kwargs):
     else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
 
 ### HELPER FUNCTIONS ###
-
-## DATA UTILITIES ##
-
-def check_instance_info(instance_text, extraction_label):
-    #TODO 
-    raise NotImplementedError
 
 ## BASIC PROMPT UTILITIES ##
 def generate_instructions(problem_relaxation):
@@ -122,7 +113,7 @@ def generate_query(instance_data):
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
     if not cot_type: return ""
-    # elif cot_type == "global": return generate_thoughts_global(example_instance)
+    elif cot_type == "global": return generate_thoughts_global(example_instance)
     else: raise NotImplementedError
 
 def generate_correct_evaluation(example_instance, extraction_label, problem_relaxation):
@@ -137,3 +128,6 @@ def generate_correct_evaluation(example_instance, extraction_label, problem_rela
 
 ## SPECIFIC COT UTILITIES ##
 #TODO 
+
+def generate_thoughts_global(example_instance):
+    raise NotImplementedError

@@ -16,6 +16,8 @@ fire = "^0.6.0"
 pandas = "^2.2.2"
 rich = "^13.7.1"
 seaborn = "^0.13.2"
+matplotlib = "^3.8.4"
+pyqt6 = "^6.7.0"
 
 
 [build-system]
