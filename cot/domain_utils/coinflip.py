@@ -101,14 +101,14 @@ def generate_instructions(problem_relaxation):
         return "Respond only with 'yes' or 'no'. Do not include anything else in your response."
     else: raise NotImplementedError
 
-def generate_query(instance_data):
+def generate_query(instance):
+    instance_data = instance["raw_instance"]
     query  = f'[QUESTION]\n'
     query += f"A coin is heads up. "
     for name in instance_data:
         query += name[0]
         query += " flips the coin. " if name[1] else " does not flip the coin. "
     query += "Is the coin still heads up?"
-    print(query)
     return query
 
 ## COT PROMPT UTILITIES ##
@@ -117,11 +117,9 @@ def generate_thoughts(example_instance, cot_type):
     elif cot_type == "global": return generate_thoughts_global(example_instance)
     else: raise NotImplementedError
 
-def generate_correct_evaluation(example_instance, extraction_label, problem_relaxation):
+def generate_correct_evaluation(example_instance, problem_relaxation):
     if problem_relaxation == "full":
-        flips = [x[1] for x in example_instance]
-        #TODO check this
-        print(sum(flips))
+        flips = [x[1] for x in example_instance["raw_instance"]]
         heads = bool(sum(flips)%2)
         if heads: return "yes"
         else: return "no"

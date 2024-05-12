@@ -23,7 +23,7 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
 
     for instance in instances:
         # TODO clean this up
-        prompt = domain.generate(instances[instance]["raw_instance"], problem_relaxation=relaxation, cot_type=cot, n_examples=n_examples, magic=magic)
+        prompt = domain.generate(instances[instance], problem_relaxation=relaxation, cot_type=cot, n_examples=n_examples, magic=magic)
         # computation_graph = domain.generate_graph(instance, cot_type=cot_type, extraction_label=label)
         full_prompt_info = {"relaxation":relaxation, "cot":cot, "n_examples": n_examples, "magic": magic, "example_type": example_type} #, "computation_graph": computation_graph}
         # TODO this could be done better
