@@ -62,3 +62,9 @@ def dict_index(l, b):
         a = l[n]
         if all(a[k] == b[k] for k in b.keys()): return n
     return -1
+
+def includes_sub_dict(a, b):
+    try: 
+        if all(a[k] == b[k] for k in b.keys()): return True
+    except: return False
+    return False

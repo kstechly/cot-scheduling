@@ -67,8 +67,9 @@ def load_all_names():
 def generate(*args, **kwargs):
     return domain.generator(DOMAIN_NAME, generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation)(*args, **kwargs)
 
-def evaluate(response):
+def evaluate(response,**kwargs):
     evaluation = {}
+    if not utils.includes_sub_dict(response, kwargs): return {}
     if response["relaxation"] == "full":
         legal_answers = ["yes", "no"]
         if response["cot"] == "":
@@ -81,8 +82,12 @@ def evaluate(response):
 
             llm_claim = response["response"].strip().lower()
             if llm_claim in legal_answers:
+                llm_claim_bool = llm_claim == "yes"
+                evaluation["llm_claim"] = llm_claim_bool
                 evaluation["well_formed_response"] = True
-                evaluation["correct"] = heads_ground_truth if llm_claim == "yes" else not heads_ground_truth
+                evaluation["correct"] = heads_ground_truth if llm_claim_bool else not heads_ground_truth
+                evaluation["true_positive"] = llm_claim_bool and heads_ground_truth
+                evaluation["true_negative"] = not llm_claim_bool and not heads_ground_truth
             else: 
                 evaluation["well_formed_response"] = False
                 print(f"Ill-formed response! Can't parse {response}")
