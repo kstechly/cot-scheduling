@@ -102,6 +102,7 @@ def evaluate_full_raw(response, llm_claim):
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
     if not cot_type: return ""
+    elif cot_type == "wei": generate_thoughts_wei
     #TODO 
     else: raise NotImplementedError
 
@@ -111,31 +112,30 @@ def generate_correct_evaluation(example_instance, problem_relaxation):
     else: raise NotImplementedError
 
 ## SPECIFIC COT UTILITIES ##
-#TODO 
 
 def generate_thoughts_wei(example_instance):
     # Replicated from Wei, et. al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
     #
-    # Some original examples from the paper (Table 23 on Page 37):
-        # Q: Q: A coin is heads up. Ka flips the coin. Sherrie flips the coin. Is the coin still heads up?
-        # A: The coin was flipped by Ka and Sherrie. So the coin was flipped 2 times, which is an even number. The coin
-        # started heads up, so after an even number of flips, it will still be heads up. So the answer is yes.
+    # Original examples from the paper (Table 22 on Page 36):
+        # Q: Take the last letters of the words in "Elon Musk" and concatenate them.
+        # A: The last letter of "Elon" is "n". The last letter of "Musk" is "k". Concatenating them is "nk". The answer is nk.
         #
-        # Q: A coin is heads up. Maybelle flips the coin. Shalonda does not flip the coin. Is the coin still heads up?
-        # A: The coin was flipped by Maybelle. So the coin was flipped 1 time, which is an odd number. The coin started
-        # heads up, so after an odd number of flips, it will be tails up. So the answer is no.
+        # Q: Take the last letters of the words in "Larry Page" and concatenate them.
+        # A: The last letter of "Larry" is "y". The last letter of "Page" is "e". Concatenating them is "ye". The answer is ye.
         #
-        # Q: A coin is heads up. Inga does not flip the coin. Elanor does not flip the coin. Is the coin still heads up?
-        # A: The coin was flipped by no one. So the coin was flipped 0 times. The coin started heads up, and it was not
-        # flipped, so it is still heads up. So the answer is yes.
-    raw = example_instance["raw_instance"]
-    raw = [['Abe',False]]
-    flipper_list = [x[0] for x in raw if x[1]==1]
-    flippers = " and ".join(flipper_list) if flipper_list else "no one"
-    flip_times = len(flipper_list)
-    heads = not bool(flip_times%2)
-    zero_case = "and it was not flipped, so it is still heads up"
-    reasoning = f"so after an {'even' if heads else 'odd'} number of flips, it will {'still be heads up' if heads else 'be tails up'}" if flip_times else zero_case
-    answer = 'yes' if heads else 'no'
-    cot = f"The coin was flipped by {flippers}. So the coin was flipped {flip_times} times. The coin started heads up, {reasoning}. So the answer is {answer}."
+        # Q: Take the last letters of the words in "Sergey Brin" and concatenate them.
+        # A: The last letter of "Sergey" is "y". The last letter of "Brin" is "n". Concatenating them is "yn". The answer is yn.
+        # 
+        # Q: Take the last letters of the words in "Bill Gates" and concatenate them.
+        # A: The last letter of "Bill" is "l". The last letter of "Gates" is "s". Concatenating them is "ls". The answer is ls.
+    word_list = example_instance["raw_instance"]
+    answer = "".join([word[-1] for word in word_list])
+    per_word = [f'The last letter of \"{word}\" is {word[-1]}.' for word in word_list]
+    
+    cot = " ".join(per_word)
+    cot+= f' Concatenating them is \"{answer}\". The answer is {answer}.' 
+    print(cot)
     return cot
+
+def generate_thoughts_wei_incorrect(example_instance):
+    return "The last letter of \"Bill\" is l. Concatenating them is \"l\". The answer is l."
