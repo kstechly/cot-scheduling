@@ -1,9 +1,9 @@
-from tqdm import tqdm # type: ignore
 import openai # type: ignore
 import tiktoken # type: ignore
 from fire import Fire # type: ignore
 from functools import cache
 import time
+from rich.progress import track #type: ignore
 
 import utils
 
@@ -35,7 +35,7 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
     previous = utils.read_json(domain_name, overwrite_previous, "responses", verbose=verbose)
 
     failed_instances = []
-    for instance in tqdm(working_instances):
+    for instance in track(working_instances, description=f"Querying {llm}"):
         if instance not in previous.keys(): previous[instance] = []
         previous_instance_output = previous[instance]         
         for prompt in working_instances[instance]:
@@ -71,7 +71,7 @@ def get_responses(llm, domain_name, specified_instances = [], overwrite_previous
                     print(f"***Current cost: {total_cost:.4f}***")
 
                 trial_output.update({"response": llm_response, "timestamp": time.time(), "estimated_cost": trial_cost})
-                print(f'Trial output: {trial_output}')
+                # print(f'Trial output: {trial_output}')
                 if ind == -1: previous[instance].append(trial_output)
                 else: previous[instance][ind] = trial_output
                 utils.write_json(domain_name, previous, "responses")

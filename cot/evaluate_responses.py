@@ -31,13 +31,16 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
 
             if ind == -1: previous[instance].append(response)
             else: previous[instance][ind] = response
-            previous[instance].append(response)
     utils.write_json(domain_name, previous, "evaluations")
     flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
     print(df['correct'].value_counts(normalize=True).mul(100).astype(str)+"%")
     print(df.pivot_table(columns='steps_to_solve', values='correct'))
     print(df.pivot_table(columns='uniform_token_length', values='correct'))
+    # df['binned'] = pd.cut(df['input_length'],5)
+    # print(df.pivot_table(index='steps_to_solve',columns='binned', values='correct'))
+    df = df.drop(columns=['trial_id', 'temp', 'n_examples', 'output_length', 'well_formed_response', 'timestamp', 'estimated_cost'])
+    print(df.corr(numeric_only=True))
 
 if __name__=="__main__":
     Fire(evaluate_responses)

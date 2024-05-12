@@ -76,7 +76,9 @@ def evaluate(response):
             sum_flips = [int(x[1]) for x in raw]
             heads_ground_truth = bool((sum(sum_flips)+1)%2)
             evaluation["ground_truth"] = heads_ground_truth
-            
+            evaluation["input_length"] = token_l(response["prompt"])
+            evaluation["output_length"] = token_l(response["response"])
+
             llm_claim = response["response"].strip().lower()
             if llm_claim in legal_answers:
                 evaluation["well_formed_response"] = True
