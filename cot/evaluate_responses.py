@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, **kwargs):
+def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False, values='', columns='', **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
@@ -29,7 +29,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
         for response in working_instances[instance]:
             ind = utils.dict_index(previous[instance], response)
             if not overwrite_previous and ind > -1: continue
-            response.update(domain.evaluate(response, **kwargs))
+            response.update(domain.evaluate(response))
 
             if ind == -1: previous[instance].append(response)
             else: previous[instance][ind] = response
@@ -43,21 +43,25 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # print(df.pivot_table(columns='uniform_token_length', values='correct'))
     # df['binned'] = pd.cut(df['input_length'],5)
     # print(df.pivot_table(index='steps_to_solve',columns='binned', values='correct'))
+    print(f"${df['estimated_cost'].sum():.02f} estimated total spend.")
     df = df.drop(columns=['trial_id', 'temp', 'n_examples', 'output_length', 'well_formed_response', 'timestamp', 'estimated_cost'])
     print(df.corr(numeric_only=True))
     # steps_pivot = df.pivot_table(columns='steps_to_solve', values='correct')
     # print(steps_pivot.head())
     # print(steps_pivot.columns)
     # x = 'uniform_token_length'
-    x = 'steps_to_solve'
-    y = 'correct'
-    h = 'llm_claim' # useful for seeing it stop outputting true
-    h = 'ground_truth' # useful for seeing the trues fall off in accuracy
-    sns.barplot(x=x, y=y, hue=h,
-            data=df)
-    sns.despine(offset=10, trim=True)
-    plt.plot([df.min()[x], df.max()[x]], [0.5, 0.5])
-    plt.show()
+    if graph_it:
+        x = 'steps_to_solve'
+        y = 'correct'
+        h = 'llm_claim' # useful for seeing it stop outputting true
+        h = 'ground_truth' # useful for seeing the trues fall off in accuracy
+        sns.barplot(x=x, y=y, hue=h,
+                data=df)
+        sns.despine(offset=10, trim=True)
+        plt.plot([df.min()[x], df.max()[x]], [0.5, 0.5])
+        plt.show()
+    if values and columns:
+        print(df.pivot_table(columns=columns, values=values))
 
 
 if __name__=="__main__":

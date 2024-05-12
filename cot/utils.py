@@ -3,6 +3,9 @@ import os
 import time
 import pickle
 from itertools import chain
+from rich.progress import TextColumn, MofNCompleteColumn, Progress, BarColumn, TimeElapsedColumn, TimeRemainingColumn  #type: ignore
+from rich.table import Column #type: ignore
+import pandas as pd #type: ignore
 
 ### json utils
 
@@ -37,6 +40,29 @@ def load_pickle(file_loc):
 def save_pickle(obj,file_loc):
     with open(file_loc, "wb") as fp:
         pickle.dump(obj, fp)
+
+### progress bar
+def progress_bar():
+    return Progress(
+        TextColumn("[progress.description]{task.description}"),
+        TextColumn("[progress.percentage]{task.percentage:>3.0f}%"),
+        BarColumn(),
+        MofNCompleteColumn(table_column=Column(justify="right")),
+        TextColumn("•"),
+        TimeElapsedColumn(),
+        TextColumn("•"),
+        TimeRemainingColumn(),
+    )
+
+def replace_task(progress, prev, *args, **kwargs):
+    if prev is not None:
+        progress.remove_task(prev)
+    return progress.add_task(*args, **kwargs)
+
+def get_total_cost(domain_name):
+    responses = read_json(domain_name, False, "responses", False)
+    df = pd.DataFrame(flatten(responses))
+    return df['estimated_cost'].sum()
 
 
 ### other utils
