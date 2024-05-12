@@ -102,8 +102,8 @@ def evaluate_full_raw(response, llm_claim):
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
     if not cot_type: return ""
-    elif cot_type == "wei": generate_thoughts_wei
-    #TODO 
+    elif cot_type == "wei": return generate_thoughts_wei(example_instance)
+    elif cot_type == "wei_incorrect": return generate_thoughts_wei_incorrect(example_instance)
     else: raise NotImplementedError
 
 def generate_correct_evaluation(example_instance, problem_relaxation):
@@ -134,7 +134,6 @@ def generate_thoughts_wei(example_instance):
     
     cot = " ".join(per_word)
     cot+= f' Concatenating them is \"{answer}\". The answer is {answer}.' 
-    print(cot)
     return cot
 
 def generate_thoughts_wei_incorrect(example_instance):
