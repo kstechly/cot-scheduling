@@ -1,0 +1,170 @@
+{
+    "0": {
+        "raw_instance": [
+            [
+                "Craig",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1
+    },
+    "1": {
+        "raw_instance": [
+            [
+                "Daniel",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1
+    },
+    "2": {
+        "raw_instance": [
+            [
+                "Cal",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1
+    },
+    "3": {
+        "raw_instance": [
+            [
+                "Greg",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1
+    },
+    "4": {
+        "raw_instance": [
+            [
+                "Major",
+                true
+            ],
+            [
+                "Maria",
+                false
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2
+    },
+    "5": {
+        "raw_instance": [
+            [
+                "Santa",
+                true
+            ],
+            [
+                "Ted",
+                false
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2
+    },
+    "6": {
+        "raw_instance": [
+            [
+                "Jay",
+                false
+            ],
+            [
+                "Una",
+                false
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2
+    },
+    "7": {
+        "raw_instance": [
+            [
+                "Tom",
+                true
+            ],
+            [
+                "Santa",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2
+    },
+    "8": {
+        "raw_instance": [
+            [
+                "Albert",
+                false
+            ],
+            [
+                "Wolf",
+                true
+            ],
+            [
+                "Page",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3
+    },
+    "9": {
+        "raw_instance": [
+            [
+                "Trace",
+                false
+            ],
+            [
+                "Philip",
+                false
+            ],
+            [
+                "Newton",
+                false
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3
+    },
+    "10": {
+        "raw_instance": [
+            [
+                "Quest",
+                false
+            ],
+            [
+                "Baby",
+                true
+            ],
+            [
+                "Analy",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3
+    },
+    "11": {
+        "raw_instance": [
+            [
+                "Cash",
+                true
+            ],
+            [
+                "Meg",
+                true
+            ],
+            [
+                "Thor",
+                true
+            ]
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3
+    }
+}

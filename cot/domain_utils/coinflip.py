@@ -15,14 +15,15 @@ RANDOM_FILE_LOC = f"random"
 
 ### SCRIPT FOR GENERATING INSTANCES ###
 
-def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_length=1):
+def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_length=1, instance_type="instances"):
+    if instance_type not in ["instances", "examples"]: raise ValueError("What are you trying to generate? I can only do instances and examples.")
     if overwrite_previous:
         random.seed(a=SEED)
     else: 
         try: utils.load_pickle(RANDOM_FILE_LOC)
         except: raise FileNotFoundError(f"Could not find pickled random state. If you want to start anew, pass --overwrite_previous=True")
     
-    instances = utils.read_json(DOMAIN_NAME, overwrite_previous, "instances", verbose=True)
+    instances = utils.read_json(DOMAIN_NAME, overwrite_previous, instance_type, verbose=True)
     if overwrite_previous: instances = {}
     prev_num = len(instances.keys())
     for instance_num in range(prev_num,prev_num+num):
@@ -33,9 +34,9 @@ def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_len
         # print(f'{instance_num}: {inst_names}')
         instances[instance_num] = {"raw_instance": inst_names, "uniform_token_length": token_length, "steps_to_solve":num_steps}
     
-    print(f'Writing {num} instances to json. (num steps: {num_steps}, token_length: {token_length})')
+    print(f'Writing {num} {instance_type} to json. (num steps: {num_steps}, token_length: {token_length})')
     # TODO This could be faster if it were only done every so often
-    utils.write_json(DOMAIN_NAME, instances, "instances")
+    utils.write_json(DOMAIN_NAME, instances, instance_type)
 
 def generate_names(token_length):
     allowed_names = get_allowed_names(token_length)
