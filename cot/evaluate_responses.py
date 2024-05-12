@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False, values='', columns='', h='ground_truth', **kwargs):
+def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False, values='', columns='', h='', **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
@@ -56,8 +56,8 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
         sns.set_theme(style="darkgrid")
         x = 'steps_to_solve'
         y = 'correct'
-        sns.barplot(x=x, y=y, hue=h,
-                data=df)
+        if h: sns.barplot(x=x, y=y, hue=h, data=df)
+        else: sns.barplot(x=x, y=y, data=df)
         sns.despine(offset=10, trim=True)
         if domain_name == "coinflip": plt.plot([df.min()[x]-1, df.max()[x]-2], [0.5, 0.5])
         plt.show()
