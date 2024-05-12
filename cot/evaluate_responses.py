@@ -38,6 +38,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # TODO factor this into a better place 
     flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
+    df.replace({"cot":{"":"Direct"}}, inplace=True)
     boolean_table = df.select_dtypes(np.bool_).value_counts(normalize=True).mul(100).astype(str)
     print(boolean_table+"%")
     # print(df.pivot_table(columns='uniform_token_length', values='correct'))
@@ -58,7 +59,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
         sns.barplot(x=x, y=y, hue=h,
                 data=df)
         sns.despine(offset=10, trim=True)
-        plt.plot([df.min()[x], df.max()[x]], [0.5, 0.5])
+        plt.plot([df.min()[x]-1, df.max()[x]-2], [0.5, 0.5])
         plt.show()
     if values and columns:
         print(df.pivot_table(columns=columns, values=values))

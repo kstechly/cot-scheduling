@@ -71,25 +71,21 @@ def evaluate(response,**kwargs):
     evaluation = {}
     if not utils.includes_sub_dict(response, kwargs): return {}
     if response["relaxation"] == "full":
-        legal_answers = ["yes", "no"]
         if response["cot"] == "":
-            raw = response["raw_instance"]
-            sum_flips = [int(x[1]) for x in raw]
-            heads_ground_truth = bool((sum(sum_flips)+1)%2)
-            evaluation["ground_truth"] = heads_ground_truth
-            evaluation["input_length"] = token_l(response["prompt"])
-            evaluation["output_length"] = token_l(response["response"])
-
             llm_claim = response["response"].strip().lower()
-            if llm_claim in legal_answers:
-                llm_claim_bool = llm_claim == "yes"
-                evaluation["llm_claim"] = llm_claim_bool
-                evaluation["well_formed_response"] = True
-                evaluation["correct"] = heads_ground_truth if llm_claim_bool else not heads_ground_truth
-            else: 
-                evaluation["well_formed_response"] = False
-                print(f"Ill-formed response! Can't parse {response}")
-            return evaluation
+            return evaluate_full_raw(response, llm_claim)
+        elif response["cot"] == "wei":
+            #TODO implement computational graph evaluation
+            try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
+            except: 
+                if response["response"] in ["yes", "no"]:
+                    # Sometimes the LLM just outputs the answer and refuses to use the thought format.
+                    llm_claim = response["response"]
+                    evaluation = {"refused_to_think": True}
+                    evaluation.update(evaluate_full_raw(response, llm_claim))
+                    return evaluation
+                else: llm_claim = None
+            return evaluate_full_raw(response, llm_claim)
         else: raise NotImplementedError(f"CoT {response['cot']} does not have evaluation implemented!")
     else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
 
@@ -98,7 +94,7 @@ def evaluate(response,**kwargs):
 ## BASIC PROMPT UTILITIES ##
 def generate_instructions(problem_relaxation):
     if problem_relaxation == "full":
-        return "Respond only with 'yes' or 'no'. Do not include anything else in your response."
+        return "After the [Answer] tag, you may respond only with 'yes' or 'no'. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
     else: raise NotImplementedError
 
 def generate_query(instance):
@@ -110,6 +106,29 @@ def generate_query(instance):
         query += " flips the coin. " if name[1] else " does not flip the coin. "
     query += "Is the coin still heads up?"
     return query
+
+## EVALUATION UTILITIES ##
+
+def evaluate_full_raw(response, llm_claim):
+    evaluation = {}
+    legal_answers = ["yes", "no"]
+    raw = response["raw_instance"]
+    sum_flips = [int(x[1]) for x in raw]
+    heads_ground_truth = bool((sum(sum_flips)+1)%2)
+    evaluation["ground_truth"] = heads_ground_truth
+    evaluation["input_length"] = token_l(response["prompt"])
+    evaluation["output_length"] = token_l(response["response"])
+
+    if llm_claim in legal_answers:
+        llm_claim_bool = llm_claim == "yes"
+        evaluation["llm_claim"] = llm_claim_bool
+        evaluation["well_formed_response"] = True
+        evaluation["correct"] = heads_ground_truth if llm_claim_bool else not heads_ground_truth
+    else: 
+        evaluation["well_formed_response"] = False
+        print(f"Ill-formed response! Can't parse:")
+        print(response["response"])
+    return evaluation
 
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
