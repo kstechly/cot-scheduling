@@ -71,13 +71,14 @@ def evaluate(response,**kwargs):
     evaluation = {}
     if not utils.includes_sub_dict(response, kwargs): return {}
     if response["relaxation"] in ["full", "explained", "turn"]:
-        if response["cot"] == "":
-            llm_claim = response["response"].strip().lower()
-            return evaluate_full_raw(response, llm_claim)
-        elif response["cot"] == "wei" or response["cot"] == "wei_incorrect":
+        # if response["cot"] == "" and response["magic"] =="":
+        #     llm_claim = response["response"].strip().lower()
+        #     return evaluate_full_raw(response, llm_claim)
+        #elif
+        if response["cot"] in ["", "wei","wei_incorrect"]: # or response["magic"]:
             #TODO implement computational graph evaluation
-            try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
-            except: 
+            try: llm_claim = response["response"].lower().split("[answer]")[1].strip()
+            except:
                 if response["response"] in ["yes", "no"]:
                     # Sometimes the LLM just outputs the answer and refuses to use the thought format.
                     llm_claim = response["response"]
@@ -134,6 +135,8 @@ def evaluate_full_raw(response, llm_claim):
         evaluation["well_formed_response"] = False
         print(f"Ill-formed response! Can't parse:")
         print(response["response"])
+        # print(f"I was given {llm_claim} for magic: {response['magic']} and cot: {response['cot']}")
+        # print(response['prompt'])
     return evaluation
 
 ## COT PROMPT UTILITIES ##

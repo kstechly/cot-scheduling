@@ -73,7 +73,7 @@ def generate_instructions(problem_relaxation):
         return "After the [Answer] tag, you may only respond with a lowercase string of concatenated characters. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
     else: raise NotImplementedError
 
-def generate_query(instance):
+def generate_query(instance, problem_relaxation):
     # Mirroring instances at https://huggingface.co/datasets/ChilleD/LastLetterConcat/viewer/default/train except with spelling and grammar errors cleaned up.
     instance_data = instance["raw_instance"]
     query  = f'[Question]\n'
@@ -98,6 +98,7 @@ def evaluate_full_raw(response, llm_claim):
             print(f"Ill-formed response! Can't parse:")
             print(response["response"])
             llm_claim_cleaned = "".join(llm_claim_cleaned.split()) #last ditch, but will still print about it
+            print(f'I\'m marking this as {llm_claim_cleaned == evaluation["ground_truth"]}')
     else: evaluation["well_formed_response"] = True
     
     evaluation["correct"] = llm_claim_cleaned == evaluation["ground_truth"]

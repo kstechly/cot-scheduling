@@ -38,6 +38,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # TODO factor this into a better place 
     flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
+    df = df.drop(df[df['llm'] != 'gpt-4-turbo-2024-04-09'].index)
     df.replace({"cot":{"":"Direct"}}, inplace=True)
     boolean_table = df.select_dtypes(np.bool_).value_counts(normalize=True).mul(100).astype(str)
     print(boolean_table+"%")
@@ -65,7 +66,9 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
         plt.show()
     if values and columns:
         print("\n")
-        print(df.pivot_table(columns=columns, values=values))
+        if gcol and gval: subdf = df[df[gcol]==gval]
+        else: subdf = df
+        print(subdf.pivot_table(columns=columns, values=values))
 
 
 if __name__=="__main__":
