@@ -46,11 +46,15 @@ def get_allowed_words(domain_name, token_length, words_location):
     return [n for n in names if token_l(n)==token_length]
 @cache
 def token_l(x):
-    enc = get_encoding()
-    return len(enc.encode(x))
+    return len(get_tokens(x))
 @cache
 def get_encoding():
     return tiktoken.get_encoding("cl100k_base")
+@cache
+def get_tokens(x):
+    enc = get_encoding()
+    return enc.encode(x)
+
 
 def load_all_names(domain_name, words_location):
     return utils.read_json(domain_name, False, "instances", strange_subloc=words_location)

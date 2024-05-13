@@ -2,6 +2,7 @@ from fire import Fire #type: ignore
 import random
 import re
 from Levenshtein import distance #type: ignore
+from textdistance import levenshtein
 
 from domain_utils import domain
 import utils
@@ -56,12 +57,9 @@ def evaluate(response,**kwargs):
     evaluation = {}
     if not utils.includes_sub_dict(response, kwargs): return {}
     if response["relaxation"] == "full":
-        if response["cot"] == "":
-            llm_claim = response["response"].strip().lower()
-            return evaluate_full_raw(response, llm_claim)
-        if response["cot"] in ["wei", "wei_incorrect", "first_letter_incorrect"]:
+        if response["cot"] in ["wei", "wei_incorrect", "first_letter_incorrect"] or response["magic"] in ["", " ", "Let's think step by step."]:
             try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
-            except: llm_claim = None
+            except: llm_claim = response["response"].strip().lower()
             return evaluate_full_raw(response, llm_claim)
         else: raise NotImplementedError(f"CoT '{response['cot']}' does not have evaluation implemented!")
     else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
@@ -105,9 +103,16 @@ def evaluate_full_raw(response, llm_claim):
     
     # TODO put the raw and do the division and filtering in pandas later
     evaluation["levenshtein_distance_normalized"] = distance(ground_truth, llm_claim_cleaned, score_cutoff=len(ground_truth)-1)/len(ground_truth)
+    evaluation["token_distance_normalized"] = token_distance(ground_truth, llm_claim_cleaned, domain.token_l(ground_truth))/domain.token_l(ground_truth)
     # if distance(ground_truth, llm_claim_cleaned)>1: print(f'Way too big! {llm_claim_cleaned}')
     evaluation["correct"] = llm_claim_cleaned == evaluation["ground_truth"]
     return evaluation
+
+def token_distance(a, b, m=0):
+    ta = domain.get_tokens(a)
+    tb = domain.get_tokens(b)
+    if m: return min(levenshtein.distance(ta,tb),m)
+    else: return levenshtein.distance(ta, tb)
 
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):

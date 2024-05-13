@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False, values='', columns='', h='', gcol='', gval='', **kwargs):
+def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False,x = 'steps_to_solve', y = 'correct', values='', columns='', h='', gcol='', gval='', **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
@@ -39,7 +39,9 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
     df = df.drop(df[df['llm'] != 'gpt-4-turbo-2024-04-09'].index)
-    df.replace({"cot":{"":"Direct"}}, inplace=True)
+    df.loc[(df.magic =="Let's think step by step.") & (df.cot==""), 'cot'] = 'kojima_magic'
+    df.loc[(df.magic ==" ") & (df.cot==""), 'cot'] = 'thought_tag_only'
+    df.replace({"cot":{"":"direct"}}, inplace=True)
     boolean_table = df.select_dtypes(np.bool_).value_counts(normalize=True).mul(100).astype(str)
     print(boolean_table+"%")
     # print(df.pivot_table(columns='uniform_token_length', values='correct'))
@@ -57,8 +59,6 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
         else: subdf = df
         # sns.color_palette("colorblind")
         # sns.set_theme(style="darkgrid")
-        x = 'steps_to_solve'
-        y = 'correct'
         if h: sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep")
         else: sns.lineplot(x=x, y=y, data=subdf)
         sns.despine(offset=10, trim=True)
