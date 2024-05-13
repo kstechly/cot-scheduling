@@ -1,6 +1,7 @@
 from fire import Fire #type: ignore
 import random
 import re
+from Levenshtein import distance #type: ignore
 
 from domain_utils import domain
 import utils
@@ -58,7 +59,7 @@ def evaluate(response,**kwargs):
         if response["cot"] == "":
             llm_claim = response["response"].strip().lower()
             return evaluate_full_raw(response, llm_claim)
-        if response["cot"] == "wei" or response["cot"] == "wei_incorrect":
+        if response["cot"] in ["wei", "wei_incorrect", "first_letter_incorrect"]:
             try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
             except: llm_claim = None
             return evaluate_full_raw(response, llm_claim)
@@ -86,7 +87,8 @@ def generate_query(instance, problem_relaxation):
 
 def evaluate_full_raw(response, llm_claim):
     evaluation = {}
-    evaluation["ground_truth"] = generate_correct_evaluation(response, "full")
+    ground_truth = generate_correct_evaluation(response, "full")
+    evaluation["ground_truth"] = ground_truth
     evaluation["input_length"] = domain.token_l(response["prompt"])
     evaluation["output_length"] = domain.token_l(response["response"])
     llm_claim_cleaned = llm_claim.strip()
@@ -101,6 +103,9 @@ def evaluate_full_raw(response, llm_claim):
             print(f'I\'m marking this as {llm_claim_cleaned == evaluation["ground_truth"]}')
     else: evaluation["well_formed_response"] = True
     
+    # TODO put the raw and do the division and filtering in pandas later
+    evaluation["levenshtein_distance_normalized"] = distance(ground_truth, llm_claim_cleaned, score_cutoff=len(ground_truth)-1)/len(ground_truth)
+    # if distance(ground_truth, llm_claim_cleaned)>1: print(f'Way too big! {llm_claim_cleaned}')
     evaluation["correct"] = llm_claim_cleaned == evaluation["ground_truth"]
     return evaluation
 
@@ -109,6 +114,7 @@ def generate_thoughts(example_instance, cot_type):
     if not cot_type: return ""
     elif cot_type == "wei": return generate_thoughts_wei(example_instance)
     elif cot_type == "wei_incorrect": return generate_thoughts_wei_incorrect(example_instance)
+    elif cot_type == "first_letter_incorrect": return generate_thoughts_first_letter_incorrect(example_instance)
     else: raise NotImplementedError
 
 def generate_correct_evaluation(example_instance, problem_relaxation):
@@ -143,3 +149,6 @@ def generate_thoughts_wei(example_instance):
 
 def generate_thoughts_wei_incorrect(example_instance):
     return "The last letter of \"Bill\" is l. Concatenating them is \"l\". The answer is l."
+
+def generate_thoughts_first_letter_incorrect(example_instance):
+    return "The last letter of \"Bill\" is B. The last letter of \"Gates\" is G. Concatenating them is \"bg\". The answer is bg."

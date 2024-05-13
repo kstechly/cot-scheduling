@@ -18,6 +18,7 @@ rich = "^13.7.1"
 seaborn = "^0.13.2"
 matplotlib = "^3.8.4"
 pyqt6 = "^6.7.0"
+levenshtein = "^0.25.1"
 
 
 [build-system]
