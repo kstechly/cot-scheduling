@@ -18,7 +18,8 @@ def generator(domain_name, generate_instructions, generate_query, generate_thoug
         prompt = "[Instructions]\n"+instructions
         if n_examples: prompt+=f"\n\nThe following {n_examples} examples are provided. Please follow the formatting used in them.\n\n"
         prompt += generate_cot(cot_type, n_examples, magic, domain_name, generate_query, generate_thoughts, generate_correct_evaluation, problem_relaxation) + f'\nProblem to solve:\n\n' + current_query + "\n\n" + magic
-        if cot_type or magic: prompt+= "\n\n[Thoughts]"
+        ## TODO refactor this. problem_relaxation reading should NOT be here! Only doing this bc in a hurry :((
+        if (cot_type or magic) and not problem_relaxation == "dont_think": prompt+= "\n\n[Thoughts]"
         else: prompt+= "\n[Answer]\n"
         return prompt
     return generate
@@ -33,7 +34,7 @@ def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, gener
 
     example_labels = [f'Example {k}:\n\n' for k in example_instances]
     example_queries = [generate_query(example, problem_relaxation) for example in example_instances.values()]
-    example_thoughts = [generate_thoughts(example, cot_type) for example in example_instances.values()]
+    example_thoughts = [generate_thoughts(example, cot_type, problem_relaxation) for example in example_instances.values()]
     example_evaluations = [generate_correct_evaluation(example, problem_relaxation) for example in example_instances.values()]
 
     examples = list(map(lambda w,x,y,z: w+x+"\n\n"+magic+f"{chr(10)+'[Thoughts]' if cot_type else ''}\n"+y+"\n\n[Answer]\n"+z+"\n\n",example_labels, example_queries, example_thoughts, example_evaluations))
