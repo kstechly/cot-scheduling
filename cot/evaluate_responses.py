@@ -12,12 +12,12 @@ import matplotlib.pyplot as plt #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it=False,x = 'steps_to_solve', y = 'correct', values='', columns='', h='', gcol='', gval='', **kwargs):
+def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it= '', x = 'steps_to_solve', y = 'correct', values='', columns='', h='', s='', idict={}, **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
     responses = utils.read_json(domain_name, False, "responses", verbose)
-    if specified_instances: working_instances = {num: responses[num] for num in responses.key() if num in specified_instances}
+    if specified_instances: working_instances = {num: responses[num] for num in responses.keys() if num in specified_instances}
     else: working_instances = responses
     
     # Load previously done work
@@ -54,21 +54,35 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # print(steps_pivot.head())
     # print(steps_pivot.columns)
     # x = 'uniform_token_length'
+    subdf = df
+    print(idict)
+    for k in idict.keys():
+        subdf = subdf[subdf[k].isin(idict[k])]
+    # subdf = subdf[subdf.steps_to_solve>1]
+    if values and columns:
+        print("\n")
+        print(subdf.pivot_table(columns=columns, values=values))
     if graph_it:
-        if gcol and gval: subdf = df[df[gcol]==gval]
-        else: subdf = df
-        # sns.color_palette("colorblind")
-        # sns.set_theme(style="darkgrid")
-        if h: sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep")
-        else: sns.lineplot(x=x, y=y, data=subdf)
+        sns.color_palette("colorblind")
+        sns.set_theme(style="whitegrid")
+        if   graph_it == "line":
+            if h and s: sns.lineplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
+            elif h: sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep")
+            else: sns.lineplot(x=x, y=y, data=subdf)
+        elif graph_it == "corr":
+            ssubdf = df[df.cot.isin(['wei','direct'])]
+            ssubdf = ssubdf[ssubdf.bag_correct==True]
+            subdf = pd.melt(ssubdf[[x,'correct', 'bag_correct','set_correct','cot']],ssubdf[[x,'cot']])
+            sns.lineplot(x=x, y='value', hue='variable',style='cot', data=subdf, palette="deep")
+            # sns.lineplot(data=df[['correct', 'set_correct', 'bag_correct']])
+        elif graph_it == "scatter":
+            if h and s: sns.scatterplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
+            elif h: sns.scatterplot(x=x, y=y, hue=h, data=subdf, palette="deep")
+            else: sns.scatterplot(x=x, y=y, data=subdf)
+        else: raise ValueError(f"Can't plot something of type {graph_it}")
         sns.despine(offset=10, trim=True)
         if domain_name == "coinflip": plt.plot([subdf.min()[x], subdf.max()[x]], [0.5, 0.5])
         plt.show()
-    if values and columns:
-        print("\n")
-        if gcol and gval: subdf = df[df[gcol]==gval]
-        else: subdf = df
-        print(subdf.pivot_table(columns=columns, values=values))
 
 
 if __name__=="__main__":

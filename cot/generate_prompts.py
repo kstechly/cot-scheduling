@@ -1,10 +1,11 @@
 import argparse
 from fire import Fire # type: ignore
+from pprint import pprint
 
 import utils
 import domain_utils
 
-def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='', magic='', relaxation='full', overwrite_previous=False):
+def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='', magic='', relaxation='full', overwrite_previous=False, verbose=False):
     if domain_name not in domain_utils.domains:
         raise ValueError(f"Domain name must be an element of {list(domain_utils.domains)}.")
     domain = domain_utils.domains[domain_name]
@@ -20,7 +21,6 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
     #      Both the expected, correct one, and the actual ones they end up seeing...
     #       (Relevant for Paradox of Learning reasons)
     #      Specifically, maybe let the domain decide how many prompts to output? **kwargs
-
     for instance in instances:
         # TODO clean this up
         prompt = domain.generate(instances[instance], problem_relaxation=relaxation, cot_type=cot, n_examples=n_examples, magic=magic)
@@ -34,6 +34,7 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
             prompts[instance] = []
         full_prompt_info.update({"prompt": prompt})
         full_prompt_info.update(instances[instance])
+        if verbose: pprint(full_prompt_info)
         if old_prompt_num>-1: 
             if overwrite_previous: prompts[instance][old_prompt_num] = full_prompt_info
             continue
