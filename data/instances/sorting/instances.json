@@ -1,0 +1,2562 @@
+{
+    "0": {
+        "raw_instance": [
+            "d",
+            "d",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "1": {
+        "raw_instance": [
+            "c",
+            "d",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "2": {
+        "raw_instance": [
+            "a",
+            "a",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "3": {
+        "raw_instance": [
+            "c",
+            "b",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "4": {
+        "raw_instance": [
+            "c",
+            "c",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "5": {
+        "raw_instance": [
+            "c",
+            "a",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "6": {
+        "raw_instance": [
+            "a",
+            "c",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "7": {
+        "raw_instance": [
+            "d",
+            "d",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "8": {
+        "raw_instance": [
+            "c",
+            "b",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "9": {
+        "raw_instance": [
+            "c",
+            "c",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "10": {
+        "raw_instance": [
+            "d",
+            "a",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "11": {
+        "raw_instance": [
+            "b",
+            "d",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "12": {
+        "raw_instance": [
+            "a",
+            "a",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "13": {
+        "raw_instance": [
+            "b",
+            "c",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "14": {
+        "raw_instance": [
+            "d",
+            "c",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "15": {
+        "raw_instance": [
+            "b",
+            "c",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "16": {
+        "raw_instance": [
+            "d",
+            "a",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "17": {
+        "raw_instance": [
+            "d",
+            "a",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "18": {
+        "raw_instance": [
+            "a",
+            "d",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "19": {
+        "raw_instance": [
+            "a",
+            "c",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "20": {
+        "raw_instance": [
+            "b",
+            "b",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "21": {
+        "raw_instance": [
+            "c",
+            "c",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "22": {
+        "raw_instance": [
+            "d",
+            "b",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "23": {
+        "raw_instance": [
+            "a",
+            "b",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "24": {
+        "raw_instance": [
+            "c",
+            "d",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "25": {
+        "raw_instance": [
+            "d",
+            "b",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "26": {
+        "raw_instance": [
+            "a",
+            "c",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "27": {
+        "raw_instance": [
+            "b",
+            "b",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "28": {
+        "raw_instance": [
+            "b",
+            "a",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "29": {
+        "raw_instance": [
+            "a",
+            "b",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "30": {
+        "raw_instance": [
+            "c",
+            "a",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "31": {
+        "raw_instance": [
+            "c",
+            "c",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "32": {
+        "raw_instance": [
+            "b",
+            "b",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "33": {
+        "raw_instance": [
+            "a",
+            "a",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "34": {
+        "raw_instance": [
+            "b",
+            "b",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "35": {
+        "raw_instance": [
+            "d",
+            "d",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "36": {
+        "raw_instance": [
+            "c",
+            "d",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "37": {
+        "raw_instance": [
+            "a",
+            "b",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "38": {
+        "raw_instance": [
+            "c",
+            "c",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "39": {
+        "raw_instance": [
+            "d",
+            "a",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "40": {
+        "raw_instance": [
+            "c",
+            "b",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "41": {
+        "raw_instance": [
+            "d",
+            "b",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "42": {
+        "raw_instance": [
+            "b",
+            "d",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "43": {
+        "raw_instance": [
+            "d",
+            "b",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "44": {
+        "raw_instance": [
+            "a",
+            "c",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "45": {
+        "raw_instance": [
+            "b",
+            "c",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "46": {
+        "raw_instance": [
+            "b",
+            "a",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "47": {
+        "raw_instance": [
+            "a",
+            "d",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "48": {
+        "raw_instance": [
+            "b",
+            "a",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "49": {
+        "raw_instance": [
+            "a",
+            "d",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "50": {
+        "raw_instance": [
+            "a",
+            "a",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "51": {
+        "raw_instance": [
+            "d",
+            "d",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "52": {
+        "raw_instance": [
+            "a",
+            "c",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "53": {
+        "raw_instance": [
+            "b",
+            "a",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "54": {
+        "raw_instance": [
+            "b",
+            "a",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "55": {
+        "raw_instance": [
+            "d",
+            "a",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "56": {
+        "raw_instance": [
+            "b",
+            "c",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "57": {
+        "raw_instance": [
+            "d",
+            "d",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "58": {
+        "raw_instance": [
+            "a",
+            "c",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "59": {
+        "raw_instance": [
+            "a",
+            "b",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "60": {
+        "raw_instance": [
+            "a",
+            "d",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "61": {
+        "raw_instance": [
+            "c",
+            "b",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "62": {
+        "raw_instance": [
+            "c",
+            "b",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "63": {
+        "raw_instance": [
+            "d",
+            "d",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "64": {
+        "raw_instance": [
+            "b",
+            "b",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "65": {
+        "raw_instance": [
+            "a",
+            "d",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "66": {
+        "raw_instance": [
+            "b",
+            "a",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "67": {
+        "raw_instance": [
+            "d",
+            "d",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "68": {
+        "raw_instance": [
+            "c",
+            "b",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "69": {
+        "raw_instance": [
+            "d",
+            "b",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "70": {
+        "raw_instance": [
+            "b",
+            "d",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "71": {
+        "raw_instance": [
+            "b",
+            "d",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "72": {
+        "raw_instance": [
+            "a",
+            "d",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "73": {
+        "raw_instance": [
+            "a",
+            "c",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "74": {
+        "raw_instance": [
+            "c",
+            "d",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "75": {
+        "raw_instance": [
+            "a",
+            "a",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "76": {
+        "raw_instance": [
+            "c",
+            "b",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "77": {
+        "raw_instance": [
+            "c",
+            "a",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "78": {
+        "raw_instance": [
+            "d",
+            "a",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "79": {
+        "raw_instance": [
+            "a",
+            "a",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "80": {
+        "raw_instance": [
+            "d",
+            "a",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "81": {
+        "raw_instance": [
+            "c",
+            "d",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "82": {
+        "raw_instance": [
+            "a",
+            "a",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "83": {
+        "raw_instance": [
+            "c",
+            "d",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "84": {
+        "raw_instance": [
+            "a",
+            "b",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "85": {
+        "raw_instance": [
+            "d",
+            "c",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "86": {
+        "raw_instance": [
+            "d",
+            "c",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "87": {
+        "raw_instance": [
+            "d",
+            "a",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "88": {
+        "raw_instance": [
+            "d",
+            "c",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "89": {
+        "raw_instance": [
+            "b",
+            "c",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "90": {
+        "raw_instance": [
+            "b",
+            "c",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "91": {
+        "raw_instance": [
+            "c",
+            "a",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "92": {
+        "raw_instance": [
+            "d",
+            "c",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "93": {
+        "raw_instance": [
+            "d",
+            "c",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "94": {
+        "raw_instance": [
+            "d",
+            "d",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "95": {
+        "raw_instance": [
+            "a",
+            "d",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "96": {
+        "raw_instance": [
+            "c",
+            "b",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "97": {
+        "raw_instance": [
+            "d",
+            "c",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "98": {
+        "raw_instance": [
+            "c",
+            "b",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "99": {
+        "raw_instance": [
+            "a",
+            "c",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "100": {
+        "raw_instance": [
+            "a",
+            "d",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "101": {
+        "raw_instance": [
+            "d",
+            "b",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "102": {
+        "raw_instance": [
+            "b",
+            "d",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "103": {
+        "raw_instance": [
+            "d",
+            "a",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "104": {
+        "raw_instance": [
+            "d",
+            "c",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "105": {
+        "raw_instance": [
+            "b",
+            "d",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "106": {
+        "raw_instance": [
+            "c",
+            "c",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "107": {
+        "raw_instance": [
+            "c",
+            "c",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "108": {
+        "raw_instance": [
+            "a",
+            "b",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "109": {
+        "raw_instance": [
+            "d",
+            "c",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "110": {
+        "raw_instance": [
+            "b",
+            "c",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "111": {
+        "raw_instance": [
+            "b",
+            "c",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "112": {
+        "raw_instance": [
+            "c",
+            "d",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "113": {
+        "raw_instance": [
+            "a",
+            "b",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "114": {
+        "raw_instance": [
+            "d",
+            "c",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "115": {
+        "raw_instance": [
+            "b",
+            "a",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "116": {
+        "raw_instance": [
+            "b",
+            "b",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "117": {
+        "raw_instance": [
+            "d",
+            "d",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "118": {
+        "raw_instance": [
+            "b",
+            "c",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "119": {
+        "raw_instance": [
+            "d",
+            "b",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "120": {
+        "raw_instance": [
+            "a",
+            "b",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "121": {
+        "raw_instance": [
+            "a",
+            "a",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "122": {
+        "raw_instance": [
+            "c",
+            "a",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "123": {
+        "raw_instance": [
+            "a",
+            "d",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "124": {
+        "raw_instance": [
+            "c",
+            "b",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "125": {
+        "raw_instance": [
+            "d",
+            "d",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "126": {
+        "raw_instance": [
+            "d",
+            "a",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "127": {
+        "raw_instance": [
+            "b",
+            "d",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "128": {
+        "raw_instance": [
+            "a",
+            "b",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "129": {
+        "raw_instance": [
+            "a",
+            "c",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "130": {
+        "raw_instance": [
+            "c",
+            "c",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "131": {
+        "raw_instance": [
+            "c",
+            "a",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "132": {
+        "raw_instance": [
+            "b",
+            "c",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "133": {
+        "raw_instance": [
+            "d",
+            "a",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "134": {
+        "raw_instance": [
+            "d",
+            "d",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "135": {
+        "raw_instance": [
+            "c",
+            "c",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "136": {
+        "raw_instance": [
+            "b",
+            "d",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "137": {
+        "raw_instance": [
+            "b",
+            "a",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "138": {
+        "raw_instance": [
+            "b",
+            "b",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "139": {
+        "raw_instance": [
+            "d",
+            "d",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "140": {
+        "raw_instance": [
+            "c",
+            "b",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "141": {
+        "raw_instance": [
+            "a",
+            "b",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "142": {
+        "raw_instance": [
+            "b",
+            "b",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "143": {
+        "raw_instance": [
+            "a",
+            "c",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "144": {
+        "raw_instance": [
+            "d",
+            "d",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "145": {
+        "raw_instance": [
+            "b",
+            "c",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "146": {
+        "raw_instance": [
+            "d",
+            "b",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "147": {
+        "raw_instance": [
+            "b",
+            "a",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "148": {
+        "raw_instance": [
+            "c",
+            "d",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "149": {
+        "raw_instance": [
+            "b",
+            "a",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "150": {
+        "raw_instance": [
+            "b",
+            "a",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "151": {
+        "raw_instance": [
+            "b",
+            "c",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "152": {
+        "raw_instance": [
+            "c",
+            "d",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "153": {
+        "raw_instance": [
+            "a",
+            "b",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "154": {
+        "raw_instance": [
+            "d",
+            "a",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "155": {
+        "raw_instance": [
+            "c",
+            "c",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "156": {
+        "raw_instance": [
+            "b",
+            "d",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "157": {
+        "raw_instance": [
+            "a",
+            "d",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "158": {
+        "raw_instance": [
+            "c",
+            "b",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "159": {
+        "raw_instance": [
+            "b",
+            "d",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "160": {
+        "raw_instance": [
+            "a",
+            "d",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "161": {
+        "raw_instance": [
+            "a",
+            "d",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "162": {
+        "raw_instance": [
+            "d",
+            "d",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "163": {
+        "raw_instance": [
+            "c",
+            "c",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "164": {
+        "raw_instance": [
+            "a",
+            "a",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "165": {
+        "raw_instance": [
+            "a",
+            "c",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "166": {
+        "raw_instance": [
+            "c",
+            "b",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "167": {
+        "raw_instance": [
+            "b",
+            "d",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "168": {
+        "raw_instance": [
+            "c",
+            "a",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "169": {
+        "raw_instance": [
+            "d",
+            "a",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "170": {
+        "raw_instance": [
+            "d",
+            "a",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "171": {
+        "raw_instance": [
+            "c",
+            "d",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "172": {
+        "raw_instance": [
+            "c",
+            "d",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "173": {
+        "raw_instance": [
+            "a",
+            "a",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "174": {
+        "raw_instance": [
+            "a",
+            "c",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "175": {
+        "raw_instance": [
+            "b",
+            "d",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "176": {
+        "raw_instance": [
+            "c",
+            "a",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "177": {
+        "raw_instance": [
+            "a",
+            "a",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "178": {
+        "raw_instance": [
+            "b",
+            "c",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "179": {
+        "raw_instance": [
+            "b",
+            "c",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "180": {
+        "raw_instance": [
+            "a",
+            "c",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "181": {
+        "raw_instance": [
+            "b",
+            "b",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "182": {
+        "raw_instance": [
+            "b",
+            "a",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "183": {
+        "raw_instance": [
+            "d",
+            "b",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "184": {
+        "raw_instance": [
+            "c",
+            "d",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "185": {
+        "raw_instance": [
+            "a",
+            "b",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "186": {
+        "raw_instance": [
+            "c",
+            "a",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "187": {
+        "raw_instance": [
+            "b",
+            "b",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "188": {
+        "raw_instance": [
+            "c",
+            "c",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "189": {
+        "raw_instance": [
+            "b",
+            "b",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "190": {
+        "raw_instance": [
+            "b",
+            "a",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "191": {
+        "raw_instance": [
+            "a",
+            "d",
+            "d",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "192": {
+        "raw_instance": [
+            "b",
+            "a",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "193": {
+        "raw_instance": [
+            "d",
+            "c",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "194": {
+        "raw_instance": [
+            "a",
+            "a",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "195": {
+        "raw_instance": [
+            "b",
+            "d",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "196": {
+        "raw_instance": [
+            "d",
+            "b",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "197": {
+        "raw_instance": [
+            "b",
+            "d",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "198": {
+        "raw_instance": [
+            "a",
+            "c",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "199": {
+        "raw_instance": [
+            "b",
+            "b",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "200": {
+        "raw_instance": [
+            "a",
+            "a",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "201": {
+        "raw_instance": [
+            "b",
+            "b",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "202": {
+        "raw_instance": [
+            "c",
+            "d",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "203": {
+        "raw_instance": [
+            "c",
+            "b",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "204": {
+        "raw_instance": [
+            "a",
+            "d",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "205": {
+        "raw_instance": [
+            "d",
+            "c",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "206": {
+        "raw_instance": [
+            "c",
+            "d",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "207": {
+        "raw_instance": [
+            "a",
+            "b",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "208": {
+        "raw_instance": [
+            "d",
+            "b",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "209": {
+        "raw_instance": [
+            "b",
+            "c",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "210": {
+        "raw_instance": [
+            "d",
+            "b",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "211": {
+        "raw_instance": [
+            "c",
+            "b",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "212": {
+        "raw_instance": [
+            "d",
+            "c",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "213": {
+        "raw_instance": [
+            "b",
+            "a",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "214": {
+        "raw_instance": [
+            "b",
+            "c",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "215": {
+        "raw_instance": [
+            "a",
+            "c",
+            "c",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "216": {
+        "raw_instance": [
+            "a",
+            "b",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "217": {
+        "raw_instance": [
+            "c",
+            "d",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "218": {
+        "raw_instance": [
+            "c",
+            "c",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "219": {
+        "raw_instance": [
+            "c",
+            "c",
+            "d",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "220": {
+        "raw_instance": [
+            "c",
+            "a",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "221": {
+        "raw_instance": [
+            "c",
+            "c",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "222": {
+        "raw_instance": [
+            "d",
+            "c",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "223": {
+        "raw_instance": [
+            "d",
+            "a",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "224": {
+        "raw_instance": [
+            "d",
+            "b",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "225": {
+        "raw_instance": [
+            "b",
+            "b",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "226": {
+        "raw_instance": [
+            "d",
+            "a",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "227": {
+        "raw_instance": [
+            "d",
+            "d",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "228": {
+        "raw_instance": [
+            "d",
+            "b",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "229": {
+        "raw_instance": [
+            "d",
+            "c",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "230": {
+        "raw_instance": [
+            "a",
+            "b",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "231": {
+        "raw_instance": [
+            "d",
+            "c",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "232": {
+        "raw_instance": [
+            "a",
+            "a",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "233": {
+        "raw_instance": [
+            "a",
+            "d",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "234": {
+        "raw_instance": [
+            "b",
+            "d",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "235": {
+        "raw_instance": [
+            "c",
+            "c",
+            "a",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "236": {
+        "raw_instance": [
+            "d",
+            "b",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "237": {
+        "raw_instance": [
+            "b",
+            "b",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "238": {
+        "raw_instance": [
+            "b",
+            "d",
+            "a",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "239": {
+        "raw_instance": [
+            "c",
+            "a",
+            "c",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "240": {
+        "raw_instance": [
+            "c",
+            "a",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "241": {
+        "raw_instance": [
+            "c",
+            "a",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "242": {
+        "raw_instance": [
+            "d",
+            "d",
+            "b",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "243": {
+        "raw_instance": [
+            "c",
+            "a",
+            "b",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "244": {
+        "raw_instance": [
+            "d",
+            "b",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "245": {
+        "raw_instance": [
+            "a",
+            "a",
+            "c",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "246": {
+        "raw_instance": [
+            "c",
+            "a",
+            "a",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "247": {
+        "raw_instance": [
+            "a",
+            "a",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "248": {
+        "raw_instance": [
+            "c",
+            "d",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "249": {
+        "raw_instance": [
+            "b",
+            "a",
+            "a",
+            "d"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "250": {
+        "raw_instance": [
+            "c",
+            "b",
+            "b",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "251": {
+        "raw_instance": [
+            "a",
+            "d",
+            "d",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "252": {
+        "raw_instance": [
+            "a",
+            "c",
+            "b",
+            "c"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "253": {
+        "raw_instance": [
+            "b",
+            "b",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "254": {
+        "raw_instance": [
+            "a",
+            "b",
+            "c",
+            "b"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    },
+    "255": {
+        "raw_instance": [
+            "c",
+            "a",
+            "d",
+            "a"
+        ],
+        "vocab_size": 4,
+        "string_length": 4
+    }
+}

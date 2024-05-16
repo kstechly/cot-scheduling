@@ -28,6 +28,8 @@ def generator(domain_name, generate_instructions, generate_query, generate_thoug
 def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, generate_thoughts, generate_correct_evaluation, problem_relaxation):
     # Example instances have to contain a "c example " line with the example coloring
     # TODO this should know its own name. Just make these classes already cmon
+    if not n_examples: return "" 
+
     example_instances = utils.read_json(domain_name, False, "examples")
 
     assert n_examples <= len(example_instances)
