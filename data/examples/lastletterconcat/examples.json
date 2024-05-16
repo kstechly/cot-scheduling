@@ -4,7 +4,8 @@
             "Anthony"
         ],
         "uniform_token_length": 1,
-        "steps_to_solve": 1
+        "steps_to_solve": 1,
+        "random_word": false
     },
     "1": {
         "raw_instance": [
@@ -12,7 +13,8 @@
             "Ash"
         ],
         "uniform_token_length": 1,
-        "steps_to_solve": 2
+        "steps_to_solve": 2,
+        "random_word": false
     },
     "2": {
         "raw_instance": [
@@ -21,7 +23,8 @@
             "Craig"
         ],
         "uniform_token_length": 1,
-        "steps_to_solve": 3
+        "steps_to_solve": 3,
+        "random_word": false
     },
     "3": {
         "raw_instance": [
@@ -31,6 +34,7 @@
             "Cal"
         ],
         "uniform_token_length": 1,
-        "steps_to_solve": 4
+        "steps_to_solve": 4,
+        "random_word": false
     }
 }

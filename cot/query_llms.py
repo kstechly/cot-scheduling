@@ -3,6 +3,10 @@ import tiktoken # type: ignore
 from fire import Fire # type: ignore
 from functools import cache
 import time
+from groq import Groq #type: ignore
+import os
+import requests
+import boto3 #type: ignore
 
 import utils
 
@@ -10,13 +14,31 @@ STOP_STATEMENT = "[ANSWER END]" # what we look for to end LLM response generatio
 
 SYSTEM_PROMPT  = "You are a system that solves reasoning problems presented in text form."
 
-input_costs_per_million  = {"gpt-4": 30, "gpt-4-turbo":10, "gpt-4-turbo-2024-04-09": 10, "gpt-3.5-turbo-0125": 0.5}
-output_costs_per_million = {"gpt-4": 60, "gpt-4-turbo":30, "gpt-4-turbo-2024-04-09": 30, "gpt-3.5-turbo-0125": 1.5}
+input_costs_per_million  = {"gpt-4": 30, "gpt-4-turbo":10, "gpt-4-turbo-2024-04-09": 10, "gpt-3.5-turbo-0125": 0.5, "llama3-8b-8192": 0.0, "gpt-4o-2024-05-13": 5}
+output_costs_per_million = {"gpt-4": 60, "gpt-4-turbo":30, "gpt-4-turbo-2024-04-09": 30, "gpt-3.5-turbo-0125": 1.5, "llama3-8b-8192": 0.0, "gpt-4o-2024-05-13": 15}
 
-def get_responses(llm, domain_name, specified_instances = [], overwrite_previous=False, verbose=False, temp=0, num_trials=1, **prompt_specification):
+def get_responses(llm, domain_name, specified_instances = [], print_models=False, overwrite_previous=False, verbose=False, temp=0, num_trials=1, **prompt_specification):
+    if print_models:
+        #TODO refactor this
+        client = openai.OpenAI()
+        openai_models = client.models.list().data
+        print([x.id for x in openai_models])
+
+        api_key = os.environ.get("GROQ_API_KEY")
+        url = "https://api.groq.com/openai/v1/models"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        response = requests.get(url, headers=headers)
+        d = response.json()['data']
+        groq_models = [x['id'] for x in d]
+        print(groq_models)
+        exit()
+
     if llm != "gpt-4-turbo-2024-04-09":
         print("This isn't the right model, is it??? " + llm)
-        exit()
+        # exit()
     # Cost calculation setup
     input_cost  = 0.0
     output_cost = 0.0
@@ -102,14 +124,30 @@ def is_openai_model(llm):
     client = openai.OpenAI()
     openai_models = client.models.list().data
     return llm in [x.id for x in openai_models]
+@cache
+def is_bedrock_model(llm):
+
+    #TODO
+    pass
+@cache
+def is_groq_model(llm):
+    api_key = os.environ.get("GROQ_API_KEY")
+    url = "https://api.groq.com/openai/v1/models"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    response = requests.get(url, headers=headers)
+    d = response.json()['data']
+    groq_models = [x['id'] for x in d]
+    return llm in groq_models
 
 def send_query(query_text, llm, temp=0, stop_statement=STOP_STATEMENT):
-    if is_openai_model(llm):
-        # TODO do this in a principled way (grab from openai api and check etc)
-        messages=[
+    messages=[
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": query_text}
         ]
+    if is_openai_model(llm):
         try:
             client = openai.OpenAI()
             response = client.chat.completions.create(model=llm, messages=messages, temperature=temp, stop=stop_statement)
@@ -118,6 +156,19 @@ def send_query(query_text, llm, temp=0, stop_statement=STOP_STATEMENT):
             return ""
         text_response = response.choices[0].message.content
         return text_response.strip()
+    elif is_groq_model(llm):
+        #TODO add some way to slow it down if it goes too fast!
+        try: 
+            client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+            response = client.chat.completions.create(model=llm, messages=messages, temperature=temp, stop=stop_statement)
+        except Exception as e:
+            print("[-]: Failed Groq query execution: {}".format(e))
+            return ""
+        text_response = response.choices[0].message.content
+        return text_response.strip()
+    elif is_bedrock_model(llm):
+        raise NotImplementedError("Haven't implemented bedrock prompting yet!")
+    else: raise NotImplementedError(f"Evaluating on \"{llm}\" is not implemented yet!")
 
 if __name__=="__main__":
     Fire(get_responses)

@@ -18,15 +18,19 @@ FULL_RELAXATIONS = ["full", "info_dump", "dont_think"]
 FOOM_RELAXATIONS = ["foom", "foom_clearer"]
 VOWEL_RELAXATIONS = ["vowel"]
 
+BASIC_COTS = ["wei", "wei_incorrect", "first_letter_incorrect", "overexplained"]
+
+ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+
 ### SCRIPT FOR GENERATING INSTANCES ###
 
-def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_length=1, instance_type="instances"):
+def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_length=1, instance_type="instances", random=False):
     if instance_type not in ["instances", "examples"]: raise ValueError("What are you trying to generate? I can only do instances and examples.")
-    if overwrite_previous:
-        random.seed(a=SEED)
-    else: 
-        try: utils.load_pickle(RANDOM_FILE_LOC)
-        except: raise FileNotFoundError(f"Could not find pickled random state. If you want to start anew, pass --overwrite_previous=True")
+    # if overwrite_previous:
+    #     random.seed(a=SEED)
+    # else: 
+    try: utils.load_pickle(RANDOM_FILE_LOC)
+    except: raise FileNotFoundError(f"Could not find pickled random state. If you want to start anew, pass --overwrite_previous=True")
     
     instances = utils.read_json(DOMAIN_NAME, overwrite_previous, instance_type, verbose=True)
     if overwrite_previous: instances = {}
@@ -34,9 +38,12 @@ def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_len
     for instance_num in range(prev_num,prev_num+num):
         inst_names = []
         for _ in range(0, num_steps):
-            inst_names.append(generate_word(token_length, WORDS_LOCATION))
+            if random: inst_names.append(generate_random_word(token_length))
+            else: inst_names.append(generate_word(token_length, WORDS_LOCATION))
         # print(f'{instance_num}: {inst_names}')
         instances[instance_num] = {"raw_instance": inst_names, "uniform_token_length": token_length, "steps_to_solve":num_steps}
+        if random: instances[instance_num]["random_word"] = True
+        else: instances[instance_num]["random_word"] = False
     
     print(f'Writing {num} {instance_type} to json. (num steps: {num_steps}, token_length: {token_length})')
     # TODO This could be faster if it were only done every so often
@@ -51,6 +58,12 @@ def generate_word(token_length, words_location):
     utils.save_pickle(random.getstate(), RANDOM_FILE_LOC)
     return name
 
+def generate_random_word(token_length):
+    word = ""
+    while domain.token_l(word)<token_length:
+        word += random.choice(ALPHABET)
+    return word
+
 ### REQUIRED FUNCTIONS ###
 
 def generate(*args, **kwargs):
@@ -63,7 +76,7 @@ def evaluate(response,**kwargs):
     try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
     except: llm_claim = response["response"].strip().lower()
     if response["relaxation"] in FULL_RELAXATIONS+FOOM_RELAXATIONS+VOWEL_RELAXATIONS:
-        if response["cot"] in ["", "wei", "wei_incorrect", "first_letter_incorrect"] or response["magic"] in ["", " ", "Let's think step by step."]:
+        if response["cot"] in BASIC_COTS or response["magic"] in ["", " ", "Let's think step by step."]:
             return evaluate_raw(response, llm_claim, response["relaxation"])
         else: raise NotImplementedError(f"CoT '{response['cot']}' does not have evaluation implemented!")
     else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
@@ -81,8 +94,10 @@ def generate_instructions(problem_relaxation):
         return info_dump + basic_instructions
     elif problem_relaxation == "dont_think":
         return "While the examples show how to work through the problem, you should only output your answer. Do NOT output any thoughts. " + basic_instructions
-    elif problem_relaxation in ["full"] + FOOM_RELAXATIONS + VOWEL_RELAXATIONS:
+    elif problem_relaxation in VOWEL_RELAXATIONS:
         return "For the purposes of these problems, a vowel is any one of the letters \"a\",\"e\",\"i\",\"o\", or \"u\", but NOT \"y\". "  + basic_instructions
+    elif problem_relaxation in ["full"] + FOOM_RELAXATIONS:
+        return basic_instructions
     else: raise NotImplementedError
 
 def generate_query(instance, problem_relaxation):
@@ -134,6 +149,8 @@ def evaluate_raw(response, llm_claim, relaxation="full"):
     zero_free_ground_truth = "".join(evaluation["ground_truth"].split("0"))
     evaluation["0_free_set_correct"] = set(zero_free_llm_claim)  == set(zero_free_ground_truth)
     evaluation["0_free_correct"]     = zero_free_llm_claim       == zero_free_ground_truth
+    evaluation["initial_correct"]    = zero_free_llm_claim[:len(zero_free_ground_truth)] == zero_free_ground_truth
+    evaluation["response_length"]    = len(llm_claim_cleaned)
     return evaluation
 
 def token_distance(a, b, m=0):
@@ -143,11 +160,12 @@ def token_distance(a, b, m=0):
     else: return levenshtein.distance(ta, tb)
 
 ## COT PROMPT UTILITIES ##
-def generate_thoughts(example_instance, cot_type, problem_relaxation):
-    if not cot_type: return ""
-    elif cot_type == "wei": return generate_thoughts_wei(example_instance, problem_relaxation)
-    elif cot_type == "wei_incorrect": return generate_thoughts_wei_incorrect(example_instance)
-    elif cot_type == "first_letter_incorrect": return generate_thoughts_first_letter_incorrect(example_instance)
+def generate_thoughts(instance, cot, relaxation):
+    if not cot: return ""
+    elif cot == "wei": return generate_thoughts_wei(instance, relaxation)
+    elif cot == "wei_incorrect": return generate_thoughts_wei_incorrect(instance)
+    elif cot == "first_letter_incorrect": return generate_thoughts_first_letter_incorrect(instance)
+    elif cot == "overexplained": return generate_thoughts_overexplained(instance)
     else: raise NotImplementedError
 
 def generate_correct_evaluation(instance, problem_relaxation):
@@ -173,7 +191,7 @@ def lastvowel(word):
 
 ## SPECIFIC COT UTILITIES ##
 
-def generate_thoughts_wei(example_instance, problem_relaxation):
+def generate_thoughts_wei(instance, problem_relaxation):
     # Replicated from Wei, et. al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
     #
     # Original examples from the paper (Table 22 on Page 36):
@@ -188,7 +206,7 @@ def generate_thoughts_wei(example_instance, problem_relaxation):
         # 
         # Q: Take the last letters of the words in "Bill Gates" and concatenate them.
         # A: The last letter of "Bill" is "l". The last letter of "Gates" is "s". Concatenating them is "ls". The answer is ls.
-    word_list = example_instance["raw_instance"]
+    word_list = instance["raw_instance"]
     if problem_relaxation in FULL_RELAXATIONS:
         answer = "".join([word[-1] for word in word_list])
         per_word = [f'The last letter of \"{word}\" is {word[-1]}.' for word in word_list]
@@ -214,8 +232,21 @@ def nth_gen(n, word, ans):
         return f"\"{word}\" does not have an {nth(n)} letter, as it is too short, so we replace it with \"0\"."
     else: return f"The {nth(n+1)} letter of \"{word}\" is {ans}."
 
-def generate_thoughts_wei_incorrect(example_instance):
+def generate_thoughts_wei_incorrect(instance):
     return "The last letter of \"Bill\" is l. Concatenating them is \"l\". The answer is l."
 
-def generate_thoughts_first_letter_incorrect(example_instance):
+def generate_thoughts_first_letter_incorrect(instance):
     return "The last letter of \"Bill\" is B. The last letter of \"Gates\" is G. Concatenating them is \"bg\". The answer is bg."
+
+def generate_thoughts_overexplained(instance):
+    word_list = instance["raw_instance"]
+    answer = "".join(word[-1] for word in word_list)
+    per_word = [f'The last letter of \"{word}\" is {word[-1]}.' for word in word_list]
+    cot = " ".join(per_word)
+    cot+= "\nNow we concatenate them step by step.\n"
+    cot+= "\n".join([f'{answer[:n-1]} concatenated with {answer[n-1]} is {answer[:n]}.' for n in range(2,len(word_list)+1)])
+    if len(answer) ==1: cot+= f"Since there is only one letter, we can just output that letter: {answer}."
+    else: cot+= f'\nCompleting our pair-wise concatenations, we find that the answer is {answer}.'
+    return cot
+
+    

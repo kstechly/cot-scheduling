@@ -9,10 +9,11 @@ import pandas as pd #type: ignore
 import seaborn as sns #type: ignore
 import numpy as np #type: ignore
 import matplotlib.pyplot as plt #type: ignore
+import matplotlib.ticker as ticker #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=False, verbose=False, graph_it= '', x = 'steps_to_solve', y = 'correct', values='', columns='', h='', s='', idict={}, **kwargs):
+def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_previous=False, verbose=False, graph_it= '', x = 'steps_to_solve', y = 'correct', values='', columns='', h='', s='', idict={}, **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
@@ -38,7 +39,7 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
     # TODO factor this into a better place 
     flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
-    df = df.drop(df[df['llm'] != 'gpt-4-turbo-2024-04-09'].index)
+    if llm: df = df.drop(df[df['llm'] != llm].index)
     df.loc[(df.magic =="Let's think step by step.") & (df.cot==""), 'cot'] = 'kojima_magic'
     df.loc[(df.magic ==" ") & (df.cot==""), 'cot'] = 'thought_tag_only'
     df.replace({"cot":{"":"direct"}}, inplace=True)
@@ -66,22 +67,23 @@ def evaluate_responses(domain_name, specified_instances=[], overwrite_previous=F
         sns.color_palette("colorblind")
         sns.set_theme(style="whitegrid")
         if   graph_it == "line":
-            if h and s: sns.lineplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
-            elif h: sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep")
-            else: sns.lineplot(x=x, y=y, data=subdf)
+            if h and s: g = sns.lineplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
+            elif h: g = sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep")
+            else: g = sns.lineplot(x=x, y=y, data=subdf)
         elif graph_it == "corr":
             ssubdf = df[df.cot.isin(['wei','direct'])]
             ssubdf = ssubdf[ssubdf.bag_correct==True]
             subdf = pd.melt(ssubdf[[x,'correct', 'bag_correct','set_correct','cot']],ssubdf[[x,'cot']])
-            sns.lineplot(x=x, y='value', hue='variable',style='cot', data=subdf, palette="deep")
+            g = sns.lineplot(x=x, y='value', hue='variable',style='cot', data=subdf, palette="deep")
             # sns.lineplot(data=df[['correct', 'set_correct', 'bag_correct']])
         elif graph_it == "scatter":
-            if h and s: sns.scatterplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
-            elif h: sns.scatterplot(x=x, y=y, hue=h, data=subdf, palette="deep")
-            else: sns.scatterplot(x=x, y=y, data=subdf)
+            if h and s: g = sns.scatterplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
+            elif h: g = sns.scatterplot(x=x, y=y, hue=h, data=subdf, palette="deep")
+            else: g = sns.scatterplot(x=x, y=y, data=subdf)
         else: raise ValueError(f"Can't plot something of type {graph_it}")
         sns.despine(offset=10, trim=True)
         if domain_name == "coinflip": plt.plot([subdf.min()[x], subdf.max()[x]], [0.5, 0.5])
+        g.axes.xaxis.set_major_locator(ticker.MultipleLocator(2))
         plt.show()
 
 
