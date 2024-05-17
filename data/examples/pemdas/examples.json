@@ -1,0 +1,56 @@
+{
+    "0": {
+        "raw_instance": [
+            [
+                4,
+                "1"
+            ],
+            [
+                2,
+                "+"
+            ]
+        ],
+        "number_of_digits": 1,
+        "steps_to_solve": 2
+    },
+    "1": {
+        "raw_instance": [
+            [
+                5,
+                "1"
+            ],
+            [
+                7,
+                "-"
+            ],
+            [
+                6,
+                "/"
+            ]
+        ],
+        "number_of_digits": 1,
+        "steps_to_solve": 3
+    },
+    "2": {
+        "raw_instance": [
+            [
+                6,
+                "1"
+            ],
+            [
+                9,
+                "-"
+            ],
+            [
+                4,
+                "-"
+            ],
+            [
+                2,
+                "/"
+            ]
+        ],
+        "number_of_digits": 1,
+        "steps_to_solve": 4
+    }
+}

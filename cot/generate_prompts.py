@@ -14,7 +14,9 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
     instances = utils.read_json(domain_name, False, "instances")
 
     # Just so that we don't double store 0-example CoT prompts on accident:
-    if n_examples == 0: cot = ""
+    if n_examples == 0:
+        cot = ""
+        raise ValueError("You can't have a CoT without examples!")
     else: cot = cot
     
     # TODO implement subprompt generation. Want to check exactly the distribution that the models get.
