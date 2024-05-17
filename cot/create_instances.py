@@ -5,7 +5,7 @@ def create_instances(domain_name, num=0, step_max=1, token_max=1, overwrite_prev
     domain = domain_utils.domains[domain_name]
     # TODO make this just fill in the stuff that's missing
     #      -> this script should handle the cartesian product thing 
-    steps = range(1,step_max+1)
+    steps = range(2,step_max+1)
     tokens = range(1,token_max+1)
     total_done = 0
     overwrite_previous_flag = overwrite_previous

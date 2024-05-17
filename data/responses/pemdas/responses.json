@@ -1,0 +1,4666 @@
+{
+    "0": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 + (1)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "6",
+            "timestamp": 1715907837.6415365,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "1": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 * (2)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    4,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "8",
+            "timestamp": 1715907859.2483203,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "2": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (7)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907860.06917,
+            "estimated_cost": 0.0008500000000000001
+        }
+    ],
+    "3": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 + (2)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    7,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "9",
+            "timestamp": 1715907860.7841432,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "4": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 + (3)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    5,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "8",
+            "timestamp": 1715907861.5001335,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "5": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 / (8)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "1",
+            "timestamp": 1715907862.217745,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "6": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 + (1)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "6",
+            "timestamp": 1715907863.0417147,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "7": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (2)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "6",
+            "timestamp": 1715907863.8544393,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "8": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (8)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "1",
+            "timestamp": 1715907864.5715258,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "9": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (7)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907865.5993726,
+            "estimated_cost": 0.0008500000000000001
+        }
+    ],
+    "10": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 - (3)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    4,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "1",
+            "timestamp": 1715907866.316745,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "11": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 / (5)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    5,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "1",
+            "timestamp": 1715907870.7183807,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "12": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (3)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "6",
+            "timestamp": 1715907871.6341784,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "13": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 / (1)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "5",
+            "timestamp": 1715907872.455807,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "14": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (6)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "6",
+            "timestamp": 1715907873.2582593,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "15": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (7)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907873.9090657,
+            "estimated_cost": 0.0008500000000000001
+        }
+    ],
+    "16": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (7)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907876.552939,
+            "estimated_cost": 0.0008500000000000001
+        }
+    ],
+    "17": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (1)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "8",
+            "timestamp": 1715907877.2733345,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "18": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 2 * (4)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    2,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907878.0895982,
+            "estimated_cost": 0.0008500000000000001
+        }
+    ],
+    "19": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (5)\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 2,
+            "response": "4",
+            "timestamp": 1715907883.8224359,
+            "estimated_cost": 0.00076
+        }
+    ],
+    "20": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 / (7 - (4))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    3,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907884.5415647,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "21": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (5 + (1))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "3",
+            "timestamp": 1715907885.256251,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "22": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 * (9 - (8))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    8,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907885.878612,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "23": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 * (9 / (9))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    9,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907886.6030889,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "24": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 - (8 - (7))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    5,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "4",
+            "timestamp": 1715907888.0227256,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "25": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (7))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "7",
+            "timestamp": 1715907888.7370257,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "26": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (8 + (1))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    8,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n1",
+            "timestamp": 1715907889.457068,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "27": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 + (1 + (2))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    3,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "6",
+            "timestamp": 1715907890.171658,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "28": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (8 / (2))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer] 5",
+            "timestamp": 1715907891.2991536,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "29": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (8 - (3))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n4",
+            "timestamp": 1715907892.3631632,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "30": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 + (3 / (1))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    3,
+                    "/"
+                ],
+                [
+                    6,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "9",
+            "timestamp": 1715907893.1739259,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "31": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (1 * (8))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "1",
+            "timestamp": 1715907894.478161,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "32": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (5 + (1))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "3",
+            "timestamp": 1715907895.1908667,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "33": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 + (6 - (1))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    4,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907896.0091732,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "34": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (8 - (4))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "4",
+            "timestamp": 1715907896.828106,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "35": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 * (9 - (8))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    7,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n7",
+            "timestamp": 1715907897.648096,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "36": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 / (3 + (5))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n1",
+            "timestamp": 1715907899.7981303,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "37": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 - (4 / (1))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    4,
+                    "/"
+                ],
+                [
+                    6,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "2",
+            "timestamp": 1715907900.7187955,
+            "estimated_cost": 0.00079
+        }
+    ],
+    "38": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 - (9 - (5))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    5,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n1",
+            "timestamp": 1715907901.4422545,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "39": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 2 * (9 - (5))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    2,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 3,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907902.2556474,
+            "estimated_cost": 0.00088
+        }
+    ],
+    "40": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (3 * (3)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    3,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "9",
+            "timestamp": 1715907903.003298,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "41": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (5 - (4 - (3)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    4,
+                    "-"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n4",
+            "timestamp": 1715907903.6757512,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "42": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 - (6 - (8 / (8)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    6,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907904.507843,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "43": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (8 / (1 * (1)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "8",
+            "timestamp": 1715907905.2246735,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "44": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (3 + (8 - (6)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n6",
+            "timestamp": 1715907906.0460055,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "45": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (5 + (9 - (5)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907907.3750186,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "46": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 / (9 - (1 + (3)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    5,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907908.5022702,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "47": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (3 * (7 - (6)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    3,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "3",
+            "timestamp": 1715907909.1212265,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "48": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 / (4 + (4 * (1)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    4,
+                    "*"
+                ],
+                [
+                    4,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907909.9361784,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "49": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 - (6 * (6 / (6)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    6,
+                    "*"
+                ],
+                [
+                    7,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "1",
+            "timestamp": 1715907910.754014,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "50": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (9 / (9 - (6)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "3",
+            "timestamp": 1715907911.5768778,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "51": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 + (8 - (2 / (1)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    2,
+                    "/"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    3,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "9",
+            "timestamp": 1715907912.39315,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "52": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 * (9 / (1 * (9)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    4,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "4",
+            "timestamp": 1715907913.1393285,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "53": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (8 - (6 / (3)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "8",
+            "timestamp": 1715907913.8264651,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "54": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (8 + (5 / (5)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    5,
+                    "/"
+                ],
+                [
+                    8,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907914.647516,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "55": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (1 + (9 - (8)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "6",
+            "timestamp": 1715907915.4677896,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "56": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (8 - (1 * (5)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n4",
+            "timestamp": 1715907916.4893615,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "57": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 / (9 / (1 * (9)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    1,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "1",
+            "timestamp": 1715907917.2062917,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "58": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 + (3 - (9 / (9)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    3,
+                    "-"
+                ],
+                [
+                    4,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "7",
+            "timestamp": 1715907918.0246441,
+            "estimated_cost": 0.00082
+        }
+    ],
+    "59": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 + (2 + (6)))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 4,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907918.9098618,
+            "estimated_cost": 0.00091
+        }
+    ],
+    "60": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 + (9 - (2 + (1 * (6))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    6,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n6",
+            "timestamp": 1715907919.6665218,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "61": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (3 + (6 - (5 - (4))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "9",
+            "timestamp": 1715907920.3803232,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "62": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (1 * (1 + (8))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907921.301068,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "63": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 / (9 - (1 * (1 * (8))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    1,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "1",
+            "timestamp": 1715907922.1181138,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "64": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (7 + (2 * (9 / (9))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    7,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907922.8376732,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "65": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 / (4 + (8 - (1 + (4))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    4,
+                    "+"
+                ],
+                [
+                    7,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "1",
+            "timestamp": 1715907923.7587798,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "66": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (1 * (3 + (7 - (1))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907924.5779233,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "67": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (3 * (1 * (8 / (4))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    3,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907925.2951891,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "68": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (1 * (1 * (2 + (7))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n1",
+            "timestamp": 1715907926.1155267,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "69": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (2 - (9 / (9 * (1))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    9,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "4",
+            "timestamp": 1715907926.9354725,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "70": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 + (2 * (9 - (5))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907927.7498238,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "71": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 + (8 / (3 + (1 * (5))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    3,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907928.4691508,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "72": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 2 + (1 + (6 - (8 / (8))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    2,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907929.186271,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "73": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (7 - (6 - (5 * (1))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "*"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "12",
+            "timestamp": 1715907929.9001782,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "74": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (1 * (1 * (2 + (7))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n1",
+            "timestamp": 1715907930.7218795,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "75": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 - (9 - (1 * (2 + (6))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    4,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "3",
+            "timestamp": 1715907933.5900874,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "76": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 / (9 - (6 + (5 - (3))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    6,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    3,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "1",
+            "timestamp": 1715907934.3062077,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "77": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (7 / (8 - (2 + (5))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907935.0204473,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "78": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (6 + (5 / (7 - (2))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    5,
+                    "/"
+                ],
+                [
+                    6,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907936.0483158,
+            "estimated_cost": 0.0009500000000000001
+        }
+    ],
+    "79": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (5 - (8 / (4 + (4))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    4,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 5,
+            "response": "12",
+            "timestamp": 1715907936.6616309,
+            "estimated_cost": 0.0008600000000000001
+        }
+    ],
+    "80": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (1 * (1 + (8 / (1)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "9",
+            "timestamp": 1715907937.3737392,
+            "estimated_cost": 0.0008900000000000001
+        }
+    ],
+    "81": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (7 / (5 / (1 + (9 - (5)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    5,
+                    "/"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n7",
+            "timestamp": 1715907938.3034012,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "82": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 / (5 + (4 - (3 - (6 - (4)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    3,
+                    "-"
+                ],
+                [
+                    4,
+                    "-"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n6",
+            "timestamp": 1715907939.1216269,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "83": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 / (9 - (1 * (8 - (8 - (6)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    6,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907940.552989,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "84": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 - (3 * (8 / (9 - (1 / (1)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    1,
+                    "/"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    3,
+                    "*"
+                ],
+                [
+                    7,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907941.3716204,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "85": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 + (2 / (9 / (7 + (2 * (1)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    7,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "/"
+                ],
+                [
+                    7,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907942.0594084,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "86": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (7 / (1 / (2 - (9 - (8)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    2,
+                    "-"
+                ],
+                [
+                    1,
+                    "/"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n6",
+            "timestamp": 1715907942.9111056,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "87": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (4 / (8 / (3 + (5 * (1)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    5,
+                    "*"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    4,
+                    "/"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907943.726894,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "88": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (1 * (2 + (1 + (6)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "10",
+            "timestamp": 1715907944.5469105,
+            "estimated_cost": 0.0008900000000000001
+        }
+    ],
+    "89": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 - (2 + (8 / (7 + (9 / (9)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    7,
+                    "+"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    8,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "5",
+            "timestamp": 1715907945.2301898,
+            "estimated_cost": 0.0008900000000000001
+        }
+    ],
+    "90": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 - (4 / (6 / (5 - (9 - (7)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    4,
+                    "/"
+                ],
+                [
+                    5,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907945.9804926,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "91": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 - (2 - (4 / (2 + (3 - (1)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    3,
+                    "-"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    4,
+                    "/"
+                ],
+                [
+                    2,
+                    "-"
+                ],
+                [
+                    3,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907947.6193976,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "92": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (9 / (8 + (9 - (2 * (4)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    8,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907948.4388747,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "93": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 - (2 + (1 + (2 * (9 - (8)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    7,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907949.1536136,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "94": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (5 + (9 / (8 - (1 * (5)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n7",
+            "timestamp": 1715907949.8706403,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "95": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 + (3 * (6 - (1 + (3)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    3,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n16",
+            "timestamp": 1715907952.5370345,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "96": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (9 - (1 * (7 + (3 / (3)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    3,
+                    "/"
+                ],
+                [
+                    7,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907954.0711122,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "97": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (4 * (2 * (9 / (9 * (1)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    1,
+                    "1"
+                ],
+                [
+                    9,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    4,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "8",
+            "timestamp": 1715907954.8025289,
+            "estimated_cost": 0.0008900000000000001
+        }
+    ],
+    "98": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 * (9 - (9 - (7 - (2 + (4)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    4,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n20",
+            "timestamp": 1715907955.531665,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "99": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 + (2 - (9 / (4 + (1 + (4)))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    4,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "-"
+                ],
+                [
+                    8,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 6,
+            "response": "[Answer]\n7",
+            "timestamp": 1715907956.2239125,
+            "estimated_cost": 0.0009800000000000002
+        }
+    ],
+    "100": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 / (6 / (9 / (1 + (4 * (1 * (2))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    4,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    6,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "9",
+            "timestamp": 1715907956.9362695,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "101": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 / (1 * (1 + (1 * (4 * (9 - (7))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    4,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907958.0661325,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "102": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 - (1 + (5 - (9 - (3 + (7 - (4))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    4,
+                    "1"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    4,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907958.8862717,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "103": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (1 + (1 + (7 / (8 / (8))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n2",
+            "timestamp": 1715907959.8045814,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "104": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 2 / (9 - (8 * (7 / (7 * (6 / (6))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    7,
+                    "*"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    8,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    2,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "2",
+            "timestamp": 1715907960.518589,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "105": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 - (9 / (1 * (1 + (5 + (9 - (6))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    6,
+                    "1"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    3,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "3",
+            "timestamp": 1715907961.441968,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "106": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (9 - (2 + (3 + (9 - (1 * (7))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907962.158572,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "107": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 4 + (9 / (1 * (7 + (4 - (7 - (5))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    7,
+                    "-"
+                ],
+                [
+                    4,
+                    "-"
+                ],
+                [
+                    7,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    4,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907962.8795664,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "108": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (9 - (1 + (5 - (9 / (1 + (8))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    5,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "7",
+            "timestamp": 1715907963.8577788,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "109": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 * (9 * (2 - (9 / (1 * (9))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "-"
+                ],
+                [
+                    9,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "1",
+            "timestamp": 1715907964.7764344,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "110": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 2 + (1 + (9 - (2 + (5 / (8 - (3))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    5,
+                    "/"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    2,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907965.7524056,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "111": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 7 / (2 - (9 / (1 * (4 + (2 + (3))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    4,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "-"
+                ],
+                [
+                    7,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n5",
+            "timestamp": 1715907966.718217,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "112": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 3 + (2 * (8 - (6 - (9 / (1 * (9))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    6,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    3,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n17",
+            "timestamp": 1715907967.4840796,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "113": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 / (2 + (8 / (9 - (8 - (9 / (9))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    6,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "3",
+            "timestamp": 1715907968.2754734,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "114": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 9 - (8 / (9 / (9 * (9 - (5 + (3))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    3,
+                    "1"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    9,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    9,
+                    "-"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907969.0182092,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "115": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 * (1 + (7 + (9 / (1 * (1 + (8))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    8,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    7,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n9",
+            "timestamp": 1715907969.7379506,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "116": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 / (9 / (3 + (5 + (3 / (1 + (2))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    3,
+                    "/"
+                ],
+                [
+                    5,
+                    "+"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    1,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n3",
+            "timestamp": 1715907970.4533067,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "117": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 5 + (6 / (9 / (8 - (8 - (8 - (5))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    5,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n11",
+            "timestamp": 1715907971.3759146,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "118": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 6 / (2 * (9 / (3 + (6 / (7 / (7))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    7,
+                    "1"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    6,
+                    "/"
+                ],
+                [
+                    3,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    6,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "3",
+            "timestamp": 1715907972.0948904,
+            "estimated_cost": 0.00092
+        }
+    ],
+    "119": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 2 + (8 - (5 / (4 / (9 - (1 * (5))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    5,
+                    "1"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    9,
+                    "-"
+                ],
+                [
+                    4,
+                    "/"
+                ],
+                [
+                    5,
+                    "/"
+                ],
+                [
+                    8,
+                    "-"
+                ],
+                [
+                    2,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 7,
+            "response": "[Answer]\n10",
+            "timestamp": 1715907973.1162987,
+            "estimated_cost": 0.00101
+        }
+    ],
+    "120": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 1 + (1 + (1 * (2 + (1 + (1 * (2 * (2)))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    2,
+                    "*"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    2,
+                    "+"
+                ],
+                [
+                    1,
+                    "*"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    1,
+                    "+"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 8,
+            "response": "12",
+            "timestamp": 1715907973.8321078,
+            "estimated_cost": 0.00095
+        }
+    ],
+    "121": [
+        {
+            "trial_id": 0,
+            "llm": "gpt-4-turbo-2024-04-09",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number representing the final value of the calculation. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nSimplify the following expression into a single number: 8 / (9 / (1 + (8 / (7 / (7 * (9 / (9)))))))\n\n\n[Answer]\n",
+            "raw_instance": [
+                [
+                    9,
+                    "1"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    7,
+                    "*"
+                ],
+                [
+                    7,
+                    "/"
+                ],
+                [
+                    8,
+                    "/"
+                ],
+                [
+                    1,
+                    "+"
+                ],
+                [
+                    9,
+                    "/"
+                ],
+                [
+                    8,
+                    "/"
+                ]
+            ],
+            "number_of_digits": 1,
+            "steps_to_solve": 8,
+            "response": "[Answer]\n8",
+            "timestamp": 1715907974.7516634,
+            "estimated_cost": 0.0010400000000000001
+        }
+    ]
+}
