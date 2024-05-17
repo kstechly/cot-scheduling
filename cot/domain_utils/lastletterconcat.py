@@ -225,7 +225,7 @@ def nth(n):
     if   n==1: return "1st"
     elif n==2: return "2nd"
     elif n==3: return "3rd"
-    elif n>20: raise ValueError("I don't know how to write 21st, so I'm going to throw a fit. Update lastletterconcat.py") #TODO
+    elif n>20: raise ValueError("I don't know how to write 21st, so I'm going to throw a fit. Go update lastletterconcat.py") #TODO
     else:      return f"{n}th" #Technically fails for 21
 def nth_gen(n, word, ans):
     if ans == "0":
