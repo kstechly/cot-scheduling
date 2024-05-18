@@ -14,7 +14,7 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
     instances = utils.read_json(domain_name, False, "instances")
 
     # Just so that we don't double store 0-example CoT prompts on accident:
-    if n_examples == 0:
+    if n_examples == 0 and cot:
         cot = ""
         raise ValueError("You can't have a CoT without examples!")
     else: cot = cot

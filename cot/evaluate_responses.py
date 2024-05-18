@@ -76,6 +76,11 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
             subdf = pd.melt(ssubdf[[x,'correct', 'bag_correct','set_correct','cot']],ssubdf[[x,'cot']])
             g = sns.lineplot(x=x, y='value', hue='variable',style='cot', data=subdf, palette="deep")
             # sns.lineplot(data=df[['correct', 'set_correct', 'bag_correct']])
+        elif graph_it == "chain":
+            ssubdf = df[df.cot.isin(['basic'])]
+            # ssubdf = ssubdf[ssubdf.bag_correct==True]
+            subdf = pd.melt(ssubdf[[x,'correct', 'chain_correct','smooth_chain_correct','normalized_chain_length','cot']],ssubdf[[x,'cot']])
+            g = sns.lineplot(x=x, y='value', hue='cot',style='variable', data=subdf, palette="deep")
         elif graph_it == "scatter":
             if h and s: g = sns.scatterplot(x=x, y=y, hue=h, style=s, data=subdf, palette="deep")
             elif h: g = sns.scatterplot(x=x, y=y, hue=h, data=subdf, palette="deep")

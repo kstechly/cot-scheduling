@@ -51658,5 +51658,405 @@
             "timestamp": 1716001527.8876333,
             "estimated_cost": 0.0
         }
+    ],
+    "1230": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 58 and 28 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                58,
+                28
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 114",
+            "timestamp": 1716001530.3451674,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 58 and 28 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                58,
+                28
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(58, 28, 3)] % 128",
+            "timestamp": 1716001532.9055223,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1231": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 97 and 86 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                97,
+                86
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 114",
+            "timestamp": 1716001535.3627665,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 97 and 86 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                97,
+                86
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(97, 86, 3)] % 128",
+            "timestamp": 1716001537.8205905,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1232": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 102 and 103 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                102,
+                103
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 114",
+            "timestamp": 1716001540.176299,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 102 and 103 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                102,
+                103
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103, FIB(102, 103,",
+            "timestamp": 1716001552.057213,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1233": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 86 and 127 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                86,
+                127
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 114",
+            "timestamp": 1716001552.4639452,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 86 and 127 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                86,
+                127
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(86, 127, 3)]",
+            "timestamp": 1716001552.8737652,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1234": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 26 and 105 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                26,
+                105
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "Answer 105",
+            "timestamp": 1716001553.181734,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 26 and 105 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                26,
+                105
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(26, 105, 3)] % 128",
+            "timestamp": 1716001553.6950808,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1235": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 33 and 53 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                33,
+                53
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "Answer 53",
+            "timestamp": 1716001556.1501484,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 33 and 53 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                33,
+                53
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(33, 53, 3)] % 128",
+            "timestamp": 1716001558.6079783,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1236": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 107 and 1 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                107,
+                1
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 113",
+            "timestamp": 1716001561.0669022,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 107 and 1 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                107,
+                1
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(107, 1, 3)]",
+            "timestamp": 1716001563.6303875,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1237": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 113 and 120 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                113,
+                120
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 113",
+            "timestamp": 1716001566.0830178,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 113 and 120 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                113,
+                120
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(113, 120, 3)] % 128",
+            "timestamp": 1716001568.5437899,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1238": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 37 and 126 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                37,
+                126
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 126",
+            "timestamp": 1716001570.998393,
+            "estimated_cost": 0.0
+        },
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "tool",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nThe fibonacci function takes two inputs x_n and x_{n+1} and outputs x_{n+2}, where x_{n+2} := x_n + x_{n+1}. When applied recursively, it continues this pattern, e.g. x_{n+3} := x_{n+1} + x_{n+2} = x_{n+1} + (x_n + x_{n+1}). You will need to know this function to solve these problems.\nWe introduce the FIB tool. To use it, put \\{FIB(a,b,d)\\} anywhere in your output. Any FIB calls will be replaced downstream by d recursive calls to a fibbonaci function tool given starting inputs of a and b.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final number or a tool call. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 37 and 126 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                37,
+                126
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[FIB(37, 126, 3)]",
+            "timestamp": 1716001573.5590158,
+            "estimated_cost": 0.0
+        }
+    ],
+    "1239": [
+        {
+            "trial_id": 0,
+            "llm": "llama3-8b-8192",
+            "temp": 0,
+            "relaxation": "full",
+            "cot": "",
+            "n_examples": 0,
+            "magic": "",
+            "example_type": "basic",
+            "prompt": "[Instructions]\nAfter the [Answer] tag, you may only respond with a single number. Do not include anything else after that tag. The [Answer] tag must precede the final answer.\nProblem to solve:\n\n[Question]\nWhat is the result of applying the fibonacci function starting from input 26 and 53 recursively 3 times? Return an answer mod 128.\n\n\n[Answer]\n",
+            "raw_instance": [
+                26,
+                53
+            ],
+            "mod": 128,
+            "depth": 3,
+            "response": "[Answer] 53",
+            "timestamp": 1716001575.9064867,
+            "estimated_cost": 0.0
+        }
     ]
 }
