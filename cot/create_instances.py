@@ -5,13 +5,13 @@ def create_instances(domain_name, num=0, step_min=2, step_max=1, token_max=1, ov
     domain = domain_utils.domains[domain_name]
     # TODO make this just fill in the stuff that's missing
     #      -> this script should handle the cartesian product thing 
-    steps = range(step_min,step_max+1)
-    tokens = range(1,token_max+1)
+    depths = range(1,7)
+    modulos = [128]
     total_done = 0
     overwrite_previous_flag = overwrite_previous
-    for step in steps:
-        for token_count in tokens:
-            domain.generate_instances(num=num, overwrite_previous=overwrite_previous_flag, num_steps = step, token_length = token_count, **kwargs)
+    for depth in depths:
+        for modulo in modulos:
+            domain.generate_instances(num=num, overwrite_previous=overwrite_previous_flag, depth = depth, modulo = modulo, **kwargs)
             overwrite_previous_flag = False
             total_done += num
     print(f'{total_done} instances created.')
