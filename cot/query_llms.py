@@ -78,6 +78,8 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
                 for trial_id in range(0, num_trials):
                     trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
                     trial_specification.update(prompt)
+                    if utils.includes_dict(previous_instance_output, trial_specification): continue
+                    trial_specification.pop('prompt',None)
 
                     if utils.includes_dict(previous_instance_output, trial_specification) and not overwrite_previous: continue
                     ind = utils.dict_index(previous_instance_output, trial_specification)
@@ -87,7 +89,7 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
                     trial_cost = token_length*input_cost
                     if verbose:
                         print(f"==Instance: {instance}, Tokens: {token_length}==")
-                        info_dict = {x: trial_specification[x] for x in trial_specification.keys() if x != "prompt"}
+                        info_dict = {x: trial_specification[x] for x in trial_specification.keys()}
                         print(f'=={info_dict}==')
                         print(prompt_text)
                     trial_output = trial_specification

@@ -136,29 +136,86 @@ def evaluate_full_raw(response_data, llm_claim, relaxation):
         else: 
             evaluation["chain_errors"] = check_chain_errors(evaluation["ground_truth_chain"], chain_claim_answers)
             evaluation["chain_correct"] = evaluation["chain_errors"] == 0
-            evaluation["smooth_chain_correct"] = 1-min(1,evaluation["chain_errors"]/response_data["steps_to_solve"])
+            # off-by-one error fixing: num of steps is actually num of numbers, not number of operations
+            evaluation["smooth_chain_correct"] = 1-min(1,evaluation["chain_errors"]/(response_data["steps_to_solve"]-1))
     if relaxation == "chain_int":
         # extract the expressions the llm gave
         chain_claim_expressions = parse_intermediates(response_data["response"],"expression")
         # check if 1) these are correctly chosen -- output the number of expression errors and normalized
-
         # TODO
+        # evaluation["expression_errors"] = check_expression_errors(chain_claim_expressions, chain_claim_answers, response_data["raw_instance"])
+        # evaluation["expression_correct"] = evaluation["expression_errors"] == 0
+        # evaluation["smooth_expression_correct"] = 1-min(1,evaluation["expression_errors"]/(response_data["steps_to_solve"]-1))
         #          2) these evaluated correctly  -- output the number of eval errors and normalized
+        if check_eval_errors(chain_claim_answers, chain_claim_expressions) == "BARHRST": 
+            print(f"cca: {chain_claim_answers}\ncce: {chain_claim_expressions}")
+            raise ValueError(response_data["response"])
         evaluation["eval_errors"] = check_eval_errors(chain_claim_answers, chain_claim_expressions)
-        raise NotImplementedError
+        evaluation["eval_correct"] = evaluation["eval_errors"] == 0
+        evaluation["smooth_eval_correct"] = 1-min(1,evaluation["eval_errors"]/evaluation["chain_length"])
+        evaluation["digit_eval_errors"] = check_digit_eval_errors(chain_claim_answers, chain_claim_expressions, response_data["number_of_digits"])
+        evaluation["digit_eval_correct"] = evaluation["digit_eval_errors"] == 0
+        # evaluation["smooth_digit_eval_correct"] = 1-evaluation["digit_eval_errors"]/evaluation["chain_length"]
     evaluation["correct"] = llm_claim_cleaned == evaluation["ground_truth"]
     return evaluation
 
-def check_eval_errors(chain_claim_expressions, chain_claim_answers):
+def check_eval_errors(chain_claim_answers, chain_claim_expressions):
     eval_errors = 0
     for k in chain_claim_expressions.keys():
-        eval_errors+= simplify(chain_claim_expressions[k]) != simplify(chain_claim_answers)
+        # print(chain_claim_expressions.keys())
+        # print(chain_claim_answers.keys())
+        if k not in chain_claim_answers.keys():
+            eval_errors+=1
+            continue
+        if "undefined" in chain_claim_answers[k].lower() or "division by zero" in chain_claim_answers[k].lower():
+            eval_errors+=1
+            continue
+        chain_claim_expression = chain_claim_expressions[k].split("=")[0]
+        # print(f'{chain_claim_expression.count("(")} vs {chain_claim_expression.count(")")}')
+        if chain_claim_expression.count("(") > chain_claim_expression.count(")"):
+            print("ADDING PARENTHESES")
+            chain_claim_expression += ")"*(chain_claim_expression.count("(")-chain_claim_expression.count(")"))
+            print(chain_claim_expression)
+        try: chain_claim_expression = simplify(chain_claim_expression)
+        except:
+            print("expression error")
+            print(k)
+            print(chain_claim_expressions[k])
+            print(chain_claim_expression)
+            return "BARHRST"
+        try: chain_claim_answer = simplify(chain_claim_answers[k].split("=")[-1])
+        except:
+            print("answer error")
+            print(k)
+            print(chain_claim_answers[k]) 
+            return "BARHRST"
+        eval_errors+= simplify(chain_claim_expression) != simplify(chain_claim_answer)
+    return eval_errors
+def check_digit_eval_errors(chain_claim_answers, chain_claim_expressions, num_digits):
+    allowed_numbers = list(range(1,10**num_digits))
+    eval_errors = 0
+    for k in chain_claim_expressions.keys():
+        if chain_claim_expressions[k].count("(") != chain_claim_expressions[k].count(")"):
+            continue
+        try: int(chain_claim_answers[k])
+        except: continue
+        eval_errors+= simplify(chain_claim_expressions[k].split("=")[0]) != simplify(chain_claim_answers[k].split("=")[-1]) if int(chain_claim_answers[k]) in allowed_numbers and simplify(int(chain_claim_answers[k])) == simplify(chain_claim_answers[k]) else 0
     return eval_errors
 def check_expression_errors(chain_claim_expressions, chain_claim_answers, raw_instance):
     # for each expression, it takes some portion of the instance, and some portion of the previous answers
+    # The output should be the number of errors made (where one error counts per basic (aka 2-number) expression,
+    #        and so an error including three numbers will count for 2 errors)
+    print(raw_instance)
+    print(chain_claim_expressions)
+    print(chain_claim_answers)
+
+    # for each portion, we want to see if it is 
+    #       1) using the previous answer in the new expression
+    #       2) using some next portion of the full expression in the next answer
+    #           - a few ways that can go wrong: skips parts, ??? TODO check the actual data for ones that didn't work
+    #           - skip part, do some operation twice
     
-    
-    raise NotImplementedError
+    raise NotImplementedError("Implement expression error checking!!")
 
 def check_chain_errors(ground_truth_chain, chain_claim):
     # generates a correct chain, then checks whether at each step it's the same
@@ -166,9 +223,7 @@ def check_chain_errors(ground_truth_chain, chain_claim):
     lc = len(chain_claim)
     min_l = min(lg, lc)
     num_errors = abs(lg-lc)
-    print(num_errors)
     for n in range(1, min_l+1):
-        print(ground_truth_chain[str(n)]==chain_claim[str(n)])
         num_errors+= int(ground_truth_chain[str(n)]!=chain_claim[str(n)])
     return num_errors
 def generate_correct_chain(raw_eq):
@@ -181,7 +236,7 @@ def generate_correct_chain(raw_eq):
     return chain
 def parse_intermediates(response_text, key = "answer"):
     response_text = response_text.lower()
-    answers_processing = response_text.split("[intermediate {key} ")
+    answers_processing = response_text.split(f"\n[intermediate {key} ")
     intermediate_answers = {}
     for n in range(1,len(answers_processing)):
         answer_num = answers_processing[n].split("]")[0]
