@@ -124,6 +124,7 @@ def evaluate_tool_use(response, llm_claim, problem_relaxation):
     if problem_relaxation == "python": raise NotImplementedError("Implement Python evaluation in a safe way.")#program_output = eval(llm_program)
     elif problem_relaxation == "tool":
         # print(llm_program)
+        llm_program = "".join(llm_program.split("\\"))
         try: 
             a,b,d = llm_program.split('{fib(')[1].split(')}')[0].split(',')
             # print("curly")
