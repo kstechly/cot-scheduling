@@ -11,6 +11,7 @@ DOMAIN_NAME = "sorting"
 ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 FULL_RELAXATIONS = ["full", "no_space"]
+TOOL_RELAXATIONS = ["tool"]
 
 ### SCRIPT FOR GENERATING INSTANCES ###
 
@@ -67,6 +68,12 @@ def evaluate(response,**kwargs):
             except: llm_claim = response["response"].strip().lower()
             return evaluate_full_raw(response, llm_claim, response["relaxation"])
         else: raise NotImplementedError(f"CoT '{response['cot']}' does not have evaluation implemented!")
+    if response["relaxation"] in TOOL_RELAXATIONS:
+        #TODO this may be bad bc of case sensitivity...
+        # try: llm_claim = response["response"].split("[Answer]")[1].strip().lower()
+        # except:
+        llm_claim = response["response"].strip().lower()
+        return evaluate_tool_use(response, llm_claim, response["relaxation"])
     else: raise NotImplementedError(f"Relaxation {response['relaxation']} does not have evaluation implemented!")
 
 ### HELPER FUNCTIONS ###
@@ -77,13 +84,15 @@ def generate_instructions(problem_relaxation):
         return "After the [Answer] tag, you may only respond with a single sorted string. Do not include anything else after that tag. The [Answer] tag must precede the final answer."
     elif problem_relaxation == "lucas":
         return ""
+    elif problem_relaxation in ["tool"]:
+        return "We introduce the SORT tool. To use it, put \{SORT(s)\} anywhere in your output. Any SORT calls will be replaced downstream by a sorted version of the string s. For example, \{Sort(cabd)\} would be replaced with abcd.\nAfter the [Answer] tag, you may only respond with your final answer, which can be either the final sorted string or a tool call. The [Answer] tag must precede the final answer."
     else: raise NotImplementedError
 
 def generate_query(instance, problem_relaxation):
     instance_data = instance["raw_instance"]
     query  = f'[Question]\n'
     query += f"Please sort the string  \""
-    query += "".join(instance_data) if problem_relaxation == "no_space" else " ".join(instance_data)
+    query += "".join(instance_data) if problem_relaxation in ["no_space","tool"] else " ".join(instance_data)
     query += "\"."
     return query
 
@@ -107,12 +116,34 @@ def evaluate_full_raw(response, llm_claim, problem_relaxation):
             llm_claim_cleaned = "".join(llm_claim_cleaned.split("-"))
     else: evaluation["well_formed_response"] = True
     
-    if llm_claim_cleaned != evaluation["ground_truth"] and problem_relaxation == "no_space": print(f"claimed: {llm_claim_cleaned}, truth: {evaluation['ground_truth']}")
+    if llm_claim_cleaned != evaluation["ground_truth"] and problem_relaxation in ["no_space","tool"]: print(f"claimed: {llm_claim_cleaned}, truth: {evaluation['ground_truth']}")
 
     evaluation["set_correct"]        = set(llm_claim_cleaned)    == set(evaluation["ground_truth"])
     evaluation["bag_correct"]        = sorted(llm_claim_cleaned) == sorted(evaluation["ground_truth"])
     evaluation["correct"]            = llm_claim_cleaned         == evaluation["ground_truth"]
     return evaluation
+
+def evaluate_tool_use(response, llm_claim, problem_relaxation):
+    # first clean the llm claim
+    #TODO
+    llm_program = llm_claim
+    if problem_relaxation == "python": raise NotImplementedError("Implement Python evaluation in a safe way.")#program_output = eval(llm_program)
+    elif problem_relaxation == "tool":
+        # print(llm_program)
+        try: 
+            x,y,op = llm_program.split('{calc(')[1].split(')}')[0].split(',')
+            # print("curly")
+            program_output = sort_function(int(x),int(y),int(op))%response["mod"]
+        except: 
+            try:
+                x,y,op = llm_program.split('[calc(')[1].split(')]')[0].split(',')
+                # print("square")
+                # print(a,b,d)
+                program_output = sort_function(int(x),int(y),int(op))%response["mod"]
+                # print("output")
+                # print(program_output)
+            except: program_output = llm_program
+    return evaluate_full_raw(response, str(program_output), problem_relaxation)
 
 ## COT PROMPT UTILITIES ##
 def generate_thoughts(example_instance, cot_type):
@@ -122,8 +153,12 @@ def generate_thoughts(example_instance, cot_type):
 def generate_correct_evaluation(example_instance, problem_relaxation):
     if problem_relaxation in ["full", "lucas"]:
         return " ".join(sorted(example_instance["raw_instance"]))
-    elif problem_relaxation in ["no_space"]:
+    elif problem_relaxation in ["no_space", "tool"]:
         return "".join(sorted(example_instance["raw_instance"]))
     else: raise NotImplementedError
+
+def sort_function(s):
+    return sorted(s)
+
 
 ## SPECIFIC COT UTILITIES ##
