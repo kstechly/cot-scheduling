@@ -13,7 +13,7 @@ import matplotlib.ticker as ticker #type: ignore
 
 import utils
 
-def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_previous=False, verbose=False, graph_it= '', x = 'steps_to_solve', y = 'correct', values='', columns='', h='', s='', idict={}, **kwargs):
+def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_previous=False, verbose=False, graph_it= '', x = 'steps_to_solve', y = 'correct', values='', columns='', aggfunc='mean', h='', s='', idict={}, **kwargs):
     domain = domain_utils.domains[domain_name]
 
     # Load response data
@@ -62,7 +62,7 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
     # subdf = subdf[subdf.steps_to_solve>1]
     if values and columns:
         print("\n")
-        print(subdf.pivot_table(columns=columns, values=values))
+        print(subdf.pivot_table(columns=columns, values=values, aggfunc=aggfunc))
     if graph_it:
         sns.color_palette("colorblind")
         sns.set_theme(style="whitegrid")

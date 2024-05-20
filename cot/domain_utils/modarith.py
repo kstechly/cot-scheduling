@@ -95,9 +95,10 @@ def evaluate_full_raw(response, llm_claim, problem_relaxation):
     evaluation["input_length"] = domain.token_l(response["prompt"])
     evaluation["output_length"] = domain.token_l(response["response"])
     llm_claim_cleaned = llm_claim.strip().lower()
+    evaluation["well_formed_response"] = True
     if re.search(r"\s", llm_claim):
         try: 
-            llm_claim_cleaned = llm_claim_cleaned.split("[answer]")[1].strip()
+            llm_claim_cleaned = llm_claim_cleaned.split("[answer]")[1].strip()     
         except:
             try: llm_claim_cleaned = llm_claim_cleaned.split("answer")[1].strip()
             except: evaluation["well_formed_response"] = False
@@ -105,7 +106,6 @@ def evaluate_full_raw(response, llm_claim, problem_relaxation):
             # print(response["response"])
             llm_claim_cleaned = "".join(llm_claim_cleaned.split())
             llm_claim_cleaned = "".join(llm_claim_cleaned.split("-"))
-    else: evaluation["well_formed_response"] = True
     # if llm_claim_cleaned != evaluation["ground_truth"] and problem_relaxation == "no_space": print(f"claimed: {llm_claim_cleaned}, truth: {evaluation['ground_truth']}")
     # if response["relaxation"] == "tool":
         # print("---------------")
@@ -116,6 +116,10 @@ def evaluate_full_raw(response, llm_claim, problem_relaxation):
         # print(llm_claim_cleaned)
         # print(f'ground truth: {evaluation["ground_truth"]}')
     evaluation["correct"] = str(llm_claim_cleaned).lower().strip() == str(evaluation["ground_truth"]).lower().strip()
+    evaluation["clean_claim"] = str(llm_claim_cleaned).lower().strip()
+    evaluation["in_range"] = False
+    try: evaluation["in_range"] = int(llm_claim_cleaned) == int(llm_claim_cleaned)%response["mod"]
+    except: print(f"{llm_claim_cleaned} is not a valid answer mod {response['mod']}")
     return evaluation
 
 def evaluate_tool_use(response, llm_claim, problem_relaxation):
@@ -151,8 +155,9 @@ def generate_correct_evaluation(example_instance, problem_relaxation):
 
 def calc(a,b,op):
     # print(f"fib {a},{b},{depth}")
-    if int(str(b).strip())=="0" and op=="/": return 0
-    try: return math.floor(simplify(f"{a}{op}{b}"))
+    if op.strip() == "/\\": op = "/"
+    if int(str(b).strip())==0 and op.strip()=="/": return 0
+    try: return math.floor(simplify(f"{a}{op.strip()}{b}"))
     except: 
         print(f"Can't simplify {a} {op} {b}")
         raise ValueError(f"Can't simplify {a} {op} {b}")
