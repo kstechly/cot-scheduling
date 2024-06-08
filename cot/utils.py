@@ -72,6 +72,7 @@ def flatten(dict):
 
 def includes_dict(l, b):
     for a in l:
+        if not all(k in a.keys() for k in b.keys()): return False
         if all(a[k] == b[k] for k in b.keys()): return True
     return False
 
