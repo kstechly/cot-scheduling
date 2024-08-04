@@ -9,3 +9,6 @@ poetry.lock
 
 # Don't push backups
 *.old
+
+# Don't push local notes
+*.todo
