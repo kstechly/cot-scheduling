@@ -14,8 +14,22 @@ STOP_STATEMENT = "[ANSWER END]" # what we look for to end LLM response generatio
 
 SYSTEM_PROMPT  = "You are a system that solves reasoning problems presented in text form."
 
-input_costs_per_million  = {"gpt-4": 30, "gpt-4-turbo":10, "gpt-4-turbo-2024-04-09": 10, "gpt-3.5-turbo-0125": 0.5, "llama3-8b-8192": 0.0, "gpt-4o-2024-05-13": 5}
-output_costs_per_million = {"gpt-4": 60, "gpt-4-turbo":30, "gpt-4-turbo-2024-04-09": 30, "gpt-3.5-turbo-0125": 1.5, "llama3-8b-8192": 0.0, "gpt-4o-2024-05-13": 15}
+input_costs_per_million  = {
+    "gpt-4": 30, 
+    "gpt-4-turbo":10, 
+    "gpt-4-turbo-2024-04-09": 10, 
+    "gpt-3.5-turbo-0125": 0.5, 
+    "llama3-8b-8192": 0.0, 
+    "gpt-4o-2024-05-13": 5, 
+    "gpt-4o-mini-2024-07-18":0.15}
+output_costs_per_million = {
+    "gpt-4": 60, 
+    "gpt-4-turbo":30, 
+    "gpt-4-turbo-2024-04-09": 30, 
+    "gpt-3.5-turbo-0125": 1.5, 
+    "llama3-8b-8192": 0.0, 
+    "gpt-4o-2024-05-13": 15, 
+    "gpt-4o-mini-2024-07-18": 0.6}
 
 def get_responses(llm, domain_name, specified_instances = [], print_models=False, overwrite_previous=False, verbose=False, temp=0, num_trials=1, **prompt_specification):
     if print_models:
@@ -36,7 +50,7 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
         print(groq_models)
         exit()
 
-    if llm != "gpt-4-turbo-2024-04-09":
+    if llm != "gpt-4o-2024-05-13":
         print("This isn't the right model, is it??? " + llm)
         # exit()
     # Cost calculation setup

@@ -26,17 +26,19 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
     ####### SUPER UGLY #######
     # graph setup
 
-    path = "/home/kaya/yochan/cot/Poppins-SemiBold.ttf"
-    fontManager.addfont(path)
-    prop = FontProperties(fname=path)
-    FONTSCALE = 2
-    FONTSIZE = 35
-    LEGENDFONT = 25
-    FIGSIZE = (30, 10)
-    fig, axs = plt.subplots(1, 3, figsize=FIGSIZE)
-    #font size
-    sns.set_context("poster", font_scale=FONTSCALE)
-    sns.set_theme(style="darkgrid", font=prop.get_name())
+    # path = "/home/kaya/yochan/cot/Poppins-SemiBold.ttf"
+    # fontManager.addfont(path)
+    # prop = FontProperties(fname=path)
+    # FONTSCALE = 2
+    # FONTSIZE = 35
+    # LEGENDFONT = 25
+    # FIGSIZE = (30, 10)
+    # print("t")
+    # fig, axs = plt.subplots(1, 3, figsize=FIGSIZE)
+    # print("s")
+    # #font size
+    # sns.set_context("poster", font_scale=FONTSCALE)
+    # sns.set_theme(style="darkgrid", font=prop.get_name())
 
     # coinflip = utils.read_json("coinflip", False, "evaluations", verbose=verbose)
     # cf_axis_num = 0
