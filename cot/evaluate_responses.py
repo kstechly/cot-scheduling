@@ -23,10 +23,10 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
     if specified_instances: working_instances = {num: responses[num] for num in responses.keys() if num in specified_instances}
     else: working_instances = responses
     
-    ####### SUPER UGLY #######
+    ####### SUPER UGLY ####### TODO fix this nonsense to generate graphs cleanly. Actually make it a general thing instead!!! That I can use in any of my projects :((
     # graph setup
 
-    path = "/home/kaya/yochan/cot/Poppins-SemiBold.ttf"
+    path = "/home/kaya/yochan/cur/cot/Poppins-SemiBold.ttf"
     fontManager.addfont(path)
     prop = FontProperties(fname=path)
     FONTSCALE = 2
