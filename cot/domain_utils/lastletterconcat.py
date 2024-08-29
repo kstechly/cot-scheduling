@@ -24,13 +24,13 @@ ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 ### SCRIPT FOR GENERATING INSTANCES ###
 
-def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_length=1, instance_type="instances", random=False):
-    if instance_type not in ["instances", "examples"]: raise ValueError("What are you trying to generate? I can only do instances and examples.")
-    # if overwrite_previous:
-    #     random.seed(a=SEED)
-    # else: 
-    try: utils.load_pickle(RANDOM_FILE_LOC)
-    except: raise FileNotFoundError(f"Could not find pickled random state. If you want to start anew, pass --overwrite_previous=True")
+def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_length=1, instance_type="instances", rndm=False):
+    # if instance_type not in ["instances", "examples"]: raise ValueError("What are you trying to generate? I can only do instances and examples.")
+    if overwrite_previous:
+         random.seed(a=SEED)
+    else: 
+        try: utils.load_pickle(RANDOM_FILE_LOC)
+        except: raise FileNotFoundError(f"Could not find pickled random state. If you want to start anew, pass --overwrite_previous=True")
     
     instances = utils.read_json(DOMAIN_NAME, overwrite_previous, instance_type, verbose=True)
     if overwrite_previous: instances = {}
@@ -38,11 +38,11 @@ def generate_instances(num=0, overwrite_previous="False", num_steps=2, token_len
     for instance_num in range(prev_num,prev_num+num):
         inst_names = []
         for _ in range(0, num_steps):
-            if random: inst_names.append(generate_random_word(token_length))
+            if rndm: inst_names.append(generate_random_word(token_length))
             else: inst_names.append(generate_word(token_length, WORDS_LOCATION))
         # print(f'{instance_num}: {inst_names}')
         instances[instance_num] = {"raw_instance": inst_names, "uniform_token_length": token_length, "steps_to_solve":num_steps}
-        if random: instances[instance_num]["random_word"] = True
+        if rndm: instances[instance_num]["random_word"] = True
         else: instances[instance_num]["random_word"] = False
     
     print(f'Writing {num} {instance_type} to json. (num steps: {num_steps}, token_length: {token_length})')

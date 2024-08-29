@@ -4,7 +4,7 @@ from functools import cache
 import tiktoken #type: ignore
 ### BASIC FUNCTIONS ###
 def generator(domain_name, generate_instructions, generate_query, generate_thoughts, generate_correct_evaluation):
-    def generate(instance_text, problem_relaxation="full", cot_type="", n_examples=0, magic=""):
+    def generate(instance_text, problem_relaxation="full", cot_type="", n_examples=0, magic="", example_type="examples"):
         # cot_type      :      name of the cot prompt (leave blank for no thought annotation)
         # n_examples    :      number of examples to provide
         # magic         :      "let's think step by step" or whatever appended to end of prompt
@@ -17,7 +17,7 @@ def generator(domain_name, generate_instructions, generate_query, generate_thoug
 
         prompt = "[Instructions]\n"+instructions
         if n_examples: prompt+=f"\n\nThe following {n_examples} examples are provided. Please follow the formatting used in them.\n\n"
-        prompt += generate_cot(cot_type, n_examples, magic, domain_name, generate_query, generate_thoughts, generate_correct_evaluation, problem_relaxation) + f'\nProblem to solve:\n\n' + current_query + "\n\n" + magic
+        prompt += generate_cot(cot_type, n_examples, magic, domain_name, generate_query, generate_thoughts, generate_correct_evaluation, problem_relaxation, example_type) + f'\nProblem to solve:\n\n' + current_query + "\n\n" + magic
         ## TODO refactor this. problem_relaxation reading should NOT be here! Only doing this bc in a hurry :((
         if (cot_type or magic) and not problem_relaxation == "dont_think": prompt+= "\n\n[Thoughts]"
         else: prompt+= "\n[Answer]\n"
@@ -25,12 +25,12 @@ def generator(domain_name, generate_instructions, generate_query, generate_thoug
     return generate
 
 ### COT PROMPT UTILITIES ###
-def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, generate_thoughts, generate_correct_evaluation, problem_relaxation):
+def generate_cot(cot_type, n_examples, magic, domain_name, generate_query, generate_thoughts, generate_correct_evaluation, problem_relaxation, example_type="examples"):
     # Example instances have to contain a "c example " line with the example coloring
     # TODO this should know its own name. Just make these classes already cmon
     if not n_examples: return "" 
 
-    example_instances = utils.read_json(domain_name, False, "examples")
+    example_instances = utils.read_json(domain_name, False, example_type)
 
     assert n_examples <= len(example_instances)
 
