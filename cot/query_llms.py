@@ -14,6 +14,8 @@ STOP_STATEMENT = "[ANSWER END]" # what we look for to end LLM response generatio
 
 SYSTEM_PROMPT  = "You are a system that solves reasoning problems presented in text form."
 
+WRITING_DELAY  = 10
+
 input_costs_per_million  = {
     "gpt-4": 30, 
     "gpt-4-turbo":10, 
@@ -80,6 +82,7 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
     instance_task = None
 
     failed_instances = []
+    write_counter = 0
     with prog as p:
         for instance in p.track(working_instances, description=f"{llm}, {domain_name}"):
             instance_task = utils.replace_task(p, instance_task, description=f'Instance {instance} (Cost so far: ${total_cost:.02f})', total=len(working_instances[instance]))
@@ -87,8 +90,10 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
             previous_instance_output = previous[instance]         
             for prompt in working_instances[instance]:
                 if not utils.includes_dict([prompt], prompt_specification):
-                    p.update(instance_task, advance=1)
-                    continue
+                    if "examples_all" in prompt_specification.values():
+                        if "examples_" not in prompt["example_type"]:
+                            p.update(instance_task, advance=1)
+                            continue
                 for trial_id in range(0, num_trials):
                     trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
                     trial_specification.update(prompt)
@@ -99,10 +104,12 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
                     ind = utils.dict_index(previous_instance_output, trial_specification)
 
                     prompt_text = prompt["prompt"]
-                    token_length = len(enc.encode(prompt_text))
-                    trial_cost = token_length*input_cost
+                    if llm != "gpt-4o-mini-2024-07-18": # TODO get rid of all the lines that start with this. It's just a hack to speed things up right now!!! Also go back and calc costs for the ones I'm skipping
+                        token_length = len(enc.encode(prompt_text))
+                        trial_cost = token_length*input_cost
                     if verbose:
-                        print(f"==Instance: {instance}, Tokens: {token_length}==")
+                        if llm != "gpt-4o-mini-2024-07-18": print(f"==Instance: {instance}, Tokens: {token_length}==")
+                        else: print(f"==Instance: {instance}")
                         info_dict = {x: trial_specification[x] for x in trial_specification.keys()}
                         print(f'=={info_dict}==')
                         print(prompt_text)
@@ -114,21 +121,28 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
                         failed_instances.append(instance)
                         print(f"==Failed instance: {instance}==")
                         continue
-                    trial_cost += len(enc.encode(llm_response))*output_cost
-                    current_sesh_cost += trial_cost
-                    total_cost += trial_cost
+                    if llm != "gpt-4o-mini-2024-07-18":
+                        trial_cost += len(enc.encode(llm_response))*output_cost
+                        current_sesh_cost += trial_cost
+                        total_cost += trial_cost
 
-                    trial_output.update({"response": llm_response, "timestamp": time.time(), "estimated_cost": trial_cost})
+                    if llm != "gpt-4o-mini-2024-07-18": trial_output.update({"response": llm_response, "timestamp": time.time(), "estimated_cost": trial_cost})
+                    else: trial_output.update({"response": llm_response, "timestamp": time.time()})
                     # print(f'Trial output: {trial_output}')
                     if ind == -1: previous[instance].append(trial_output)
                     else: previous[instance][ind] = trial_output
-                    utils.write_json(domain_name, previous, "responses")
+                    if write_counter >= WRITING_DELAY:
+                        utils.write_json(domain_name, previous, "responses")
+                        write_counter = 0
+                    else: write_counter+=1
                     if verbose:     
                         print(f'==LLM Response==')
                         print(llm_response)
                         # print(f"***Current cost: {current_sesh_cost:.4f}***")
                 p.update(instance_task, advance=1)
-                    
+
+    # a final write, if using writing_delay
+    utils.write_json(domain_name, previous, "responses")                    
     # Print any failed instances
     print(f"Failed instances: {failed_instances}")
     print(f"Total Session Cost: {current_sesh_cost:.2f}")
