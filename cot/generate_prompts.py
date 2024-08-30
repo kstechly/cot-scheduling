@@ -24,7 +24,7 @@ def generate_prompts(domain_name, n_examples = 0, example_type ='basic', cot='',
     #       (Relevant for Paradox of Learning reasons)
     #      Specifically, maybe let the domain decide how many prompts to output? **kwargs
     if example_type == 'all':
-        for x in [f'examples_{n}' for n in range(11,21)]:
+        for x in [f'examples_{n}' for n in range(1,21)]:
             example_type = x
             print(example_type)
             for instance in instances:
