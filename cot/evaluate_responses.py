@@ -164,30 +164,30 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
         if   graph_it == "line":
             if h and s:
                 # df.replace({"cot":{"":"direct"}}, inplace=True)
-                subdf['correct'] = subdf['correct'].map(lambda x: 100*x).fillna(df['correct'])
-                subdf['cot'] = subdf['cot'].map(lambda x: x.capitalize())
-                subdf['relaxation'] = subdf['relaxation'].map({"chain":"Arbitrary", "full":"Arbitrary", "told":"Single-Digit"}).fillna(df['relaxation'])
-                subdf['relaxation'] = subdf['relaxation'].map(lambda x: x.capitalize())
-                subdf['steps_to_solve'] = subdf['steps_to_solve'].map(lambda x: x-1)
-                subdf.rename(columns={"cot": "CoT", "relaxation": "Explanation"}, inplace=True)
+                # subdf['correct'] = subdf['correct'].map(lambda x: 100*x).fillna(df['correct'])
+                # subdf['cot'] = subdf['cot'].map(lambda x: x.capitalize())
+                # subdf['relaxation'] = subdf['relaxation'].map({"chain":"Arbitrary", "full":"Arbitrary", "told":"Single-Digit"}).fillna(df['relaxation'])
+                # subdf['relaxation'] = subdf['relaxation'].map(lambda x: x.capitalize())
+                # subdf['steps_to_solve'] = subdf['steps_to_solve'].map(lambda x: x-1)
+                # subdf.rename(columns={"cot": "CoT", "relaxation": "Explanation"}, inplace=True)
                 # subd
-                sns.lineplot(x=x, y=y, hue="Explanation", style="CoT", data=subdf, palette="deep", err_style=None, style_order=["Basic", "Direct"], ax=axs[2])
-                axs[2].set_title(f'One-Digit Arithmetic', fontsize=FONTSIZE)
-                axs[2].set_xlabel('# of Operations', fontsize=FONTSIZE)
-                # axs[2].set_ylabel('% of Instances correct', fontsize=FONTSIZE)
-                # a[2]xs[0e)].legend(loc='upper right', markerscale=2)
-                # 0[2]plot
-                # ax2[0].legend(bbox_to_anchor=(1, 1), fontsize=LEGENDFONT)
-                axs[2].legend(fontsize=LEGENDFONT)
-                axs[2].set_xticks(range(2, 31, 3))
-                axs[2].set_yticks(range(0, 101, 20))
-                axs[2].set_ylim(bottom=0)
-                # 0[2]art from 3 so I offset the graph from 2
-                axs[2].set_xlim(left=1, right=29)
-                axs[2].grid(True)
-                #0a[2]bels
-                axs[2].tick_params(axis='both', which='major', labelsize=FONTSIZE)
-                axs[2].tick_params(axis='both', which='minor', labelsize=FONTSIZE)
+                g = sns.lineplot(x=x, y=y, style=s, hue=h, data=subdf, palette="deep", err_style=None)
+                # axs[2].set_title(f'One-Digit Arithmetic', fontsize=FONTSIZE)
+                # axs[2].set_xlabel('# of Operations', fontsize=FONTSIZE)
+                # # axs[2].set_ylabel('% of Instances correct', fontsize=FONTSIZE)
+                # # a[2]xs[0e)].legend(loc='upper right', markerscale=2)
+                # # 0[2]plot
+                # # ax2[0].legend(bbox_to_anchor=(1, 1), fontsize=LEGENDFONT)
+                # axs[2].legend(fontsize=LEGENDFONT)
+                # axs[2].set_xticks(range(2, 31, 3))
+                # axs[2].set_yticks(range(0, 101, 20))
+                # axs[2].set_ylim(bottom=0)
+                # # 0[2]art from 3 so I offset the graph from 2
+                # axs[2].set_xlim(left=1, right=29)
+                # axs[2].grid(True)
+                # #0a[2]bels
+                # axs[2].tick_params(axis='both', which='major', labelsize=FONTSIZE)
+                # axs[2].tick_params(axis='both', which='minor', labelsize=FONTSIZE)
             elif h: g = sns.lineplot(x=x, y=y, hue=h, data=subdf, palette="deep", err_style=None)
             else: g = sns.lineplot(x=x, y=y, data=subdf, err_style=None)
         elif graph_it == "corr":
