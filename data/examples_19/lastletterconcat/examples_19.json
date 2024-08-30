@@ -1,0 +1,80 @@
+{
+    "0": {
+        "raw_instance": [
+            "Jackson",
+            "Max",
+            "Arthur",
+            "Angel",
+            "Gray",
+            "Judge",
+            "Zen",
+            "Brad",
+            "Roger",
+            "Delta",
+            "Maria",
+            "Titan",
+            "Jennifer",
+            "Fran",
+            "Edward",
+            "Daniel",
+            "Fred",
+            "Todd",
+            "Tiny"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 19,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Cal",
+            "Hal",
+            "Roger",
+            "Scotland",
+            "June",
+            "Pat",
+            "Hamilton",
+            "Phil",
+            "Hung",
+            "Tex",
+            "Steven",
+            "Emma",
+            "Hope",
+            "Hung",
+            "Judge",
+            "Aj",
+            "Vu",
+            "Robin",
+            "Edward"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 19,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Virginia",
+            "Love",
+            "Tex",
+            "Ana",
+            "Kevin",
+            "Lisa",
+            "Charlotte",
+            "Storm",
+            "Alex",
+            "Oak",
+            "Jose",
+            "Fred",
+            "Zen",
+            "Blake",
+            "Lisa",
+            "Lane",
+            "Peace",
+            "Lisa",
+            "My"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 19,
+        "random_word": false
+    }
+}

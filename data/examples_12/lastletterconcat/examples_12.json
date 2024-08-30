@@ -1,0 +1,59 @@
+{
+    "0": {
+        "raw_instance": [
+            "Aura",
+            "Dick",
+            "Santa",
+            "Mari",
+            "Albert",
+            "River",
+            "Wolf",
+            "Jessica",
+            "Fran",
+            "Page",
+            "Dean",
+            "Trace"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 12,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Dash",
+            "Tiny",
+            "Edward",
+            "Philip",
+            "Ford",
+            "Newton",
+            "Boston",
+            "Phoenix",
+            "Quest",
+            "Marc",
+            "Baby",
+            "Love"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 12,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Analy",
+            "Daniel",
+            "Cash",
+            "Del",
+            "Meg",
+            "Egypt",
+            "Chuck",
+            "Thor",
+            "Johnson",
+            "Azure",
+            "Jeremy",
+            "Dan"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 12,
+        "random_word": false
+    }
+}

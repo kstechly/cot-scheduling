@@ -1,0 +1,29 @@
+{
+    "0": {
+        "raw_instance": [
+            "Matthew",
+            "River"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Craig",
+            "India"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Daniel",
+            "Stephen"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 2,
+        "random_word": false
+    }
+}

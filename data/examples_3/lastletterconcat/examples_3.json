@@ -1,0 +1,32 @@
+{
+    "0": {
+        "raw_instance": [
+            "Cal",
+            "Tai",
+            "Judge"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Greg",
+            "Tyler",
+            "Ross"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Major",
+            "Val",
+            "Maria"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 3,
+        "random_word": false
+    }
+}

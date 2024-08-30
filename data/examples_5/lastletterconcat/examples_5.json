@@ -1,0 +1,38 @@
+{
+    "0": {
+        "raw_instance": [
+            "Stan",
+            "Stephen",
+            "Tom",
+            "Aura",
+            "Dick"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 5,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Santa",
+            "Mari",
+            "Albert",
+            "River",
+            "Wolf"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 5,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Jessica",
+            "Fran",
+            "Page",
+            "Dean",
+            "Trace"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 5,
+        "random_word": false
+    }
+}
