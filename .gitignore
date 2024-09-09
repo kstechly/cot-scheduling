@@ -12,3 +12,11 @@ poetry.lock
 
 # Don't push local notes
 *.todo
+history.json
+
+# Don't push random pickles TODO re-engineer and rename these
+random
+random[0-9]
+
+# Don't push config files
+*.conf
