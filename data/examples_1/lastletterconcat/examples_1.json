@@ -1,0 +1,26 @@
+{
+    "0": {
+        "raw_instance": [
+            "Anthony"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Beautiful"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Ash"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 1,
+        "random_word": false
+    }
+}

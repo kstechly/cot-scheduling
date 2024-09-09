@@ -1,0 +1,68 @@
+{
+    "0": {
+        "raw_instance": [
+            "Bear",
+            "Page",
+            "Pa",
+            "Italy",
+            "Rand",
+            "Nature",
+            "Brad",
+            "Gene",
+            "My",
+            "Ed",
+            "Royal",
+            "Summer",
+            "Carl",
+            "Storm",
+            "Hunter"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 15,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Canon",
+            "Don",
+            "Tiny",
+            "May",
+            "Justice",
+            "Gene",
+            "Hero",
+            "Hal",
+            "Uri",
+            "Geo",
+            "London",
+            "Beth",
+            "Lewis",
+            "Chris",
+            "Tim"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 15,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Infinity",
+            "Anderson",
+            "Rachel",
+            "Rich",
+            "Lewis",
+            "Ted",
+            "Rick",
+            "Aaron",
+            "Henry",
+            "Keith",
+            "Beautiful",
+            "Chris",
+            "Ann",
+            "Todd",
+            "Robin"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 15,
+        "random_word": false
+    }
+}

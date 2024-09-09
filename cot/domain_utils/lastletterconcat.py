@@ -135,6 +135,8 @@ def evaluate_raw(response, llm_claim, relaxation="full"):
             print(f"Ill-formed response! Can't parse:")
             print(response["response"])
             llm_claim_cleaned = "".join(llm_claim_cleaned.split()) #last ditch, but will still print about it
+            llm_claim_cleaned = "".join("".join(llm_claim_cleaned.split("[")).split("]"))
+            print(f"last ditch: {llm_claim_cleaned}")
             print(f'I\'m marking this as {llm_claim_cleaned == evaluation["ground_truth"]}')
     else: evaluation["well_formed_response"] = True
     
@@ -166,6 +168,7 @@ def generate_thoughts(instance, cot, relaxation):
     elif cot == "wei_incorrect": return generate_thoughts_wei_incorrect(instance)
     elif cot == "first_letter_incorrect": return generate_thoughts_first_letter_incorrect(instance)
     elif cot == "overexplained": return generate_thoughts_overexplained(instance)
+    elif cot == "recursive": return generate_thoughts_recursive(instance)
     else: raise NotImplementedError
 
 def generate_correct_evaluation(instance, problem_relaxation):
@@ -249,4 +252,17 @@ def generate_thoughts_overexplained(instance):
     else: cot+= f'\nCompleting our pair-wise concatenations, we find that the answer is {answer}.'
     return cot
 
-    
+def generate_thoughts_recursive(instance):
+    word_list = instance["raw_instance"]
+    answer = "".join(word[-1] for word in word_list)
+    cot = f"The last letter of \"{word_list[0]}\" is \"{word_list[0][-1]}\".\n"
+    if len(answer) ==1: 
+        return f"Since there is only one word, we can just output its last letter: {answer}."
+    for n in range(1,len(word_list)):
+        prev = "".join(answer[0:n])
+        cot+= generate_pairwise_thought(prev, word_list[n])
+    cot+= f'Completing our pair-wise concatenations, we find that the answer is {answer}.'
+    return cot
+
+def generate_pairwise_thought(prev, new_word):
+    return f"The last letter of \"{new_word}\" is {new_word[-1]}. Concatenating it with \"{prev}\" gives \"{prev}{new_word[-1]}\".\n"

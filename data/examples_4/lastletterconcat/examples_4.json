@@ -1,0 +1,35 @@
+{
+    "0": {
+        "raw_instance": [
+            "Hope",
+            "Len",
+            "Santa",
+            "Echo"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 4,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Ted",
+            "Una",
+            "Jay",
+            "Victoria"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 4,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Una",
+            "Rock",
+            "Alpha",
+            "Anderson"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 4,
+        "random_word": false
+    }
+}

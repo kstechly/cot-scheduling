@@ -1,0 +1,74 @@
+{
+    "0": {
+        "raw_instance": [
+            "Hung",
+            "Nature",
+            "Dave",
+            "Jay",
+            "Ram",
+            "Link",
+            "Doug",
+            "Delta",
+            "Hung",
+            "Louis",
+            "Cache",
+            "Juan",
+            "Greg",
+            "Ali",
+            "Jo",
+            "Hung",
+            "August"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 17,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Lex",
+            "Junior",
+            "Lee",
+            "Louis",
+            "Clinton",
+            "Henry",
+            "Christian",
+            "Leon",
+            "Andrew",
+            "William",
+            "Unique",
+            "Italy",
+            "Silver",
+            "August",
+            "Ed",
+            "Mar",
+            "Knowledge"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 17,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Jan",
+            "May",
+            "Jack",
+            "Egypt",
+            "Steven",
+            "Lua",
+            "Baby",
+            "Matt",
+            "Kal",
+            "Long",
+            "Silver",
+            "Anne",
+            "Chris",
+            "Luc",
+            "Marshal",
+            "Daniel",
+            "Leo"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 17,
+        "random_word": false
+    }
+}

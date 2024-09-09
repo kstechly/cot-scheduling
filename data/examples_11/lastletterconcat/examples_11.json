@@ -1,0 +1,56 @@
+{
+    "0": {
+        "raw_instance": [
+            "Anthony",
+            "Beautiful",
+            "Ash",
+            "Matthew",
+            "River",
+            "Craig",
+            "India",
+            "Daniel",
+            "Stephen",
+            "Cal",
+            "Tai"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 11,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Judge",
+            "Greg",
+            "Tyler",
+            "Ross",
+            "Major",
+            "Val",
+            "Maria",
+            "Hope",
+            "Len",
+            "Santa",
+            "Echo"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 11,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Ted",
+            "Una",
+            "Jay",
+            "Victoria",
+            "Una",
+            "Rock",
+            "Alpha",
+            "Anderson",
+            "Stan",
+            "Stephen",
+            "Tom"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 11,
+        "random_word": false
+    }
+}

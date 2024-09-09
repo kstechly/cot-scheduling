@@ -1,0 +1,44 @@
+{
+    "0": {
+        "raw_instance": [
+            "Chuck",
+            "Thor",
+            "Johnson",
+            "Azure",
+            "Jeremy",
+            "Dan",
+            "Andrew"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 7,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Ruby",
+            "Omega",
+            "Diamond",
+            "Aj",
+            "Ann",
+            "Josh",
+            "Ash"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 7,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Steven",
+            "Jason",
+            "Emma",
+            "Bear",
+            "Kal",
+            "Roman",
+            "Anderson"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 7,
+        "random_word": false
+    }
+}

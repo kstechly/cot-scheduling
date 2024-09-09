@@ -1,0 +1,83 @@
+{
+    "0": {
+        "raw_instance": [
+            "Aaron",
+            "Josh",
+            "Justin",
+            "Arizona",
+            "Star",
+            "Howard",
+            "Brain",
+            "Johnny",
+            "Indiana",
+            "Montserrat",
+            "Nature",
+            "Asia",
+            "Rod",
+            "Ali",
+            "Keith",
+            "Jordan",
+            "Analy",
+            "Daemon",
+            "Promise",
+            "Major"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 20,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Jake",
+            "Mike",
+            "Emma",
+            "Frank",
+            "Jones",
+            "Adam",
+            "Rose",
+            "Montserrat",
+            "January",
+            "Dream",
+            "Kit",
+            "Stan",
+            "Jo",
+            "Charlotte",
+            "August",
+            "Victoria",
+            "Justin",
+            "Grant",
+            "Dani",
+            "Victoria"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 20,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Leo",
+            "Florida",
+            "Meta",
+            "Max",
+            "Ruby",
+            "Oak",
+            "Trace",
+            "German",
+            "Andre",
+            "Arch",
+            "Oak",
+            "Moon",
+            "Carl",
+            "Dallas",
+            "Bruce",
+            "Dani",
+            "Seven",
+            "Race",
+            "Albert",
+            "Cache"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 20,
+        "random_word": false
+    }
+}

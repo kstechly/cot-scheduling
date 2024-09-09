@@ -1,0 +1,65 @@
+{
+    "0": {
+        "raw_instance": [
+            "Atlas",
+            "Marc",
+            "Sunday",
+            "Al",
+            "Kevin",
+            "Matthew",
+            "Maria",
+            "Moon",
+            "Newton",
+            "Peter",
+            "Chelsea",
+            "Valor",
+            "Georgia",
+            "Truth"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 14,
+        "random_word": false
+    },
+    "1": {
+        "raw_instance": [
+            "Neil",
+            "April",
+            "Michelle",
+            "Tyler",
+            "Viet",
+            "Ali",
+            "Geo",
+            "Sal",
+            "Crystal",
+            "Hung",
+            "Kyle",
+            "August",
+            "Brown",
+            "Seven"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 14,
+        "random_word": false
+    },
+    "2": {
+        "raw_instance": [
+            "Juan",
+            "Austin",
+            "Legend",
+            "Gary",
+            "Israel",
+            "Paul",
+            "Thor",
+            "George",
+            "Taylor",
+            "Justin",
+            "Anne",
+            "Job",
+            "Carlos",
+            "Nick"
+        ],
+        "uniform_token_length": 1,
+        "steps_to_solve": 14,
+        "random_word": false
+    }
+}
