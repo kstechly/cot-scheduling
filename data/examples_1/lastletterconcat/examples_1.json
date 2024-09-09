@@ -1,26 +1,3 @@
-{
-    "0": {
-        "raw_instance": [
-            "Anthony"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 1,
-        "random_word": false
-    },
-    "1": {
-        "raw_instance": [
-            "Beautiful"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 1,
-        "random_word": false
-    },
-    "2": {
-        "raw_instance": [
-            "Ash"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 1,
-        "random_word": false
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:faf12fb1615fccdc59388be3e55468b4ad0b1d42f25a09ec352a25d82f5504da
+size 510

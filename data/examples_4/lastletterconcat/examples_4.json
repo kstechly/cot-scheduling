@@ -1,35 +1,3 @@
-{
-    "0": {
-        "raw_instance": [
-            "Hope",
-            "Len",
-            "Santa",
-            "Echo"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 4,
-        "random_word": false
-    },
-    "1": {
-        "raw_instance": [
-            "Ted",
-            "Una",
-            "Jay",
-            "Victoria"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 4,
-        "random_word": false
-    },
-    "2": {
-        "raw_instance": [
-            "Una",
-            "Rock",
-            "Alpha",
-            "Anderson"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 4,
-        "random_word": false
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7e72d9f2afceafe4381ec1445ff2a4391f70d29027069817c98f175362ff8456
+size 688

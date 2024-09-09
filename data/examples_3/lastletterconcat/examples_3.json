@@ -1,32 +1,3 @@
-{
-    "0": {
-        "raw_instance": [
-            "Cal",
-            "Tai",
-            "Judge"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 3,
-        "random_word": false
-    },
-    "1": {
-        "raw_instance": [
-            "Greg",
-            "Tyler",
-            "Ross"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 3,
-        "random_word": false
-    },
-    "2": {
-        "raw_instance": [
-            "Major",
-            "Val",
-            "Maria"
-        ],
-        "uniform_token_length": 1,
-        "steps_to_solve": 3,
-        "random_word": false
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:499f5e66837725ea150e1f98f6a9e97f2ac6474cedf7d017ac732b90fdb4bf65
+size 624
