@@ -94,6 +94,9 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
                         if "examples_" not in prompt["example_type"]:
                             p.update(instance_task, advance=1)
                             continue
+                    else: 
+                        p.update(instance_task, advance=1)
+                        continue
                 for trial_id in range(0, num_trials):
                     trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
                     trial_specification.update(prompt)
