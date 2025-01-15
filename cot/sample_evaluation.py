@@ -11,6 +11,9 @@ def sample_evaluation(domain, which="all",**kwargs):
             next = {f'instance_num':int(k)}
             next.update(x)
             if utils.includes_dict([next], kwargs):
+                try:
+                    if x['estimated_cost']>0.1 or x['response_dict']['time'] < 30: continue
+                except: continue
                 filtered.append(next)
 
     if not len(filtered): 

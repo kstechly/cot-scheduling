@@ -8,7 +8,6 @@ from rich.table import Column #type: ignore
 import pandas as pd #type: ignore
 
 ### json utils
-
 def write_json(domain_name,text_to_write,data_type):
     directory = f"data/{data_type}/{domain_name}"
     os.makedirs(directory, exist_ok=True)
@@ -66,7 +65,6 @@ def get_total_cost(domain_name):
 
 
 ### other utils
-
 def flatten(dict):
     return list(chain(*dict.values()))
 

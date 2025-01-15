@@ -131,6 +131,18 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
             else: previous[instance][ind] = response
     utils.write_json(domain_name, previous, "evaluations")
 
+    for p in previous:
+        # print(len(previous[p]))
+        for item_n in range(0,len(previous[p])):
+            # print(item.keys())
+            if 'response_dict' in previous[p][item_n]:
+                previous[p][item_n]['time_taken']=previous[p][item_n]['response_dict']['time']
+        # print(previous[p])
+        # print(previous[p])
+        # print(previous[p]['response_dict'])
+        # t = previous[p]['response_dict']['time']
+        # print(t)
+
     # TODO factor this into a better place 
     flat_results = utils.flatten(previous)
     df = pd.DataFrame(flat_results)
@@ -159,7 +171,9 @@ def evaluate_responses(domain_name, llm=None, specified_instances=[], overwrite_
     # subdf = subdf[subdf.steps_to_solve>1]
     if values and columns:
         print("\n")
-        print(subdf.pivot_table(columns=columns, values=values, aggfunc=aggfunc))
+        pv = subdf.pivot_table(columns=columns, values=values, aggfunc=aggfunc)
+        print(pv)
+        # print(pv.corr())
     if graph_it:
         if   graph_it == "line":
             if h and s:
