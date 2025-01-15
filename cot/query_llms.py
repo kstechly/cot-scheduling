@@ -5,10 +5,11 @@ from functools import cache
 import time
 from groq import Groq #type: ignore
 import os
-import requests
+import requests #type: ignore
 import boto3 #type: ignore
 import concurrent.futures
 import time
+import json
 
 import utils
 
@@ -16,7 +17,7 @@ STOP_STATEMENT = "[ANSWER END]" # what we look for to end LLM response generatio
 
 SYSTEM_PROMPT  = "You are a system that solves reasoning problems presented in text form."
 
-WRITING_DELAY  = 10
+WRITING_DELAY  = 1
 
 input_costs_per_million  = {
     "gpt-4": 30, 
@@ -87,74 +88,81 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
 
     failed_instances = []
     write_counter = 0
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        with prog as p:
-            def process_item(instance):
-                print(f'processing {instance}')
-                #instance_task = utils.replace_task(p, instance_task, description=f'Instance {instance} (Cost so far: ${total_cost:.02f})', total=len(working_instances[instance]))
-                if instance not in previous.keys(): previous[instance] = []
-                previous_instance_output = previous[instance]         
-                for prompt in working_instances[instance]:
-                    print(f'processing prompt {prompt} of instance {instance}')
-                    if not utils.includes_dict([prompt], prompt_specification):
-                        if "examples_all" in prompt_specification.values():
-                            if "examples_" not in prompt["example_type"]:
-                                p.update(instance_task, advance=1)
-                                continue
-                        else: 
+    # with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with prog as p:
+        # def process_item(instance):
+        for instance in p.track(working_instances, description=f"{llm}, {domain_name}"):
+            # print(f'processing {instance}')
+            instance_task = utils.replace_task(p, instance_task, description=f'Instance {instance} (Cost so far: ${total_cost:.02f})', total=len(working_instances[instance]))
+            if instance not in previous.keys(): previous[instance] = []
+            previous_instance_output = previous[instance]         
+            for prompt in working_instances[instance]:
+                # print(f'processing prompt {prompt} of instance {instance}')
+                if not utils.includes_dict([prompt], prompt_specification):
+                    if "examples_all" in prompt_specification.values():
+                        if "examples_" not in prompt["example_type"]:
                             p.update(instance_task, advance=1)
-                            print(f'rejecting prompt {prompt} of {instance} bc {prompt_specification}')
                             continue
-                    for trial_id in range(0, num_trials):
-                        print(trial_id)
-                        trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
-                        trial_specification.update(prompt)
-                        if utils.includes_dict(previous_instance_output, trial_specification): continue
-                        trial_specification.pop('prompt',None)
+                    else: 
+                        p.update(instance_task, advance=1)
+                        # print(f'rejecting prompt {prompt} of {instance} bc {prompt_specification}')
+                        continue
+                for trial_id in range(0, num_trials):
+                    # print(trial_id)
+                    trial_specification = {"trial_id": trial_id, "llm": llm, "temp": temp}
+                    trial_specification.update(prompt)
+                    if utils.includes_dict(previous_instance_output, trial_specification): continue
+                    trial_specification.pop('prompt',None)
 
-                        if utils.includes_dict(previous_instance_output, trial_specification) and not overwrite_previous: continue
-                        ind = utils.dict_index(previous_instance_output, trial_specification)
+                    if utils.includes_dict(previous_instance_output, trial_specification) and not overwrite_previous: continue
+                    ind = utils.dict_index(previous_instance_output, trial_specification)
 
-                        prompt_text = prompt["prompt"]
-                        if llm != "gpt-4o-mini-2024-07-18": # TODO get rid of all the lines that start with this. It's just a hack to speed things up right now!!! Also go back and calc costs for the ones I'm skipping
-                            token_length = len(enc.encode(prompt_text))
-                            trial_cost = token_length*input_cost
-                        if verbose:
-                            if llm != "gpt-4o-mini-2024-07-18": print(f"==Instance: {instance}, Tokens: {token_length}==")
-                            else: print(f"==Instance: {instance}")
-                            info_dict = {x: trial_specification[x] for x in trial_specification.keys()}
-                            print(f'=={info_dict}==')
-                            print(prompt_text)
-                        trial_output = trial_specification
-                        trial_output.update(prompt)
+                    prompt_text = prompt["prompt"]
+                    # if llm != "gpt-4o-mini-2024-07-18": # TODO get rid of all the lines that start with this. It's just a hack to speed things up right now!!! Also go back and calc costs for the ones I'm skipping
+                    if verbose:
+                        if llm != "gpt-4o-mini-2024-07-18": print(f"==Instance: {instance}==")
+                        else: print(f"==Instance: {instance}")
+                        info_dict = {x: trial_specification[x] for x in trial_specification.keys()}
+                        print(f'=={info_dict}==')
+                        print(prompt_text)
+                    trial_output = trial_specification
+                    trial_output.update(prompt)
 
-                        llm_response = send_query(prompt_text, llm, temp=temp)
-                        if not llm_response:
-                            failed_instances.append(instance)
-                            print(f"==Failed instance: {instance}==")
-                            continue
-                        if llm != "gpt-4o-mini-2024-07-18":
-                            trial_cost += len(enc.encode(llm_response))*output_cost
-                            current_sesh_cost += trial_cost
-                            total_cost += trial_cost
+                    llm_response, llm_response_dict = send_query(prompt_text, llm, temp=temp)
+                    llm_response_text = llm_response.choices[0].message.content
+                    # llm_response_serializable = response_dict(llm_response)
+                    if not llm_response_text:
+                        failed_instances.append(instance)
+                        print(f"==Failed instance: {instance}==")
+                        continue
+                    if llm != "gpt-4o-mini-2024-07-18":
+                        trial_cost = llm_response.usage.prompt_tokens*input_cost
+                        trial_cost += llm_response.usage.completion_tokens*output_cost
+                        current_sesh_cost += trial_cost
+                        total_cost += trial_cost
+                        print(f'Trial cost: {trial_cost}')
 
-                        if llm != "gpt-4o-mini-2024-07-18": trial_output.update({"response": llm_response, "timestamp": time.time(), "estimated_cost": trial_cost})
-                        else: trial_output.update({"response": llm_response, "timestamp": time.time()})
-                        # print(f'Trial output: {trial_output}')
-                        if ind == -1: previous[instance].append(trial_output)
-                        else: previous[instance][ind] = trial_output
-                        if write_counter >= WRITING_DELAY:
-                            utils.write_json(domain_name, previous, "responses")
-                            write_counter = 0
-                        else: write_counter+=1
-                        if verbose:     
-                            print(f'==LLM Response==')
-                            print(llm_response)
-                            # print(f"***Current cost: {current_sesh_cost:.4f}***")
-                    #p.update(instance_task, advance=1)
-            print('e time')
-            executor.map(process_item, working_instances)
-            print('e over')
+                    if llm != "gpt-4o-mini-2024-07-18": trial_output.update({"response": llm_response_text, "timestamp": time.time(), "estimated_cost": trial_cost, "response_dict":llm_response_dict})
+                    else: trial_output.update({"response": llm_response_text, "timestamp": time.time()})
+                    # print(f'Trial output: {trial_output}')
+                    if ind == -1: previous[instance].append(trial_output)
+                    else: previous[instance][ind] = trial_output
+                    # if write_counter >= WRITING_DELAY:
+                    utils.write_json(domain_name, previous, "responses")
+                        # write_counter = 0
+                    # else: write_counter+=1
+                    if verbose:
+                        print(f'==LLM Response==')
+                        print(llm_response_text)
+                        print(f"***Current cost: {current_sesh_cost:.4f}***")
+                        if current_sesh_cost > 50:
+                            print("too expensive!")
+                            exit()
+
+                #p.update(instance_task, advance=1)
+        # print('e time')
+        # executor.map(process_item, working_instances)
+        # print('e over')
 
     # a final write, if using writing_delay
     utils.write_json(domain_name, previous, "responses")                    
@@ -162,7 +170,7 @@ def get_responses(llm, domain_name, specified_instances = [], print_models=False
     print(f"Failed instances: {failed_instances}")
     print(f"Total Session Cost: {current_sesh_cost:.2f}")
     print(f"Total Cost: {total_cost:.2f}")
-    
+
 
 @cache
 def is_openai_model(llm):
@@ -195,13 +203,20 @@ def send_query(query_text, llm, temp=0, stop_statement=STOP_STATEMENT):
     if is_openai_model(llm):
         try:
             client = openai.OpenAI()
+            start = time.time()
             response = client.chat.completions.create(model=llm, messages=messages)#, temperature=temp, stop=stop_statement)
+            end = time.time()
         except Exception as e:
             print("[-]: Failed GPT query execution: {}".format(e))
             time.sleep(3000)
             return ""
-        text_response = response.choices[0].message.content
-        return text_response.strip()
+        print(f'reasoning tokens: {response.usage.completion_tokens_details["reasoning_tokens"]}')
+        print(f'prompt tokens: {response.usage.prompt_tokens}; completion tokens: {response.usage.completion_tokens-response.usage.completion_tokens_details["reasoning_tokens"]}')
+        print(f'time taken: {end-start}')
+        response_json = response.model_dump_json()
+        response_dict = json.loads(response_json)
+        response_dict['time'] = end-start
+        return response, response_dict
     elif is_groq_model(llm):
         #TODO add some way to slow it down if it goes too fast!
         try: 
