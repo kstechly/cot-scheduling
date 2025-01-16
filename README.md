@@ -1,7 +1,7 @@
-# Exploring generalizable reasoning with chain-of-thought
+# [Chain of Thoughtlessness? An Analysis of CoT in Planning](https://openreview.net/forum?id=kPBEAZU5Nm)
 
 
-Requires Poetry and the dotenv-plugin
+Requires Poetry
 ```bash
 poetry self add poetry-dotenv-plugin
 ```
